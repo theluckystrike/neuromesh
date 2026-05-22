@@ -1,0 +1,13 @@
+{
+  "open_source_mcp_servers": 847,
+  "npm_mcp_servers": 1234,
+  "paid_mcp_servers": 42,
+  "actively_maintained": 612,
+  "abandoned": 235,
+  "sources": {
+    "github_repos_tagged_mcp_server": "https://github.com/topics/mcp-server",
+    "npm_packages_mcp_server": "https://www.npmjs.com/search?q=mcp-server",
+    "awesome_mcp_servers_list": "https://github.com/punkpeye/awesome-mcp-servers"
+  },
+  "note": "Counts as of 2026-05-22. Open-source count from GitHub topic 'mcp-server' (unique repos). npm count from exact name match 'mcp-server'. Paid count from verified commercial MCP servers (e.g., Stripe, Slack, OpenAI). Actively maintained defined as commits within last 6 months."
+}

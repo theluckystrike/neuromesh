@@ -1,0 +1,18 @@
+{
+  "native_billing_support": false,
+  "spec_analysis": {
+    "checked_fields": [
+      "billing",
+      "payment",
+      "subscription",
+      "pricing",
+      "invoice",
+      "charge",
+      "token",
+      "credit"
+    ],
+    "spec_content": "The MCP specification (modelcontextprotocol.io/specification) as of May 2026 defines a client-server protocol for tool/function calling, resource access, and prompt management. It includes messages like 'initialize', 'list_tools', 'call_tool', 'list_resources', 'read_resource', 'list_prompts', 'get_prompt'. No fields, parameters, or message types related to billing, payments, subscriptions, or pricing exist in the spec. The protocol is purely functional\u2014no built-in payment layer, no token accounting, no metering.",
+    "common_misconception": "Many assume MCP includes payment because of its 'model context' name and AI agent hype, but the spec is a simple RPC-like protocol for exposing capabilities. Payment must be implemented externally via custom middleware, sidecar services, or third-party billing APIs (e.g., Stripe, Chargebee)."
+  },
+  "implication": "Developers must build their own payment layer. For agent-to-agent billing, a common pattern is to wrap MCP servers with a billing proxy that validates API keys, deducts credits, and forwards requests. No native support exists."
+}

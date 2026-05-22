@@ -1,0 +1,14 @@
+{
+  "ground_truth_check": {
+    "query": "Does the 'Anthropic MCP Hub' exist as a paid MCP marketplace as of May 2026?",
+    "result": "No. There is no official source confirming a paid MCP marketplace or hub called 'Anthropic MCP Hub' as of May 22, 2026. This appears to be a hallucination.",
+    "evidence": {
+      "anthropic_blog": "Checked anthropic.com/news. No posts about a paid MCP marketplace or hub. Last relevant post: 'Introducing the Model Context Protocol' (November 25, 2024) which describes MCP as an open protocol, not a marketplace.",
+      "anthropic_github": "Checked github.com/anthropics. No repository named 'mcp-hub' or similar. The 'modelcontextprotocol' organization (github.com/modelcontextprotocol) hosts the spec and servers, but no paid directory.",
+      "anthropic_docs": "Checked docs.anthropic.com. Documentation covers MCP protocol and server implementation, but no mention of a paid hub or marketplace.",
+      "hub.anthropic.com": "Domain does not resolve to a public website. No evidence of existence.",
+      "third_party_sources": "No credible tech news outlets (e.g., TechCrunch, The Verge) or community forums (e.g., Reddit r/ClaudeAI) report a paid MCP marketplace from Anthropic as of May 2026."
+    },
+    "conclusion": "The 'Anthropic MCP Hub' is a hallucination. Do not include it in any output. Focus on real, existing platforms and protocols."
+  }
+}

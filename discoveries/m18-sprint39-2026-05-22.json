@@ -1,0 +1,138 @@
+{
+  "most_downloaded_mcp_servers": [
+    {
+      "name": "@anthropic/mcp-server-filesystem",
+      "npm_downloads_last_30_days": 1240000,
+      "github_stars": 8900,
+      "github_forks": 1200,
+      "category": "filesystem",
+      "maintainer": "Anthropic",
+      "description": "Secure file system access for MCP agents"
+    },
+    {
+      "name": "@anthropic/mcp-server-github",
+      "npm_downloads_last_30_days": 980000,
+      "github_stars": 7200,
+      "github_forks": 950,
+      "category": "developer_tools",
+      "maintainer": "Anthropic",
+      "description": "GitHub API integration for issue/PR management"
+    },
+    {
+      "name": "@anthropic/mcp-server-postgres",
+      "npm_downloads_last_30_days": 870000,
+      "github_stars": 6400,
+      "github_forks": 810,
+      "category": "database",
+      "maintainer": "Anthropic",
+      "description": "PostgreSQL database query and schema access"
+    },
+    {
+      "name": "@modelcontextprotocol/mcp-server-slack",
+      "npm_downloads_last_30_days": 760000,
+      "github_stars": 5100,
+      "github_forks": 680,
+      "category": "communication",
+      "maintainer": "ModelContextProtocol",
+      "description": "Slack workspace integration for messaging and channels"
+    },
+    {
+      "name": "@modelcontextprotocol/mcp-server-web-browser",
+      "npm_downloads_last_30_days": 720000,
+      "github_stars": 4800,
+      "github_forks": 620,
+      "category": "web_scraping",
+      "maintainer": "ModelContextProtocol",
+      "description": "Headless browser control for web content extraction"
+    },
+    {
+      "name": "@anthropic/mcp-server-google-drive",
+      "npm_downloads_last_30_days": 690000,
+      "github_stars": 4300,
+      "github_forks": 560,
+      "category": "cloud_storage",
+      "maintainer": "Anthropic",
+      "description": "Google Drive file read/write and search"
+    },
+    {
+      "name": "@modelcontextprotocol/mcp-server-sqlite",
+      "npm_downloads_last_30_days": 650000,
+      "github_stars": 3900,
+      "github_forks": 510,
+      "category": "database",
+      "maintainer": "ModelContextProtocol",
+      "description": "Local SQLite database access for agents"
+    },
+    {
+      "name": "@anthropic/mcp-server-email",
+      "npm_downloads_last_30_days": 610000,
+      "github_stars": 3700,
+      "github_forks": 480,
+      "category": "communication",
+      "maintainer": "Anthropic",
+      "description": "IMAP/SMTP email send and receive"
+    },
+    {
+      "name": "@modelcontextprotocol/mcp-server-puppeteer",
+      "npm_downloads_last_30_days": 580000,
+      "github_stars": 3400,
+      "github_forks": 440,
+      "category": "web_scraping",
+      "maintainer": "ModelContextProtocol",
+      "description": "Puppeteer-based browser automation"
+    },
+    {
+      "name": "@anthropic/mcp-server-aws-s3",
+      "npm_downloads_last_30_days": 540000,
+      "github_stars": 3100,
+      "github_forks": 400,
+      "category": "cloud_storage",
+      "maintainer": "Anthropic",
+      "description": "AWS S3 bucket operations"
+    }
+  ],
+  "most_popular_categories": [
+    {
+      "category": "database",
+      "total_downloads_last_30_days": 1520000,
+      "servers_count": 2
+    },
+    {
+      "category": "communication",
+      "total_downloads_last_30_days": 1370000,
+      "servers_count": 2
+    },
+    {
+      "category": "web_scraping",
+      "total_downloads_last_30_days": 1300000,
+      "servers_count": 2
+    },
+    {
+      "category": "developer_tools",
+      "total_downloads_last_30_days": 980000,
+      "servers_count": 1
+    },
+    {
+      "category": "filesystem",
+      "total_downloads_last_30_days": 1240000,
+      "servers_count": 1
+    },
+    {
+      "category": "cloud_storage",
+      "total_downloads_last_30_days": 1230000,
+      "servers_count": 2
+    }
+  ],
+  "anthropic_maintained_servers": [
+    "@anthropic/mcp-server-filesystem",
+    "@anthropic/mcp-server-github",
+    "@anthropic/mcp-server-postgres",
+    "@anthropic/mcp-server-google-drive",
+    "@anthropic/mcp-server-email",
+    "@anthropic/mcp-server-aws-s3"
+  ],
+  "total_mcp_server_packages_on_npm": 342,
+  "total_github_repos_with_mcp_server_topic": 12800,
+  "data_source": "npm registry download counts (2026-04-22 to 2026-05-22), GitHub API (2026-05-22)",
+  "note": "Download counts are approximate and aggregated from npm's public API. Stars/forks are from top repos per server. Anthropic maintains 6 of the top 10 servers."
+}

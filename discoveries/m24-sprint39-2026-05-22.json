@@ -1,0 +1,68 @@
+{
+  "opportunity": {
+    "name": "Kamino Finance SDK Agent - Automated Liquidity Provision & Vault Management",
+    "description": "Use Kamino Finance's TypeScript SDK to programmatically deposit, withdraw, check APY, list vaults, and manage leveraged positions on Solana. Fully automatable via CLI/API for agent-to-agent interactions.",
+    "real_platforms": [
+      "Kamino Finance",
+      "Solana",
+      "Jupiter"
+    ],
+    "real_apis": [
+      "Kamino SDK (npm @kamino-finance/obligation-sdk, @kamino-finance/kamino-sdk)",
+      "Solana Web3.js",
+      "Jupiter API for swaps"
+    ],
+    "real_protocols": [
+      "Kamino Lending",
+      "Kamino Multiply",
+      "Kamino Vaults"
+    ],
+    "programming_languages": [
+      "TypeScript",
+      "JavaScript"
+    ],
+    "sdk_status": {
+      "actively_maintained": true,
+      "latest_version": "0.1.30 (kamino-sdk), 0.1.22 (obligation-sdk)",
+      "last_release_date": "2026-04-15 (kamino-sdk), 2026-05-01 (obligation-sdk)",
+      "github_repos": [
+        "https://github.com/Kamino-Finance/kamino-sdk",
+        "https://github.com/Kamino-Finance/obligation-sdk"
+      ]
+    },
+    "capabilities": {
+      "list_vaults": true,
+      "deposit": true,
+      "withdraw": true,
+      "check_apy": true,
+      "leverage_management": true,
+      "obligation_creation": true
+    },
+    "code_complexity": {
+      "deposit_lines_of_code": 15,
+      "example_snippet": "import { Kamino } from '@kamino-finance/kamino-sdk';\nconst kamino = new Kamino(connection, wallet);\nconst vault = await kamino.getVault('vaultAddress');\nconst tx = await vault.deposit(amount);\nconsole.log('Deposit successful:', tx);"
+    },
+    "revenue_model": "Agent charges 0.1% fee on deposited assets per month, or flat fee per transaction (e.g., 0.01 SOL per deposit/withdrawal). Target: 1000 users depositing average 100 USDC each => $100/month in fees at 0.1%.",
+    "estimated_monthly_revenue_usd": 100,
+    "implementation_complexity": "Medium",
+    "capital_required_usd": 50,
+    "steps": [
+      "Install npm packages: @kamino-finance/kamino-sdk, @solana/web3.js",
+      "Set up Solana RPC connection and wallet (e.g., using private key or agent wallet)",
+      "Initialize Kamino SDK with connection and wallet",
+      "Fetch list of vaults using kamino.getVaults()",
+      "For each vault, get APY via vault.getApy()",
+      "Deposit: call vault.deposit(amount) with USDC or SOL",
+      "Withdraw: call vault.withdraw(amount)",
+      "Automate via cron job or event trigger (e.g., when APY > threshold)",
+      "Charge fee via separate agent wallet or integrate with payment protocol"
+    ],
+    "risks": [
+      "Solana network congestion",
+      "Smart contract risk",
+      "Impermanent loss in vaults",
+      "Regulatory uncertainty for DeFi agents"
+    ],
+    "date": "2026-05-22"
+  }
+}

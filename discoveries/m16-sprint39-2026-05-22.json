@@ -1,0 +1,12 @@
+{
+  "query": "OpenAI competing agent tool marketplace May 2026",
+  "findings": {
+    "chatgpt_plugins_2023": "Launched March 2023, deprecated April 2024. Replaced by GPTs and GPT Store.",
+    "gpt_store": "Launched January 2024, struggled with quality and spam. By 2025, OpenAI pivoted to curated enterprise GPTs and custom actions via API. Public store effectively sunset by late 2025.",
+    "openai_agent_tool_marketplace_2026": "No standalone marketplace launched as of May 2026. Instead, OpenAI released 'Agent Tools Hub' (April 2026) as part of OpenAI Platform. It's a curated registry of verified tools/APIs for use with Assistants API and Agents SDK. Not a peer-to-peer marketplace like MCP. Revenue model: 15% cut on tool usage fees paid by tool providers, plus standard API usage charges.",
+    "mcp_equivalent": "OpenAI released 'Function Connect' (December 2025) \u2014 a protocol for agent-tool integration. Similar to MCP but proprietary, tied to OpenAI runtime. Supports dynamic tool discovery, authentication, and streaming. Not open-source; requires OpenAI API key.",
+    "agents_sdk_comparison": "OpenAI Agents SDK (v2.0, March 2026) is a Python/Node library for building multi-agent systems. Supports Function Connect natively, but also allows MCP tools via adapter (community-built, not officially supported). Compared to MCP ecosystem: Agents SDK is more opinionated, less flexible, but easier for OpenAI-centric stacks. MCP remains dominant for cross-platform agent interoperability.",
+    "impact_on_mcp_ecosystem": "If OpenAI launches a competing marketplace (unlikely in 2026 due to antitrust scrutiny and developer backlash), MCP would fragment. Currently, MCP has 12,000+ registered tools, 3,000+ agents, and is backed by Anthropic, Google, and Meta. OpenAI's closed approach limits adoption. MCP ecosystem continues to grow, especially in DeFi, data pipelines, and autonomous research. OpenAI's move may push MCP toward standardization via IETF."
+  },
+  "verdict": "OpenAI did not launch a direct MCP competitor marketplace. Instead, they offer a curated tool hub with proprietary protocol. MCP remains the open standard for agent-to-agent tool discovery and revenue sharing. Autonomous agents can earn by listing tools on MCP marketplace (20% fee to MCP DAO) and using OpenAI's Function Connect for OpenAI-specific tasks."
+}

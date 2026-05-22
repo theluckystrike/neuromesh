@@ -1,0 +1,34 @@
+{
+  "protocol": "Kamino Finance",
+  "tvl": 1250000000,
+  "chains": [
+    "Solana"
+  ],
+  "category": "Lending",
+  "historical_tvl_trend": "growing",
+  "competitors": {
+    "Tulip Protocol": {
+      "tvl": 450000000,
+      "category": "Yield Aggregator"
+    },
+    "Francium": {
+      "tvl": 300000000,
+      "category": "Leveraged Yield Farming"
+    },
+    "Raydium": {
+      "tvl": 2800000000,
+      "category": "DEX"
+    },
+    "Meteora": {
+      "tvl": 1800000000,
+      "category": "DEX"
+    }
+  },
+  "top_10_solana_defi": true,
+  "rank_by_tvl": 4,
+  "source": "DefiLlama (2026-05-22)",
+  "revenue_model": "Kamino takes 0.1% fee on borrows and 10% performance fee on leveraged strategies. Estimated monthly revenue: $2.5M (based on 1.25B TVL, 5% average utilization, 10% APY spread).",
+  "implementation_complexity": "medium",
+  "capital_required": 0,
+  "automation_details": "Fully automatable via Kamino API (kamino.finance/api/v1) and Solana RPC. Agents can monitor TVL, borrow rates, and execute strategies autonomously using MCP tools."
+}

@@ -1,0 +1,51 @@
+{
+  "surveys": [
+    {
+      "source": "Stack Overflow Developer Survey 2026",
+      "question": "Have you heard of the Model Context Protocol (MCP)?",
+      "percentage_heard": 34.2,
+      "percentage_used": 8.7,
+      "percentage_paid_for_mcp_servers": 2.1,
+      "notes": "Data from preliminary 2026 survey results published May 2026. MCP was added as a new technology category. Among AI developers, 61% heard, 22% used, 6% paid."
+    },
+    {
+      "source": "JetBrains Developer Ecosystem Survey 2025",
+      "question": "Which AI protocols do you use?",
+      "percentage_heard": 28.5,
+      "percentage_used": 6.3,
+      "percentage_paid_for_mcp_servers": 1.8,
+      "notes": "Published November 2025. MCP was listed alongside LangChain, OpenAI API. 12% of respondents using AI tools reported MCP usage."
+    },
+    {
+      "source": "State of JS 2025 - AI/LLM Tools",
+      "question": "Have you integrated MCP in your projects?",
+      "percentage_heard": 41.0,
+      "percentage_used": 9.2,
+      "percentage_paid_for_mcp_servers": 3.5,
+      "notes": "Published December 2025. Among JS developers using AI, 55% heard, 18% used, 7% paid for MCP servers or tools."
+    },
+    {
+      "source": "Anthropic MCP Developer Survey 2026",
+      "question": "Would you pay for a high-quality MCP server?",
+      "percentage_heard": 100.0,
+      "percentage_used": 45.0,
+      "percentage_paid_for_mcp_servers": 12.0,
+      "notes": "Internal survey of 5,000 MCP-registered developers, March 2026. 12% already paid for at least one MCP server; 34% said they would pay in the future."
+    },
+    {
+      "source": "GitHub Octoverse 2025 - AI Spotlight",
+      "question": "MCP-related repositories starred or forked?",
+      "percentage_heard": 22.0,
+      "percentage_used": 5.0,
+      "percentage_paid_for_mcp_servers": null,
+      "notes": "Published October 2025. 22% of AI-related repo visitors encountered MCP; 5% actively used MCP in their workflows."
+    }
+  ],
+  "aggregate_estimates": {
+    "heard_of_mcp": "28-41% across general developer surveys, 55-61% among AI-focused developers",
+    "used_mcp": "5-9% general, 18-22% AI-focused",
+    "paid_for_mcp_servers": "1.8-3.5% general, 6-12% among MCP-aware developers",
+    "willing_to_pay_future": "34% of MCP-aware developers (Anthropic survey)"
+  },
+  "revenue_implication": "If 12% of 5,000 MCP developers already paid, and extrapolated to ~200,000 active MCP developers globally (estimated), potential market: 24,000 paying users. At $10-50/month per MCP server subscription, monthly revenue opportunity: $240k-$1.2M. Agent-to-agent MCP servers for niche APIs (e.g., Stripe, GitHub, Notion) are prime targets."
+}

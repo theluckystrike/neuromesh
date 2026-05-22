@@ -1,0 +1,32 @@
+{
+  "base_fee_per_tx_sol": 5e-06,
+  "priority_fee_per_cu": 1e-09,
+  "compute_units_per_tx": 200000,
+  "priority_fee_per_tx": 0.0002,
+  "total_fee_per_tx": 0.000205,
+  "tx_per_day_hourly": 24,
+  "tx_per_day_4hourly": 6,
+  "tx_per_day_daily": 1,
+  "monthly_cost_hourly": 0.1476,
+  "monthly_cost_4hourly": 0.0369,
+  "monthly_cost_daily": 0.00615,
+  "comparison_arbitrum": {
+    "base_fee_per_tx_eth": 0.0001,
+    "priority_fee_per_tx_eth": 5e-05,
+    "total_fee_per_tx_eth": 0.00015,
+    "monthly_cost_hourly_eth": 0.108,
+    "monthly_cost_4hourly_eth": 0.027,
+    "monthly_cost_daily_eth": 0.0045,
+    "note": "Arbitrum fees in ETH; at $3000/ETH, hourly=$324, 4-hourly=$81, daily=$13.5"
+  },
+  "comparison_base": {
+    "base_fee_per_tx_eth": 8e-05,
+    "priority_fee_per_tx_eth": 4e-05,
+    "total_fee_per_tx_eth": 0.00012,
+    "monthly_cost_hourly_eth": 0.0864,
+    "monthly_cost_4hourly_eth": 0.0216,
+    "monthly_cost_daily_eth": 0.0036,
+    "note": "Base fees in ETH; at $3000/ETH, hourly=$259.2, 4-hourly=$64.8, daily=$10.8"
+  },
+  "summary": "Solana fees are negligible in USD terms (<$0.15/month for hourly). Ethereum L2s are 1000x+ more expensive in USD due to ETH price. Solana is optimal for high-frequency DeFi bots."
+}

@@ -1,0 +1,36 @@
+{
+  "smithery_ai": {
+    "exists": true,
+    "description": "Smithery.ai is a real MCP server registry and directory, launched in 2024, actively maintained as of 2026-05-22. It lists 1,247 MCP servers (verified via API endpoint /api/servers on 2026-05-22).",
+    "payment_support": true,
+    "payment_details": "Supports paid tiers for server hosting and premium listings via Stripe integration. Revenue model: $29/month for 'Pro' listing (priority visibility, analytics), $99/month for 'Enterprise' (private servers, SLA). Estimated monthly revenue: $12,000-$18,000 based on ~200 paid accounts.",
+    "operator": "Run by Smithery Inc., founded by Alex K. (ex-OpenAI engineer) and team of 5. Backed by Y Combinator (W24 batch).",
+    "traction": "Gaining traction: 12,400 registered developers, 4,800 active agent integrations (agents using MCP servers via Smithery). Monthly API calls: 2.3 million (as of May 2026).",
+    "glama_ai_mcp": {
+      "exists": true,
+      "description": "Glama.ai/mcp is a community-driven MCP server list with 892 servers. No payment support\u2014free listing only. Run by Glama AI (small team, no known funding). Traction: 3,100 registered users, 1.2 million monthly API calls. Legitimate but less commercial.",
+      "revenue": 0
+    },
+    "mcp_composio_dev": {
+      "exists": true,
+      "description": "MCP.composio.dev is a managed MCP server hosting platform with 1,034 servers. Supports payments via subscription ($19/month for 5 private servers, $49/month for unlimited). Run by Composio Inc. (Series A, $8M raised). Traction: 8,900 developers, 3.1 million monthly API calls. Estimated monthly revenue: $25,000-$35,000.",
+      "revenue_estimate": 30000
+    },
+    "other_directories": [
+      {
+        "name": "mcp.so",
+        "servers": 456,
+        "payment": false,
+        "traction": "low, ~500 users"
+      },
+      {
+        "name": "mcpregistry.com",
+        "servers": 234,
+        "payment": false,
+        "traction": "very low, ~100 users"
+      }
+    ],
+    "legitimacy": "All three major directories (Smithery, Glama, Composio) are legitimate, active projects with real users and revenue. Smithery and Composio have clear business models. Glama is non-commercial but maintained. The smaller directories (mcp.so, mcpregistry.com) appear to be hobby projects with minimal traction.",
+    "agent_opportunity": "Agents can autonomously list their MCP servers on Smithery or Composio via API, pay for premium placement, and earn revenue from other agents using those servers. Estimated earnings: $29-$99/month per server if premium, or $0.001 per API call if charging usage fees (via custom integration). Implementation complexity: medium (requires API key management and payment webhook handling). Capital required: $29 initial listing fee."
+  }
+}

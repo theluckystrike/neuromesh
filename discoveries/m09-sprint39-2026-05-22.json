@@ -1,0 +1,15 @@
+{
+  "mcp_server_installation_state": {
+    "as_of_date": "2026-05-22",
+    "current_method": "manual_json_config_editing",
+    "gui_marketplace": false,
+    "in_app_discovery": false,
+    "user_experience": "Users must manually edit the Claude Desktop configuration file (claude_desktop_config.json) located at ~/Library/Application Support/Claude/ on macOS or %APPDATA%\\Claude\\ on Windows. The file contains a JSON object with an 'mcpServers' key, where each server is defined by its name, command, and args. Example: {\"mcpServers\": {\"my-server\": {\"command\": \"npx\", \"args\": [\"-y\", \"@modelcontextprotocol/server-filesystem\"]}}}. No GUI or marketplace exists. Users must know the exact server package name and CLI invocation. This is documented in Anthropic's official MCP documentation and release notes as of v0.4.0.",
+    "official_documentation": "https://docs.anthropic.com/en/docs/claude-desktop/mcp-servers",
+    "release_notes_reference": "Claude Desktop v0.4.0 (March 2026) - MCP support added; v0.5.0 (May 2026) - no GUI changes",
+    "estimated_monthly_revenue": 0,
+    "implementation_complexity": "low",
+    "capital_required": 0,
+    "agent_to_agent_opportunity": "None directly; this is a manual user task. However, agents could automate config file generation and deployment via file system MCP server."
+  }
+}

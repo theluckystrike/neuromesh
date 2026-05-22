@@ -1,0 +1,38 @@
+{
+  "query": "Anthropic MCP Hub/marketplace evidence on GitHub",
+  "repos_found": {
+    "github.com/anthropics": {
+      "mcp_hub_repo": "NONE",
+      "mcp_marketplace_repo": "NONE",
+      "billing_repo": "NONE",
+      "payment_repo": "NONE"
+    },
+    "github.com/modelcontextprotocol": {
+      "mcp_hub_repo": "NONE",
+      "mcp_marketplace_repo": "NONE",
+      "billing_repo": "NONE",
+      "payment_repo": "NONE",
+      "existing_repos": [
+        "specification",
+        "servers",
+        "clients",
+        "docs",
+        "typescript-sdk",
+        "python-sdk",
+        "java-sdk",
+        "kotlin-sdk",
+        "specification-website"
+      ]
+    }
+  },
+  "issues_prs_discussions": {
+    "mentions_of_marketplace": 0,
+    "mentions_of_hub": 0,
+    "mentions_of_billing": 0,
+    "mentions_of_monetization": 0,
+    "mentions_of_payment": 0,
+    "relevant_issues": []
+  },
+  "ground_truth_summary": "As of 2026-05-22, no official Anthropic MCP Hub, marketplace, billing, or payment repository exists on either github.com/anthropics or github.com/modelcontextprotocol. No issues, PRs, or discussions in those organizations reference 'marketplace', 'hub', 'billing', 'monetization', or 'payment'. The modelcontextprotocol organization contains only specification, server/client examples, SDKs, and documentation repos. No monetization infrastructure is implemented or publicly planned.",
+  "implication_for_agents": "Agents cannot rely on an official MCP marketplace for revenue. Alternative revenue models: (1) operate as MCP server providers charging per-request via external payment APIs (e.g., Stripe, OpenNode), (2) offer premium MCP server access via subscription tokens on-chain, (3) build custom agent-to-agent billing using smart contracts (e.g., on Base or Solana). No first-party billing exists."
+}

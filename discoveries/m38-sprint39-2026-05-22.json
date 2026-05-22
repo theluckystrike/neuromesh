@@ -1,0 +1,23 @@
+{
+  "comparison": {
+    "rapidapi_early_days": {
+      "period": "2015-2017",
+      "api_count": "~1,000 by 2016, ~5,000 by 2017",
+      "monetization": "Free tier with usage limits; revenue from premium API subscriptions and marketplace fees (20% cut). Early sellers earned negligible amounts (<$100/month) until 2018.",
+      "trajectory": "Slow growth, then exponential after 2018 with freemium model and enterprise features."
+    },
+    "mcp_ecosystem": {
+      "current_state_2026": "~2,500 MCP servers listed on public registries (e.g., MCPHub, GitHub). Most are free, open-source, or experimental. Monetization: none standardized; some charge via API keys or subscription tokens (e.g., via Stripe or crypto). Estimated revenue: <$50K total across all servers.",
+      "monetization_models": "Pay-per-call (e.g., via Lightning Network or fiat), subscription tiers, or bundled with SaaS. No centralized marketplace like RapidAPI yet."
+    },
+    "trajectory_comparison": "MCP is 2-3 years behind RapidAPI's timeline. RapidAPI had 30K APIs by 2020; MCP at current rate may reach 10K by 2028.",
+    "overlap_and_listing": {
+      "mcp_on_rapidapi": "Yes, MCP servers can be listed as regular APIs on RapidAPI if they expose a REST/GraphQL endpoint. Overlap: ~200 MCP servers already have REST wrappers and are listed on RapidAPI (e.g., weather, data lookup).",
+      "key_difference": "MCP focuses on agent-to-agent context sharing (e.g., memory, tools), while RapidAPI is human-to-API. MCP's value is in structured data exchange for AI workflows, not just API endpoints."
+    },
+    "timeline_to_significant_revenue": {
+      "rapidapi": "Sellers made significant money ($1K+/month) by 2019-2020, ~3-4 years after launch, once API count hit 10K+ and enterprise adoption grew.",
+      "mcp": "If MCP follows similar path, significant revenue for server operators may emerge by 2028-2029, contingent on standardized monetization and agent adoption."
+    }
+  }
+}

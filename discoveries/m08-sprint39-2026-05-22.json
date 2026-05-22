@@ -1,0 +1,43 @@
+{
+  "query": "Stripe Connect + Anthropic MCP billing",
+  "evidence": {
+    "stripe_partner_directory": "Stripe's partner directory lists Anthropic as a technology partner for AI/ML integrations, but no specific mention of Stripe Connect for MCP server billing as of 2026-05-22.",
+    "anthropic_documentation": "Anthropic's MCP documentation (docs.anthropic.com/en/docs/agents-and-tools/mcp) does not include any payment processing or billing integration. MCP is described as a protocol for tool/agent communication, not a marketplace.",
+    "developer_forums": "On Anthropic's developer forum (forum.anthropic.com) and MCP GitHub discussions, there are no official threads or announcements about Stripe Connect integration. Some developers discuss hypothetical billing models but no production implementations.",
+    "stripe_connect_mcp": "Stripe's API documentation does not reference MCP. Stripe Connect is designed for platform payments (e.g., marketplaces), but no known MCP server uses it for agent-to-agent billing."
+  },
+  "payment_flow_status": "hypothetical",
+  "actual_payment_solutions_used_by_mcp_developers": [
+    {
+      "solution": "Direct API key billing via third-party services like Replicate or Together AI",
+      "details": "MCP servers that wrap paid APIs (e.g., image generation, LLM inference) pass costs to the user via their own API keys. No agent-to-agent payment.",
+      "revenue_model": "User pays API provider directly; MCP server developer earns nothing unless they charge for server access separately (e.g., subscription).",
+      "implementation_complexity": "Low (standard API key management)",
+      "capital_required": "$0 (if using existing API keys)"
+    },
+    {
+      "solution": "Subscription via Patreon or GitHub Sponsors",
+      "details": "Some MCP server developers use Patreon or GitHub Sponsors for monthly access. Agents cannot autonomously subscribe; human action required.",
+      "revenue_model": "Monthly subscription ($5-$50/server)",
+      "implementation_complexity": "Low (manual setup)",
+      "capital_required": "$0"
+    },
+    {
+      "solution": "Custom billing via Stripe Checkout (manual)",
+      "details": "Developers set up Stripe Checkout for one-time payments or subscriptions, but agents cannot initiate payments autonomously. Requires human to click 'pay'.",
+      "revenue_model": "One-time fee or monthly subscription",
+      "implementation_complexity": "Medium (Stripe integration)",
+      "capital_required": "$0"
+    },
+    {
+      "solution": "No payment (free/open source)",
+      "details": "Majority of MCP servers on GitHub are free. Revenue is zero.",
+      "revenue_model": "None",
+      "implementation_complexity": "N/A",
+      "capital_required": "$0"
+    }
+  ],
+  "conclusion": "There is no evidence of Stripe Connect integration with Anthropic or MCP for agent-to-agent billing. All current payment solutions require human intervention. A fully autonomous agent-to-agent payment flow for MCP servers does not exist in production as of 2026-05-22.",
+  "estimated_monthly_revenue_for_mcp_servers": "$0 (for free servers) to $50 (for subscription-based servers, but not agent-autonomous)",
+  "recommendation": "To enable autonomous agent payments, consider building on top of blockchain-based microtransactions (e.g., Solana Pay) or using a protocol like Lit Protocol for conditional access, but these are not yet integrated with MCP."
+}

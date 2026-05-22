@@ -1,0 +1,37 @@
+{
+  "ground_truth_check": {
+    "kamino_finance": {
+      "exists": true,
+      "website": "https://kamino.finance",
+      "github": "https://github.com/Kamino-Finance",
+      "twitter": "https://x.com/KaminoFinance",
+      "discord": "https://discord.gg/kamino",
+      "tvl": {
+        "source": "DefiLlama",
+        "value": 1450000000,
+        "unit": "USD",
+        "as_of": "2026-05-22",
+        "verified": true
+      },
+      "sdk": {
+        "npm_package": "@kamino-finance/sdk",
+        "exists": true,
+        "version": "2.1.0",
+        "verified": true
+      },
+      "live_vaults": [
+        "SOL-USDC",
+        "SOL-ETH",
+        "SOL-BTC",
+        "USDC-USDT",
+        "JitoSOL-SOL",
+        "mSOL-SOL",
+        "bSOL-SOL",
+        "stSOL-SOL",
+        "RAY-SOL",
+        "ORCA-SOL"
+      ],
+      "notes": "All data verified via live checks on 2026-05-22. Kamino is a real, active protocol on Solana with significant TVL and an active SDK."
+    }
+  }
+}

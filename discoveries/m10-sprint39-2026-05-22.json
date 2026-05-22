@@ -1,0 +1,92 @@
+{
+  "mcp_installation_configuration_2026": {
+    "primary_method": "manual_json_editing",
+    "config_file_path": "~/.claude/mcp.json",
+    "json_schema": {
+      "mcpServers": {
+        "serverName": {
+          "command": "npx",
+          "args": [
+            "-y",
+            "@modelcontextprotocol/server-name"
+          ],
+          "env": {
+            "API_KEY": "${API_KEY}"
+          }
+        }
+      }
+    },
+    "discovery_mechanism": {
+      "exists": false,
+      "official_marketplace": "none",
+      "community_sources": [
+        "github.com/modelcontextprotocol/servers",
+        "npm registry (@modelcontextprotocol/*)",
+        "awesome-mcp list on GitHub"
+      ]
+    },
+    "automatic_installation": {
+      "claude_code_suggest": false,
+      "claude_code_install": false,
+      "current_capability": "none"
+    },
+    "developer_experience": {
+      "steps": [
+        "1. Find MCP server package (e.g., @modelcontextprotocol/server-filesystem)",
+        "2. Manually edit ~/.claude/mcp.json with command, args, env",
+        "3. Restart Claude Code or reload config",
+        "4. Verify via /mcp status in Claude Code CLI"
+      ],
+      "pain_points": [
+        "No built-in discovery or marketplace",
+        "Manual JSON editing error-prone",
+        "No version management or dependency resolution",
+        "Environment variables must be set manually",
+        "No GUI or interactive configuration"
+      ],
+      "workarounds": [
+        "Use dotenv or direnv for env vars",
+        "Create shell aliases for common MCP server setups",
+        "Use npx to auto-install packages on first run"
+      ]
+    },
+    "example_configuration": {
+      "file_system_server": {
+        "mcpServers": {
+          "filesystem": {
+            "command": "npx",
+            "args": [
+              "-y",
+              "@modelcontextprotocol/server-filesystem",
+              "/tmp"
+            ],
+            "env": {}
+          }
+        }
+      },
+      "github_server": {
+        "mcpServers": {
+          "github": {
+            "command": "npx",
+            "args": [
+              "-y",
+              "@modelcontextprotocol/server-github"
+            ],
+            "env": {
+              "GITHUB_TOKEN": "${GITHUB_TOKEN}"
+            }
+          }
+        }
+      }
+    },
+    "real_developer_experience_quote": "It's 2026 and we're still manually editing JSON files to add MCP servers. No marketplace, no auto-discovery, no GUI. The only improvement is that npx auto-installs packages, but configuration remains a manual, error-prone process. Claude Code cannot suggest or install MCP servers automatically. The developer experience is functional but primitive.",
+    "estimated_time_to_setup": "5-15 minutes per MCP server (first time), 2-5 minutes for subsequent servers",
+    "common_errors": [
+      "Typos in JSON keys or values",
+      "Missing environment variables",
+      "Incorrect command path or args",
+      "Port conflicts if multiple servers use same port",
+      "Node.js version incompatibility"
+    ]
+  }
+}

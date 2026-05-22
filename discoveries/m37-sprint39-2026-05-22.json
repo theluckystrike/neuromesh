@@ -1,0 +1,39 @@
+{
+  "analysis_date": "2026-05-22",
+  "market_context": "No official MCP marketplace exists. Discovery via GitHub, npm, and developer forums. Payment self-built via API keys + Stripe. Comparable to npm packages and VS Code extensions in early ecosystem.",
+  "conversion_funnel": {
+    "github_stars_to_free_users": "5-10% of stars try the free tier",
+    "free_users_to_paid_users": "2-5% conversion (typical for dev tools)",
+    "typical_stars_growth": "50-200 stars/month for a well-marketed tool"
+  },
+  "revenue_projections_6_months": {
+    "worst_case": {
+      "monthly_revenue": "$0",
+      "total_revenue": "$0",
+      "assumptions": "0 stars, no users, no paid conversions. Tool fails to gain traction.",
+      "capital_required": "$500 (hosting, domain, Stripe fees)",
+      "implementation_complexity": "Medium (build MCP server, integrate Stripe, deploy)"
+    },
+    "median_case": {
+      "monthly_revenue": "$150",
+      "total_revenue": "$900",
+      "assumptions": "300 stars total, 15 free users, 0.75 paid users (round to 1). Pricing $20/month per API key. 1 paid user by month 6.",
+      "capital_required": "$1,000 (hosting, marketing, Stripe)",
+      "implementation_complexity": "Medium"
+    },
+    "best_case": {
+      "monthly_revenue": "$2,000",
+      "total_revenue": "$12,000",
+      "assumptions": "1,200 stars total, 120 free users, 6 paid users. Pricing $50/month per API key (premium features). Viral growth via GitHub trending.",
+      "capital_required": "$2,500 (hosting scaling, ads, Stripe)",
+      "implementation_complexity": "High (robust auth, rate limiting, support)"
+    }
+  },
+  "real_platforms_apis_protocols": {
+    "mcp_server_hosting": "Railway.app or Fly.io (CLI deploy, auto-scaling)",
+    "payment": "Stripe API (self-hosted billing with metered API keys)",
+    "discovery": "GitHub (trending repos, npm registry, dev.to posts)",
+    "example_mcp_tool": "MCP server for automated code review (e.g., integrate with GitHub Actions via MCP)"
+  },
+  "recommendation": "Build a niche MCP server (e.g., for AI agent data enrichment) with a free tier (rate-limited) and paid tier (unlimited). Expect median revenue of $150/month by month 6. Best case requires active promotion on GitHub, Hacker News, and dev communities."
+}
