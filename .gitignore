@@ -1,0 +1,13 @@
+# Keep repo lean — only deploy dashboard
+agents/
+config/
+discoveries/
+earnings/
+logs/
+reports/
+scripts/
+signals/
+state/
+pipeline-status.json
+dashboards/
+.claude/
