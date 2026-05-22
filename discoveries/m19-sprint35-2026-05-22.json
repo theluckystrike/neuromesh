@@ -1,0 +1,58 @@
+{
+  "opportunity": {
+    "title": "macOS Autonomous Agent Orchestrator via Shortcuts + AppleScript + Shell",
+    "description": "Combine macOS Shortcuts (2026), AppleScript, and shell scripts to build a fully autonomous agent management system. Shortcuts can run shell scripts, interact with REST APIs via 'Get Contents of URL', handle OAuth flows using stored credentials and web views, post to Slack/Telegram/email via URL actions or shell, monitor files with Folder Actions or launchd, and trigger on cron/launchd. AppleScript extends UI automation and legacy app control. Limits: Shortcuts lacks complex error handling, concurrency, and native OAuth token refresh\u2014but shell scripts and AppleScript fill gaps. Implementation: Use launchd for cron-like scheduling, Shortcuts for API calls and notifications, AppleScript for GUI automation, shell for heavy lifting. Fully automatable agent-to-agent via MCP/API.",
+    "platforms": {
+      "shortcuts": {
+        "capabilities": {
+          "run_shell_scripts": true,
+          "api_interaction": true,
+          "oauth_flows": "partial (manual initial auth, then token storage via Keychain)",
+          "post_slack": true,
+          "post_telegram": true,
+          "send_email": true,
+          "file_monitoring": "via Folder Actions or launchd triggers",
+          "cron_launchd": true
+        },
+        "limits_vs_applescript": "No direct Apple event control, limited UI scripting, no complex loops/conditionals, no persistent background processes"
+      },
+      "applescript": {
+        "capabilities": {
+          "ui_automation": true,
+          "app_control": true,
+          "file_operations": true,
+          "network_requests": "via curl in shell",
+          "oauth_flows": "via shell + Keychain"
+        }
+      },
+      "shell_scripts": {
+        "capabilities": {
+          "cron_launchd": true,
+          "api_calls": true,
+          "oauth_token_refresh": true,
+          "file_monitoring": true,
+          "complex_logic": true
+        }
+      }
+    },
+    "implementation": {
+      "architecture": "launchd plist triggers shell script \u2192 shell script calls Shortcuts via 'shortcuts run' or AppleScript via osascript \u2192 Shortcuts handles API calls and notifications \u2192 AppleScript handles GUI tasks if needed",
+      "example_workflow": "1. launchd runs every 5 min \u2192 2. shell script checks file changes \u2192 3. if new file, shell calls Shortcuts \u2192 4. Shortcuts uploads file to API, posts result to Slack, logs to local DB",
+      "oauth_handling": "Initial auth via Shortcuts web view, store refresh token in Keychain via shell (security add-generic-password), shell script refreshes token using curl before each API call",
+      "estimated_monthly_revenue": "$500-$2,000 (selling as SaaS agent management tool for macOS power users, or as internal automation service)",
+      "implementation_complexity": "Medium (3/5)",
+      "capital_required": "$0 (only macOS device and developer time)"
+    },
+    "revenue_model": "Subscription ($10-50/month per user) or one-time license ($200-500) for the agent orchestration system; target freelancers, small businesses, and IT admins",
+    "real_platforms_apis": {
+      "slack_api": "https://api.slack.com/methods/chat.postMessage",
+      "telegram_api": "https://core.telegram.org/bots/api#sendmessage",
+      "email": "sendmail or SMTP via shell (e.g., curl smtp://...)",
+      "file_monitoring": "launchd WatchPaths or fswatch (brew install fswatch)",
+      "cron_launchd": "~/Library/LaunchAgents/ with StartInterval"
+    },
+    "agent_to_agent": "Shortcuts can call other agents via MCP endpoints (e.g., local MCP server running on macOS), or use shell to invoke agent CLI tools (e.g., 'agent run --task ...')",
+    "currently_possible_2026": true,
+    "date": "2026-05-22"
+  }
+}

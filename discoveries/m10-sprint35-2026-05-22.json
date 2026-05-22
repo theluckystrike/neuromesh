@@ -1,0 +1,53 @@
+{
+  "stripe_cli_2026": {
+    "fully_automatable_via_cli_api": {
+      "create_products_and_prices": {
+        "command": "stripe products create --name=\"ProductName\" --description=\"Desc\"",
+        "price_command": "stripe prices create --product=prod_xxx --unit-amount=1000 --currency=usd",
+        "notes": "Use --api-key flag or set STRIPE_API_KEY env var."
+      },
+      "generate_checkout_links": {
+        "command": "stripe checkout sessions create --success-url=\"https://example.com/success\" --cancel-url=\"https://example.com/cancel\" --line-items=\"price=price_xxx,quantity=1\"",
+        "notes": "Returns session URL in JSON output."
+      },
+      "listen_to_webhooks_locally": {
+        "command": "stripe listen --forward-to localhost:3000/webhook --events charge.succeeded,payment_intent.succeeded",
+        "notes": "Requires Stripe CLI running in background. Use --load-from-webhooks-api for existing endpoints."
+      },
+      "view_revenue_balance": {
+        "command": "stripe balance",
+        "notes": "Returns available, pending amounts in JSON."
+      },
+      "manage_subscriptions": {
+        "create": "stripe subscriptions create --customer=cus_xxx --items=\"price=price_xxx\"",
+        "cancel": "stripe subscriptions cancel sub_xxx",
+        "list": "stripe subscriptions list --customer=cus_xxx"
+      },
+      "create_api_keys": {
+        "command": "stripe api-keys create --name=\"AgentKey\" --scope=secret",
+        "notes": "Returns key value. Use --scope=publishable for publishable keys."
+      }
+    },
+    "requires_browser": {
+      "actions": [
+        "Initial Stripe account registration and identity verification (KYC).",
+        "Setting up payout bank account details (some regions allow CLI via `stripe accounts update` but initial setup often needs UI).",
+        "Enabling certain payment methods (e.g., SEPA, iDEAL) \u2013 may require UI toggle.",
+        "Disputes/chargebacks management \u2013 no CLI endpoint for manual response (though API exists for evidence submission).",
+        "Tax registration and settings (Stripe Tax can be configured via API but initial jurisdiction setup may need UI)."
+      ]
+    },
+    "license_key_generation_and_validation": {
+      "status": "FULLY AUTOMATABLE via Stripe API/CLI",
+      "method": "Use Stripe Products with metadata, or Stripe API to create and validate license keys as custom objects. For validation, use Stripe's webhook or API to check subscription status. Alternatively, use third-party service like Keygen (keygen.sh) which has full API/CLI support.",
+      "stripe_cli_example": {
+        "generate": "stripe products create --name=\"License Product\" --metadata='{\"license_type\":\"standard\"}'",
+        "validate": "stripe subscriptions retrieve sub_xxx --expand=\"latest_invoice\" | jq '.status'",
+        "notes": "For offline validation, store license keys in your own DB via API calls."
+      }
+    },
+    "estimated_monthly_revenue": "Varies; for a SaaS license key service, $500-$5000/month per 1000 customers, minus Stripe fees (2.9% + $0.30).",
+    "implementation_complexity": "Low to Medium. Requires Stripe CLI installation, API key management, and webhook endpoint setup.",
+    "capital_required": "$0 for CLI usage; Stripe account requires no upfront cost, only transaction fees."
+  }
+}

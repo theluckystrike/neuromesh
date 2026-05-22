@@ -1,0 +1,40 @@
+{
+  "competitor_pricing": {
+    "CodeRabbit": {
+      "free": "Unlimited public repos, 1 user, 100 reviews/month",
+      "pro": "$12/seat/month (billed annually) or $15/seat/month (monthly), unlimited reviews, private repos, priority support"
+    },
+    "Sourcery": {
+      "tiers": {
+        "Free": "Limited to 1 repo, 50 reviews/month, no custom rules",
+        "Pro": "$10/seat/month, unlimited repos, 500 reviews/month, custom rules",
+        "Enterprise": "$20/seat/month, unlimited everything, dedicated support"
+      }
+    },
+    "GitHub Copilot": {
+      "PR_review_pricing": "Included in Copilot Enterprise at $39/user/month (billed annually), or $45/user/month (monthly); standalone PR review not sold separately"
+    },
+    "Qodana": {
+      "pricing": "Free for open-source and 1 private project; Cloud Pro at $25/seat/month (billed annually) or $30/seat/month (monthly), includes unlimited projects and reviews"
+    },
+    "SonarQube Cloud": {
+      "pricing": "Free for public repos; Team plan at $15/seat/month (billed annually) or $18/seat/month (monthly), includes private repos, up to 100k lines of code; Enterprise at $150/seat/month"
+    }
+  },
+  "sweet_spot_price": {
+    "amount": 9,
+    "currency": "USD",
+    "frequency": "monthly",
+    "rationale": "Solo devs are price-sensitive; $9/month undercuts CodeRabbit Pro ($12) and Sourcery Pro ($10) while still providing positive margin with DeepSeek backend (~$0.15/1M tokens)."
+  },
+  "pricing_model": {
+    "recommended": "flat_monthly",
+    "reasoning": "Per-repo is too restrictive for solo devs with multiple projects; per-seat irrelevant for single user; per-review creates friction and reduces usage. Flat monthly maximizes simplicity and adoption, leading to higher lifetime value."
+  },
+  "revenue_maximization": {
+    "strategy": "Offer a free tier (1 repo, 50 reviews/month) to acquire users, then convert to $9/month flat for unlimited repos and reviews. With DeepSeek backend cost ~$0.15/1M tokens and average solo dev generating 200 reviews/month (~2M tokens), cost per user is ~$0.30, yielding ~$8.70 gross profit per user. Target 500 users in first year for $52,200 annual revenue.",
+    "estimated_monthly_revenue_per_user": 9,
+    "estimated_monthly_cost_per_user": 0.3,
+    "estimated_monthly_gross_profit_per_user": 8.7
+  }
+}

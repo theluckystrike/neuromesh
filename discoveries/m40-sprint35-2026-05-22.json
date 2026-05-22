@@ -1,0 +1,92 @@
+[
+  {
+    "play": "GitHub Actions",
+    "scores": {
+      "market_exists": 9,
+      "can_charge_money": 8,
+      "cli_automatable": 10,
+      "organic_discovery": 7,
+      "time_to_first_dollar": 6,
+      "revenue_ceiling": 7,
+      "competition_level": 4,
+      "deepseek_advantage": 9
+    },
+    "total_score": 60,
+    "estimated_monthly_revenue_usd": 5000,
+    "implementation_complexity": "Medium",
+    "capital_required_usd": 200,
+    "rationale": "GitHub Actions marketplace allows CLI-published actions; DeepSeek can generate optimized workflows. Market is large (20M+ repos), but competition from established actions. Revenue via paid marketplace or usage-based billing."
+  },
+  {
+    "play": "npm CLI Tools",
+    "scores": {
+      "market_exists": 8,
+      "can_charge_money": 7,
+      "cli_automatable": 10,
+      "organic_discovery": 8,
+      "time_to_first_dollar": 5,
+      "revenue_ceiling": 6,
+      "competition_level": 5,
+      "deepseek_advantage": 8
+    },
+    "total_score": 57,
+    "estimated_monthly_revenue_usd": 3000,
+    "implementation_complexity": "Low",
+    "capital_required_usd": 100,
+    "rationale": "npm registry CLI tools can be published via CLI; DeepSeek can generate code. Revenue via paid CLI licenses or freemium features. Market is large but crowded; organic discovery via npm search."
+  },
+  {
+    "play": "RapidAPI",
+    "scores": {
+      "market_exists": 9,
+      "can_charge_money": 9,
+      "cli_automatable": 9,
+      "organic_discovery": 6,
+      "time_to_first_dollar": 7,
+      "revenue_ceiling": 8,
+      "competition_level": 6,
+      "deepseek_advantage": 7
+    },
+    "total_score": 61,
+    "estimated_monthly_revenue_usd": 8000,
+    "implementation_complexity": "Medium",
+    "capital_required_usd": 500,
+    "rationale": "RapidAPI hub enables API monetization; DeepSeek can create and deploy APIs via CLI. Strong market demand, but competition from existing APIs. Revenue via usage-based pricing."
+  },
+  {
+    "play": "VS Code Extensions",
+    "scores": {
+      "market_exists": 8,
+      "can_charge_money": 6,
+      "cli_automatable": 9,
+      "organic_discovery": 7,
+      "time_to_first_dollar": 6,
+      "revenue_ceiling": 5,
+      "competition_level": 7,
+      "deepseek_advantage": 8
+    },
+    "total_score": 56,
+    "estimated_monthly_revenue_usd": 2000,
+    "implementation_complexity": "High",
+    "capital_required_usd": 300,
+    "rationale": "VS Code marketplace allows CLI-published extensions; DeepSeek can generate extension code. Market is large but saturated; revenue via paid extensions or donations. Lower ceiling due to free culture."
+  },
+  {
+    "play": "Freelance Arbitrage",
+    "scores": {
+      "market_exists": 7,
+      "can_charge_money": 8,
+      "cli_automatable": 8,
+      "organic_discovery": 4,
+      "time_to_first_dollar": 9,
+      "revenue_ceiling": 9,
+      "competition_level": 8,
+      "deepseek_advantage": 6
+    },
+    "total_score": 59,
+    "estimated_monthly_revenue_usd": 10000,
+    "implementation_complexity": "High",
+    "capital_required_usd": 1000,
+    "rationale": "Using DeepSeek to automate freelance tasks (e.g., Upwork, Fiverr) via CLI; arbitrage on low-cost AI labor. High revenue ceiling but intense competition and need for client acquisition. Organic discovery low."
+  }
+]

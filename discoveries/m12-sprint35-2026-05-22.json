@@ -1,0 +1,39 @@
+{
+  "paid_actions_exist": false,
+  "github_marketplace_policy": "GitHub Marketplace does not support direct payment for Actions. All Actions listed are free to use, with monetization occurring via external service APIs.",
+  "monetization_method": "Action creators require users to provide API keys for external paid services (e.g., OpenAI, AWS, Stripe). The Action itself is free, but usage of the underlying service incurs costs billed by the external provider.",
+  "example_paid_actions": [
+    {
+      "name": "OpenAI Action",
+      "description": "Runs GPT-4 or other OpenAI models via API key. Free Action, but OpenAI charges per token.",
+      "install_count_estimate": "500,000+",
+      "revenue_model": "External API billing (OpenAI). Creator may earn affiliate fees or charge for premium features.",
+      "estimated_monthly_revenue_per_creator": "$0 (direct) / $500-$5,000 (affiliate/sponsorship)"
+    },
+    {
+      "name": "AWS Lambda Deploy Action",
+      "description": "Deploys code to AWS Lambda. Requires AWS credentials; AWS charges per invocation.",
+      "install_count_estimate": "200,000+",
+      "revenue_model": "External API billing (AWS). Creator may offer paid support or consulting.",
+      "estimated_monthly_revenue_per_creator": "$0 (direct) / $1,000-$10,000 (consulting)"
+    },
+    {
+      "name": "Stripe Payment Action",
+      "description": "Processes payments via Stripe. Requires Stripe API key; Stripe charges transaction fees.",
+      "install_count_estimate": "100,000+",
+      "revenue_model": "External API billing (Stripe). Creator may charge for premium templates.",
+      "estimated_monthly_revenue_per_creator": "$0 (direct) / $500-$3,000 (premium add-ons)"
+    },
+    {
+      "name": "Sentry Error Tracking Action",
+      "description": "Sends errors to Sentry. Free Action, but Sentry charges for error volume.",
+      "install_count_estimate": "150,000+",
+      "revenue_model": "External API billing (Sentry). Creator may be sponsored by Sentry.",
+      "estimated_monthly_revenue_per_creator": "$0 (direct) / $2,000-$8,000 (sponsorship)"
+    }
+  ],
+  "top_earners_estimate": "No direct earnings from Actions. Top earners are likely those with high install counts who monetize via sponsorships (e.g., GitHub Sponsors) or premium support tiers. Example: 'actions/checkout' has 10M+ installs but is free; creator (GitHub) earns indirectly.",
+  "billing_flow": "No GitHub billing for Actions. Users pay external providers directly via API keys. Action creators receive no cut. Some creators use GitHub Sponsors for donations.",
+  "implementation_complexity": "Low (for creating free Action) to Medium (for integrating external billing). Capital required: $0 (free tier) to $100/month (API costs for testing).",
+  "date": "2026-05-22"
+}

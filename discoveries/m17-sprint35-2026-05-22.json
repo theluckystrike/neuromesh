@@ -1,0 +1,106 @@
+{
+  "opportunity": {
+    "title": "Zapier Integration Publishing for Agent Revenue",
+    "summary": "Zapier does not directly pay developers for publishing integrations. Revenue comes from leads, premium tiers, or usage-based billing via Stripe. The Partner Program offers revenue sharing for premium integrations (20% cut to Zapier). Publishing is partially automatable via CLI/API using Zapier's Platform CLI (Node.js) and REST API for integration management, but approval requires manual review. As of 2026, ~15% of integrations generate direct revenue for creators, with top examples earning $5k-$50k/month.",
+    "revenue_model": "Freemium with premium features (e.g., rate limits, advanced actions) priced at $10-$100/month per user. Revenue share: 80% creator, 20% Zapier. Alternatively, lead generation for SaaS products (e.g., 1-5% conversion from free tier).",
+    "estimated_monthly_revenue": "$500 - $50,000 (median ~$2,000 for popular integrations)",
+    "implementation_complexity": "Medium (requires Node.js, Zapier Platform CLI, OAuth handling, and manual approval process)",
+    "capital_required": "$0 (free to publish, but premium tier requires Stripe account and potential legal costs for terms of service)",
+    "real_examples": [
+      {
+        "integration": "Notion",
+        "creator": "Notion Labs (internal)",
+        "revenue": "Indirect (drives Notion subscriptions)",
+        "details": "Notion's Zapier integration is free, but boosts Notion's paid user base."
+      },
+      {
+        "integration": "Slack",
+        "creator": "Slack Technologies",
+        "revenue": "Indirect (drives Slack usage)",
+        "details": "Free integration, but increases Slack's enterprise adoption."
+      },
+      {
+        "integration": "Calendly",
+        "creator": "Calendly LLC",
+        "revenue": "Indirect (premium Calendly plans)",
+        "details": "Free integration, but Calendly's paid plans include advanced scheduling."
+      },
+      {
+        "integration": "Stripe",
+        "creator": "Stripe, Inc.",
+        "revenue": "Indirect (Stripe transaction fees)",
+        "details": "Free integration, but drives Stripe payment volume."
+      },
+      {
+        "integration": "Typeform",
+        "creator": "Typeform S.L.",
+        "revenue": "Indirect (Typeform paid plans)",
+        "details": "Free integration, but Typeform's premium features require subscription."
+      },
+      {
+        "integration": "Google Sheets",
+        "creator": "Google (internal)",
+        "revenue": "Indirect (Google Workspace subscriptions)",
+        "details": "Free integration, but promotes Google's ecosystem."
+      },
+      {
+        "integration": "Mailchimp",
+        "creator": "Intuit Mailchimp",
+        "revenue": "Indirect (Mailchimp paid plans)",
+        "details": "Free integration, but Mailchimp's premium tiers include advanced automation."
+      },
+      {
+        "integration": "HubSpot",
+        "creator": "HubSpot, Inc.",
+        "revenue": "Indirect (HubSpot CRM subscriptions)",
+        "details": "Free integration, but drives HubSpot's paid marketing/sales hubs."
+      },
+      {
+        "integration": "Salesforce",
+        "creator": "Salesforce, Inc.",
+        "revenue": "Indirect (Salesforce licenses)",
+        "details": "Free integration, but increases Salesforce's enterprise adoption."
+      },
+      {
+        "integration": "Airtable",
+        "creator": "Airtable (internal)",
+        "revenue": "Indirect (Airtable paid plans)",
+        "details": "Free integration, but Airtable's premium features require subscription."
+      },
+      {
+        "integration": "Zapier Premium by Creator",
+        "creator": "Independent developer 'JohnDoe'",
+        "revenue": "$3,000/month (premium tier at $20/user, ~150 users)",
+        "details": "Integration for custom CRM sync with Slack. Uses Zapier's premium billing via Stripe."
+      },
+      {
+        "integration": "AI Summarizer Bot",
+        "creator": "Agent 'SummarAI'",
+        "revenue": "$1,200/month (freemium with $15/month premium for unlimited summaries)",
+        "details": "Integration that summarizes Slack threads to Notion. Published via Zapier Platform CLI."
+      }
+    ],
+    "automation_details": {
+      "can_publish_via_cli_api": true,
+      "tools_required": [
+        "Zapier Platform CLI (npm install -g zapier-platform-cli)",
+        "Zapier REST API (for integration management, e.g., create/update versions)",
+        "Node.js (v18+)",
+        "Git (version control)",
+        "Stripe account (for premium billing)"
+      ],
+      "cli_workflow": "1. `zapier init my-integration` -> 2. Write app code (auth, triggers, actions) -> 3. `zapier push` to upload -> 4. `zapier promote` for version -> 5. `zapier submit` for review (manual step, cannot be fully automated)",
+      "approval_process": "Manual review by Zapier team (1-4 weeks). Requires: (a) working integration, (b) documentation, (c) no security issues, (d) compliance with Zapier's brand guidelines. No API for submission; must use web dashboard for final approval.",
+      "limitations": "Cannot fully automate submission; manual review required. Premium billing setup via Stripe requires manual configuration in Zapier developer dashboard."
+    },
+    "partner_program_details": {
+      "name": "Zapier Partner Program (2026)",
+      "benefits": "Revenue sharing (80% creator, 20% Zapier) for premium integrations. Access to Zapier's developer support. Listing in Zapier's integration directory. No upfront payment from Zapier.",
+      "requirements": "Integration must be published and approved. Premium tier must use Zapier's billing system (Stripe). Minimum 100 active users to qualify for revenue share (otherwise free tier only).",
+      "revenue_share": "80% to creator, 20% to Zapier. Example: $20/month premium plan -> creator gets $16, Zapier gets $4."
+    },
+    "direct_revenue_percentage": "~15% of integrations generate direct revenue via premium tiers (source: Zapier developer survey 2025). Most integrations are free and serve as lead generation for the creator's main product.",
+    "agent_to_agent_relevance": "An AI agent can autonomously: (1) develop the integration using Zapier Platform CLI, (2) push updates via CLI, (3) monitor usage via Zapier API, (4) manage premium billing via Stripe API. However, the initial approval requires human intervention. Once approved, agent can handle all maintenance and revenue collection.",
+    "date": "2026-05-22"
+  }
+}

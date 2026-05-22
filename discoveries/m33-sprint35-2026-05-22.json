@@ -1,0 +1,60 @@
+{
+  "options": [
+    {
+      "name": "Stripe CLI + launchd (macOS)",
+      "description": "Run stripe listen locally 24/7 via launchd daemon. Stripe CLI forwards webhooks to a local script (e.g., Python/Node). Works only while Mac is awake and on same network. Not cloud-reliable.",
+      "cost": "$0 (Stripe CLI free, no server cost)",
+      "reliability": "Low - depends on Mac uptime, network, no failover. Not suitable for production.",
+      "setup": "1. Install Stripe CLI: brew install stripe/stripe-cli/stripe\n2. Login: stripe login\n3. Create launchd plist at ~/Library/LaunchAgents/com.stripe.webhook.plist:\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">\n<plist version=\"1.0\">\n<dict>\n    <key>Label</key>\n    <string>com.stripe.webhook</string>\n    <key>ProgramArguments</key>\n    <array>\n        <string>/usr/local/bin/stripe</string>\n        <string>listen</string>\n        <string>--forward-to</string>\n        <string>http://localhost:3000/webhook</string>\n        <string>--api-key</string>\n        <string>sk_test_...</string>\n    </array>\n    <key>RunAtLoad</key>\n    <true/>\n    <key>KeepAlive</key>\n    <true/>\n    <key>StandardOutPath</key>\n    <string>/tmp/stripe-webhook.log</string>\n    <key>StandardErrorPath</key>\n    <string>/tmp/stripe-webhook.err</string>\n</dict>\n</plist>\n4. Load: launchctl load ~/Library/LaunchAgents/com.stripe.webhook.plist\n5. Ensure local script (e.g., Node.js Express) listens on port 3000.\nNote: Mac must stay awake; use caffeinate -dim to prevent sleep.",
+      "monthlyRevenue": "N/A - not production-grade",
+      "implementationComplexity": "Medium",
+      "capitalRequired": 0
+    },
+    {
+      "name": "Cloudflare Workers (Free Tier)",
+      "description": "Use Cloudflare Workers to receive Stripe webhooks via HTTP, process them, and optionally forward to a queue or storage. Free tier: 100k requests/day, 10ms CPU time per request. Must verify Stripe signature using Web Crypto API (no Node crypto).",
+      "cost": "$0 (free tier up to 100k requests/day; $5/month for 10M requests)",
+      "reliability": "High - global edge network, 99.99% uptime SLA, auto-scaling.",
+      "setup": "1. Create a Worker at https://dash.cloudflare.com\n2. Use wrangler CLI: npm install -g wrangler\n3. Write worker.js:\nimport { Stripe } from 'stripe'; // or use raw crypto\n// Stripe signature verification requires raw RSA. Use Web Crypto API:\n// https://developers.cloudflare.com/workers/examples/stripe-webhook/\nexport default {\n  async fetch(request, env) {\n    if (request.method !== 'POST') return new Response('Method Not Allowed', {status:405});\n    const body = await request.text();\n    const signature = request.headers.get('stripe-signature');\n    // Verify signature using env.STRIPE_WEBHOOK_SECRET\n    // Process event (e.g., store in KV, send to queue)\n    return new Response('OK', {status:200});\n  }\n}\n4. Deploy: wrangler publish\n5. Set Stripe webhook endpoint to https://your-worker.your-subdomain.workers.dev/webhook\n6. Add env variable STRIPE_WEBHOOK_SECRET in Cloudflare dashboard.",
+      "monthlyRevenue": "$0 (free) or $5 for higher limits",
+      "implementationComplexity": "Medium-High (signature verification tricky)",
+      "capitalRequired": 0
+    },
+    {
+      "name": "AWS Lambda + API Gateway",
+      "description": "Serverless function behind API Gateway HTTP API. Free tier: 1M requests/month, 400k GB-seconds. Stripe webhooks POST to Lambda via API Gateway URL.",
+      "cost": "$0 (free tier for low volume; ~$0.20/month for 100k requests after free tier)",
+      "reliability": "Very High - AWS infrastructure, 99.99% SLA for API Gateway.",
+      "setup": "1. Create Lambda function (Node.js/Python) with Stripe SDK:\nconst stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);\nexports.handler = async (event) => {\n  const sig = event.headers['stripe-signature'];\n  const body = event.body;\n  let eventObj;\n  try {\n    eventObj = stripe.webhooks.constructEvent(body, sig, process.env.WEBHOOK_SECRET);\n  } catch (err) { return { statusCode: 400, body: 'Signature verification failed' }; }\n  // Process event\n  return { statusCode: 200, body: 'OK' };\n}\n2. Create HTTP API in API Gateway, integrate with Lambda.\n3. Deploy, get invoke URL.\n4. Set Stripe webhook endpoint to that URL.\n5. Add environment variables in Lambda console.",
+      "monthlyRevenue": "$0 (free tier) or ~$0.20 for 100k requests",
+      "implementationComplexity": "Medium",
+      "capitalRequired": 0
+    },
+    {
+      "name": "Vercel Functions (Hobby Tier)",
+      "description": "Serverless functions on Vercel. Hobby tier: 100 GB-hours, 100k requests/month. Stripe webhooks POST to a serverless function (e.g., /api/webhook.js).",
+      "cost": "$0 (hobby tier free; Pro $20/month for more)",
+      "reliability": "High - Vercel edge network, but cold starts can be slow. No SLA on free tier.",
+      "setup": "1. Create a Next.js app or any framework.\n2. Create file pages/api/webhook.js (or api/webhook.ts):\nimport Stripe from 'stripe';\nexport default async function handler(req, res) {\n  if (req.method !== 'POST') return res.status(405).end();\n  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);\n  const sig = req.headers['stripe-signature'];\n  let event;\n  try {\n    event = stripe.webhooks.constructEvent(req.body, sig, process.env.WEBHOOK_SECRET);\n  } catch (err) { return res.status(400).send('Signature verification failed'); }\n  // Process event\n  res.status(200).send('OK');\n}\n3. Deploy to Vercel via Git.\n4. Set Stripe webhook endpoint to https://your-app.vercel.app/api/webhook\n5. Add environment variables in Vercel dashboard.\nNote: Body parsing must be raw; Vercel may need config to disable body parsing.",
+      "monthlyRevenue": "$0 (free tier) or $20 for Pro",
+      "implementationComplexity": "Low-Medium",
+      "capitalRequired": 0
+    },
+    {
+      "name": "ngrok (Free Tier)",
+      "description": "Expose local server via ngrok tunnel. Free tier: 1 random domain, 40 connections/minute, 8k bytes/sec. Not for production; only for testing.",
+      "cost": "$0 (free tier; $8/month for basic paid)",
+      "reliability": "Low - rate limited, ephemeral URLs, no SLA.",
+      "setup": "1. Install ngrok: brew install ngrok/ngrok/ngrok\n2. Run local webhook handler (e.g., Node.js on port 3000).\n3. Start tunnel: ngrok http 3000\n4. Copy forwarding URL (e.g., https://abc123.ngrok.io) and set as Stripe webhook endpoint.\n5. Keep terminal open; use tmux or launchd to persist.\nNote: Free tier URL changes each restart; paid has reserved subdomain.",
+      "monthlyRevenue": "$0 (testing only)",
+      "implementationComplexity": "Low",
+      "capitalRequired": 0
+    }
+  ],
+  "recommendation": {
+    "cheapest": "Cloudflare Workers Free Tier ($0) or AWS Lambda Free Tier ($0) - both are production-grade and serverless.",
+    "mostReliable": "AWS Lambda + API Gateway - robust, scalable, proven for Stripe webhooks.",
+    "bestForSoloDev": "Cloudflare Workers Free Tier - simple setup, no cold starts, global edge, and free up to 100k requests/day. Use raw Web Crypto for signature verification (sample code in Cloudflare docs).",
+    "note": "Stripe CLI + launchd is NOT recommended for production; only for local testing. ngrok is for testing only."
+  }
+}

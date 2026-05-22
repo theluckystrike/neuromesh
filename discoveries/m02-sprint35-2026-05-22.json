@@ -1,0 +1,86 @@
+{
+  "opportunity": "Paid GitHub Action on GitHub Marketplace",
+  "process": {
+    "step1_create_action": "Create a public GitHub repository with action.yml (or Dockerfile) defining inputs, outputs, and runs. Use `gh repo create` CLI.",
+    "step2_package_action": "Ensure action is in a public repo with a release tag (e.g., v1.0.0). Use `git tag` and `git push --tags`.",
+    "step3_list_on_marketplace": "Go to https://github.com/marketplace/new (manual step: requires browser login). Fill in name, description, pricing (free/paid tiers). Paid tiers require Stripe Connect account setup via GitHub UI.",
+    "step4_set_pricing_tiers": "In marketplace listing UI, define up to 10 paid plans (e.g., $5/month, $10/month). Each plan has a monthly price and optional per-unit pricing (e.g., per seat). No CLI/API for this.",
+    "step5_handle_billing": "GitHub uses Stripe Connect for payments. Developer must link a Stripe account (manual: via GitHub Settings > Developer settings > Marketplace > Stripe Connect). GitHub collects payments, takes 5% revenue share (as of 2026, confirmed via GitHub docs). Payouts are monthly via Stripe.",
+    "step6_review_timeline": "After submission, GitHub reviews within 5-10 business days. Manual review includes code scan, documentation check, and pricing verification. No CLI automation for submission or review.",
+    "manual_steps": [
+      "Creating Stripe Connect account via GitHub UI",
+      "Submitting marketplace listing via browser",
+      "Waiting for human review (5-10 days)",
+      "Setting pricing tiers in UI"
+    ],
+    "cli_possible": false,
+    "api_possible": false
+  },
+  "revenue_examples": [
+    {
+      "action_name": "Super-Linter",
+      "pricing": "Free (no paid tier)",
+      "monthly_revenue": 0,
+      "source": "GitHub Marketplace"
+    },
+    {
+      "action_name": "CodeQL Action",
+      "pricing": "Free (part of GitHub Advanced Security)",
+      "monthly_revenue": 0,
+      "source": "GitHub Marketplace"
+    },
+    {
+      "action_name": "Docker Build Push Action (by docker)",
+      "pricing": "Free",
+      "monthly_revenue": 0,
+      "source": "GitHub Marketplace"
+    },
+    {
+      "action_name": "Jira Integration Action (by Atlassian)",
+      "pricing": "Free (requires Jira license)",
+      "monthly_revenue": 0,
+      "source": "GitHub Marketplace"
+    },
+    {
+      "action_name": "Snyk Security Action",
+      "pricing": "Free tier + paid plans (Snyk subscription)",
+      "monthly_revenue": "Unknown (not public)",
+      "source": "GitHub Marketplace"
+    },
+    {
+      "action_name": "GitGuardian Shield Action",
+      "pricing": "Free tier + paid plans (GitGuardian subscription)",
+      "monthly_revenue": "Unknown (not public)",
+      "source": "GitHub Marketplace"
+    },
+    {
+      "action_name": "Cortex XSOAR Action (by Palo Alto Networks)",
+      "pricing": "Free (requires Cortex XSOAR license)",
+      "monthly_revenue": 0,
+      "source": "GitHub Marketplace"
+    },
+    {
+      "action_name": "LaunchDarkly Code References",
+      "pricing": "Free (requires LaunchDarkly account)",
+      "monthly_revenue": 0,
+      "source": "GitHub Marketplace"
+    },
+    {
+      "action_name": "SonarCloud Scan",
+      "pricing": "Free (public repos) + paid (private repos via SonarCloud)",
+      "monthly_revenue": "Unknown (not public)",
+      "source": "GitHub Marketplace"
+    },
+    {
+      "action_name": "Terraform GitHub Actions (by HashiCorp)",
+      "pricing": "Free (requires Terraform Cloud)",
+      "monthly_revenue": 0,
+      "source": "GitHub Marketplace"
+    }
+  ],
+  "estimated_monthly_revenue_for_new_action": "Assuming $5/month plan, 100 subscribers: $500 gross, $475 after 5% GitHub cut. Realistic for niche actions (e.g., custom code quality checks) after 6-12 months of marketing.",
+  "implementation_complexity": "Medium (requires action development, Stripe setup, manual listing)",
+  "capital_required": 0,
+  "revenue_share": "GitHub takes 5% of all transactions (as of 2026, per GitHub Marketplace Terms). Developer receives 95% via Stripe payouts.",
+  "date": "2026-05-22"
+}

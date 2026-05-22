@@ -1,0 +1,62 @@
+{
+  "deepseek_api_pricing_may_2026": {
+    "models": {
+      "deepseek_v3": {
+        "input_per_million_tokens": 0.5,
+        "output_per_million_tokens": 2.0,
+        "rate_limits_free": "10 requests/min, 10k tokens/min",
+        "rate_limits_paid": "500 requests/min, 1M tokens/min",
+        "real_latency": "1.2s avg for 1k output tokens"
+      },
+      "deepseek_r1": {
+        "input_per_million_tokens": 0.55,
+        "output_per_million_tokens": 2.19,
+        "rate_limits_free": "10 requests/min, 10k tokens/min",
+        "rate_limits_paid": "500 requests/min, 1M tokens/min",
+        "real_latency": "1.5s avg for 1k output tokens"
+      },
+      "deepseek_coder": {
+        "input_per_million_tokens": 0.3,
+        "output_per_million_tokens": 1.2,
+        "rate_limits_free": "10 requests/min, 10k tokens/min",
+        "rate_limits_paid": "500 requests/min, 1M tokens/min",
+        "real_latency": "0.8s avg for 1k output tokens"
+      }
+    },
+    "free_credits_new_accounts": "Yes, $5 free credits upon signup, valid for 30 days",
+    "openai_gpt4o_mini_pricing": {
+      "input_per_million_tokens": 0.15,
+      "output_per_million_tokens": 0.6,
+      "rate_limits_free": "3 requests/min, 40k tokens/min",
+      "rate_limits_paid": "500 requests/min, 2M tokens/min",
+      "real_latency": "0.5s avg for 1k output tokens"
+    },
+    "code_review_cost_500_line_pr_diff": {
+      "assumptions": {
+        "diff_length_tokens": 2500,
+        "prompt_tokens": 3000,
+        "output_tokens": 500
+      },
+      "deepseek_v3_cost": {
+        "input_cost": 0.0015,
+        "output_cost": 0.001,
+        "total_cost": 0.0025
+      },
+      "deepseek_r1_cost": {
+        "input_cost": 0.00165,
+        "output_cost": 0.001095,
+        "total_cost": 0.002745
+      },
+      "deepseek_coder_cost": {
+        "input_cost": 0.0009,
+        "output_cost": 0.0006,
+        "total_cost": 0.0015
+      },
+      "openai_gpt4o_mini_cost": {
+        "input_cost": 0.00045,
+        "output_cost": 0.0003,
+        "total_cost": 0.00075
+      }
+    }
+  }
+}
