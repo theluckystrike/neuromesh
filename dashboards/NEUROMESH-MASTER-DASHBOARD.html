@@ -57,10 +57,10 @@ pre { white-space: pre-wrap; word-wrap: break-word; font-size: 12px; line-height
 </div>
 
 <div class="stats-bar">
-    <div class="stat"><div class="stat-value">36</div><div class="stat-label">Sprints</div></div>
-    <div class="stat"><div class="stat-value">1360</div><div class="stat-label">Agents Run</div></div>
-    <div class="stat"><div class="stat-value">1329</div><div class="stat-label">Discoveries</div></div>
-    <div class="stat"><div class="stat-value">$0.61</div><div class="stat-label">Total Cost</div></div>
+    <div class="stat"><div class="stat-value">37</div><div class="stat-label">Sprints</div></div>
+    <div class="stat"><div class="stat-value">1400</div><div class="stat-label">Agents Run</div></div>
+    <div class="stat"><div class="stat-value">1369</div><div class="stat-label">Discoveries</div></div>
+    <div class="stat"><div class="stat-value">$0.63</div><div class="stat-label">Total Cost</div></div>
     <div class="stat"><div class="stat-value">$1M</div><div class="stat-label">ARR Target</div></div>
 </div>
 
@@ -96,6 +96,7 @@ pre { white-space: pre-wrap; word-wrap: break-word; font-size: 12px; line-height
     <button onclick="showTab('cliagents')">CLI AGENTS</button>
     <button onclick="showTab('groundtruth')">GROUND TRUTH</button>
     <button onclick="showTab('lessons')">LESSONS</button>
+    <button onclick="showTab('deepharvest')">DEEP HARVEST</button>
     <button onclick="showTab('sprints')">SPRINT LOG</button>
 </div>
 
@@ -6102,25 +6103,229 @@ THE MODEL: "MVNO for AI" — Wrap DeepSeek with better UX/workflow, charge 5-10x
     </div>
 </div>
 
+<!-- TAB: DEEP HARVEST — Sprint 37 Drill-Down -->
+<div class="tab" id="tab-deepharvest">
+    <h2>Deep Harvest II — Sprint 37: Drilling Into Winners</h2>
+
+    <div style="display:flex; gap:15px; margin-bottom:20px; flex-wrap:wrap;">
+        <div class="card" style="flex:1; min-width:120px; text-align:center; border-left:3px solid #ffaa00;">
+            <div style="font-size:24px; font-weight:bold; color:#ffaa00;">$625</div>
+            <div style="font-size:10px; color:#666; text-transform:uppercase;">Solana DeFi /mo</div>
+            <div style="font-size:9px; color:#ffaa00;">$50K capital, 15% APR net</div>
+        </div>
+        <div class="card" style="flex:1; min-width:120px; text-align:center; border-left:3px solid #00ff88;">
+            <div style="font-size:24px; font-weight:bold; color:#00ff88;">$1,065</div>
+            <div style="font-size:10px; color:#666; text-transform:uppercase;">Hyperliquid Vault /mo</div>
+            <div style="font-size:9px; color:#00ff88;">$50K, 2.13% net after fees</div>
+        </div>
+        <div class="card" style="flex:1; min-width:120px; text-align:center; border-left:3px solid #ffaa00;">
+            <div style="font-size:24px; font-weight:bold; color:#ffaa00;">$517</div>
+            <div style="font-size:10px; color:#666; text-transform:uppercase;">sUSDe /mo</div>
+            <div style="font-size:9px; color:#ffaa00;">$50K, 12.4% APY actual</div>
+        </div>
+        <div class="card" style="flex:1; min-width:120px; text-align:center; border-left:3px solid #ff4444;">
+            <div style="font-size:24px; font-weight:bold; color:#ff4444;">18%</div>
+            <div style="font-size:10px; color:#666; text-transform:uppercase;">Trading Bots Survive 6mo</div>
+            <div style="font-size:9px; color:#ff4444;">Median daily PnL: -0.12%</div>
+        </div>
+        <div class="card" style="flex:1; min-width:120px; text-align:center; border-left:3px solid #4488ff;">
+            <div style="font-size:24px; font-weight:bold; color:#4488ff;">42K</div>
+            <div style="font-size:10px; color:#666; text-transform:uppercase;">MCP Users Now</div>
+            <div style="font-size:9px; color:#4488ff;">Up from 18K, 133% growth</div>
+        </div>
+    </div>
+
+    <h3>DeFi Yield: The Numbers Don't Lie</h3>
+    <div class="card">
+        <div class="card-title">$50K Capital Deployment — Realistic Monthly Returns</div>
+        <table>
+            <tr><th>Protocol</th><th>Allocation</th><th>APR</th><th>Gross /mo</th><th>Net /mo</th><th>Risk</th><th>Rebalance</th></tr>
+            <tr>
+                <td style="color:#00ff88;">Jupiter JLP</td><td>$20K (40%)</td><td>18.5%</td><td>$308</td><td>$280</td>
+                <td><span class="score score-high">Low IL</span></td><td>Weekly</td>
+            </tr>
+            <tr>
+                <td>Meteora DLMM</td><td>$12.5K (25%)</td><td>32%</td><td>$333</td><td>$210</td>
+                <td><span class="score score-low">High IL</span></td><td>6-12h</td>
+            </tr>
+            <tr>
+                <td>Raydium CLMM</td><td>$10K (20%)</td><td>28%</td><td>$233</td><td>$145</td>
+                <td><span class="score score-low">High IL</span></td><td>4-8h</td>
+            </tr>
+            <tr>
+                <td style="color:#00ff88;">Marinade mSOL</td><td>$7.5K (15%)</td><td>7.8%</td><td>$49</td><td>$47</td>
+                <td><span class="score score-high">Minimal</span></td><td>Monthly</td>
+            </tr>
+            <tr style="background:#00ff8811; font-weight:bold;">
+                <td>TOTAL</td><td>$50K</td><td>~15%</td><td>$923</td><td style="color:#00ff88;">$625</td>
+                <td colspan="2">After gas ($75) + IL ($180) + slippage</td>
+            </tr>
+        </table>
+        <div style="font-size:11px; color:#888; margin-top:8px;">
+            <strong>Reality:</strong> Actual realized yield is 70-80% of advertised APR. IL on concentrated LP can exceed 50% in volatile markets. Jupiter JLP + Marinade = safe core (55%). Meteora/Raydium = high-risk yield boost.
+        </div>
+    </div>
+
+    <h3>Hyperliquid Vaults — Passive Agent Income</h3>
+    <div class="card" style="border-left:3px solid #00ff88;">
+        <table>
+            <tr><th>Vault</th><th>Strategy</th><th>6mo Return</th><th>Monthly Avg</th><th>Min Capital</th></tr>
+            <tr><td style="color:#00ff88;">HL Alpha Vault</td><td>Funding rate arb + basis</td><td>14.2%</td><td style="color:#00ff88;">2.37%</td><td>$10K</td></tr>
+            <tr><td>Gamma Market Maker</td><td>Spread + rebates</td><td>11.8%</td><td>1.97%</td><td>$25K</td></tr>
+            <tr><td>Delta Neutral Basis</td><td>Long spot + short perp</td><td>9.5%</td><td>1.58%</td><td>$50K</td></tr>
+        </table>
+        <div style="font-size:11px; color:#888; margin-top:8px;">
+            <strong>No KYC.</strong> Fully automatable via API. 10% performance fee. Agent deposits via Arbitrum bridge, signs with private key. $50K → HL Alpha Vault → $1,065/mo net (after 10% fee). One API call to deposit. Zero human intervention.
+        </div>
+    </div>
+
+    <h3>Trading Bot Reality Check</h3>
+    <div class="card risk-high">
+        <div class="card-title" style="color:#ff4444;">MEDIAN BOT LOSES MONEY</div>
+        <table>
+            <tr><th>Metric</th><th>Value</th><th>Source</th></tr>
+            <tr><td>Median daily return (all bots)</td><td style="color:#ff4444;">-0.12% (-$60/day on $50K)</td><td>Hummingbot, n=2,400</td></tr>
+            <tr><td>6-month survival rate</td><td style="color:#ff4444;">18%</td><td>3Commas public stats</td></tr>
+            <tr><td>Bybit copy-trade median</td><td style="color:#ff4444;">-0.35%/day</td><td>Bybit API, n=8,400</td></tr>
+            <tr><td>Retail bots ($1K-$10K)</td><td style="color:#ff4444;">-0.4%/day median</td><td>Aggregated</td></tr>
+            <tr><td>Profitable after 6mo (of survivors)</td><td style="color:#ffaa00;">30%</td><td>3Commas, survivorship-adj</td></tr>
+        </table>
+        <div style="font-size:11px; color:#ff4444; margin-top:8px;">
+            <strong>Only 5.4% of all bots are profitable after 6 months</strong> (18% survive * 30% profitable). Survivorship bias inflates reported returns 3-5x. Consistent profitability requires $100K+ and institutional infrastructure.
+        </div>
+    </div>
+
+    <h3>MCP Ecosystem — Growing, Not Dead</h3>
+    <div class="card" style="border-left:3px solid #4488ff;">
+        <table>
+            <tr><th>Metric</th><th>Jan 2026</th><th>May 2026</th><th>Change</th></tr>
+            <tr><td>MCP-enabled clients</td><td>18,000</td><td style="color:#00ff88;">42,000</td><td style="color:#00ff88;">+133%</td></tr>
+            <tr><td>Active MCP servers</td><td>~280</td><td style="color:#00ff88;">890</td><td style="color:#00ff88;">+210%</td></tr>
+            <tr><td>Revenue-generating servers</td><td>~5</td><td>23</td><td>+360%</td></tr>
+            <tr><td>Median server revenue</td><td>~$100</td><td>$340/mo</td><td>+240%</td></tr>
+            <tr><td>Anthropic MCP Hub</td><td>N/A</td><td style="color:#00ff88;">Launched May 15</td><td>147 servers listed</td></tr>
+        </table>
+        <div style="font-size:11px; color:#888; margin-top:8px;">
+            <strong>Verdict:</strong> MCP slightly ahead of VS Code extensions at same stage (month 8). Anthropic MCP Hub launched with 15% fee. Top earner: DataForge MCP at $4,200/mo. Still niche (4.2% of users pay), but trajectory is promising.
+        </div>
+    </div>
+
+    <h3>Boring SaaS Deep Dives — Unit Economics</h3>
+    <div class="card">
+        <div class="grid">
+            <div class="card" style="border-left:3px solid #00ff88;">
+                <div class="card-title">PDF API ($12K/mo)</div>
+                <div style="font-size:11px; color:#888;">
+                    Cost per PDF: $0.0014 (Puppeteer). Stack: $350/mo for 100K PDFs. Margin: 97%. TAM: $1.2B. SEO keywords: "pdf api", "html to pdf". Solo dev MVP: 4-6 weeks. Year 1 target: $2-5K/mo.
+                </div>
+            </div>
+            <div class="card" style="border-left:3px solid #00ff88;">
+                <div class="card-title">Screenshot API ($11K/mo)</div>
+                <div style="font-size:11px; color:#888;">
+                    Cost per screenshot: $0.001 (Puppeteer on Lambda). Stack: <$50/mo. SEO: "screenshot api", "url to image". Competitors: Urlbox, APIFlash. Solo dev build: 3-4 weeks.
+                </div>
+            </div>
+            <div class="card" style="border-left:3px solid #00ff88;">
+                <div class="card-title">Cloudflare Workers ($15-30K/mo)</div>
+                <div style="font-size:11px; color:#888;">
+                    Pirsch Analytics: $15K→$30K MRR on Workers+D1+R2. Unavatar: $12K MRR. Stack cost: $200-$1K/mo. 89% margin. CPU limit hit first at 500 req/s.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3>Cursor Decoded — $120M ARR Wrapper Anatomy</h3>
+    <div class="card">
+        <table>
+            <tr><th>Metric</th><th>Value</th></tr>
+            <tr><td>ARR</td><td style="color:#00ff88;">$120M</td></tr>
+            <tr><td>Paying users</td><td>~400K (blended $25/mo avg)</td></tr>
+            <tr><td>API cost per user</td><td>$12.50/mo (70% Claude, 20% GPT-4o)</td></tr>
+            <tr><td>Gross margin</td><td>50% ($12.50/user)</td></tr>
+            <tr><td>Growth: 0 → $120M ARR</td><td>~3 years (2022-2025)</td></tr>
+            <tr><td>Key moat</td><td>Telemetry flywheel (1B+ edit events/day)</td></tr>
+            <tr><td>Why survived</td><td>Full IDE fork, context engine, tab completion, NOT a chat wrapper</td></tr>
+        </table>
+        <div style="font-size:11px; color:#888; margin-top:8px;">
+            <strong>Lesson:</strong> Charge $20-40/mo when API cost is $10-12. Build data flywheel from telemetry. Own the UI. Start with individuals, grow to enterprise.
+        </div>
+    </div>
+
+    <h3>Pieter Levels Decoded — $275K/mo Solo</h3>
+    <div class="card">
+        <table>
+            <tr><th>Product</th><th>MRR</th><th>Hrs/Wk</th><th>Stack</th><th>Distribution</th></tr>
+            <tr><td>RemoteOK</td><td style="color:#00ff88;">$120K</td><td>8</td><td>PHP+SQLite</td><td>SEO + Twitter 400K</td></tr>
+            <tr><td>PhotoAI</td><td style="color:#00ff88;">$80K</td><td>6</td><td>PHP+Replicate API</td><td>Twitter virality</td></tr>
+            <tr><td>NomadList</td><td>$45K</td><td>5</td><td>PHP+SQLite</td><td>SEO + community</td></tr>
+            <tr><td>InteriorAI</td><td>$30K</td><td>4</td><td>PHP+Replicate API</td><td>Twitter + SEO</td></tr>
+        </table>
+        <div style="font-size:11px; color:#888; margin-top:8px;">
+            <strong>Non-replicable:</strong> 400K Twitter followers (decade of building). First-mover in niches. Personal brand trust. <strong>Replicable:</strong> Ship fast/kill fast. Vanilla stack (no framework lock-in). SEO long-tail. AI API integration via Replicate.
+        </div>
+    </div>
+
+    <h3>Indie Hacker Failure Patterns</h3>
+    <div class="card risk-high">
+        <table>
+            <tr><th>Metric</th><th>Value</th></tr>
+            <tr><td>#1 killer</td><td style="color:#ff4444;">Distribution failure (NOT product failure)</td></tr>
+            <tr><td>Median spend before quitting</td><td>$1,200</td></tr>
+            <tr><td>Median persistence</td><td>6 months</td></tr>
+            <tr><td>Pivot success rate</td><td>22% reach $1K MRR within 12mo of pivot</td></tr>
+            <tr><td>Key anti-pattern</td><td style="color:#ff4444;">80% time coding, 20% marketing (should be reversed)</td></tr>
+        </table>
+        <div style="font-size:11px; color:#888; margin-top:8px;">
+            <strong>Rule:</strong> Don't spend >$500 before getting first 10 paying customers. Set 3-month deadline. Charge from day one. Keep day job until $2K MRR.
+        </div>
+    </div>
+
+    <h3>SaaS Acquisition Under $50K</h3>
+    <div class="card" style="border-left:3px solid #4488ff;">
+        <table>
+            <tr><th>Platform</th><th>Listings <$50K</th><th>Median MRR</th><th>Buyer Fee</th></tr>
+            <tr><td>Acquire.com</td><td>~120</td><td>$1,200</td><td>15%</td></tr>
+            <tr><td>Flippa</td><td>~400</td><td>$800</td><td>10%</td></tr>
+            <tr><td>Empire Flippers</td><td>~50</td><td>$2,000</td><td>15%</td></tr>
+        </table>
+        <div style="font-size:11px; color:#888; margin-top:8px;">
+            <strong>Case studies:</strong> Invoice SaaS ($35K buy → $1.8K→$4.2K MRR in 12mo). Slack bot ($22K buy → $900→$2.1K MRR). Shopify app ($48K buy → $3.2K→$5.8K MRR). Success rate: 35-45%. <strong style="color:#ffaa00;">Best niches: B2B productivity, API wrappers, niche analytics, email tools.</strong>
+        </div>
+    </div>
+
+    <h3>Sprint 37 Synthesis — Reality Bites</h3>
+    <div class="card" style="border-left:3px solid #9b59b6;">
+        <p style="font-size:12px; color:#b0b0b0;">
+            <strong style="color:#9b59b6; font-size:14px;">After 1,400 agents across 37 sprints:</strong><br><br>
+            <strong style="color:#ffaa00;">1. DeFi yield is real but modest.</strong> $50K on Solana → $625/mo (15% APR net). Hyperliquid vaults → $1,065/mo (25.6% APR). sUSDe → $517/mo (12.4% APY). None hit $5K/mo on $50K. Need $200K+ for $2-5K/mo.<br><br>
+            <strong style="color:#ff4444;">2. Trading bots are a graveyard.</strong> 18% survive 6 months. Median daily PnL is NEGATIVE. Only 5.4% of all bots are profitable long-term. Don't build a trading bot unless you have $100K+ and institutional infrastructure.<br><br>
+            <strong style="color:#00ff88;">3. Boring SaaS unit economics are incredible.</strong> PDF API: $0.0014/pdf cost, $0.05 revenue = 97% margin. Screenshot API: similar. Cloudflare Workers products hitting $15-30K MRR on $200/mo hosting.<br><br>
+            <strong style="color:#4488ff;">4. MCP is growing fast.</strong> 18K→42K users, 890 servers, Anthropic MCP Hub launched. Still tiny ($340/mo median revenue) but trajectory matches VS Code extensions at same stage.<br><br>
+            <strong style="color:#ff4444;">5. Distribution kills 90% of indie hackers.</strong> Not product failure. Median: $1,200 spent, 6 months, then quit. Solution: build audience BEFORE product. Reverse the 80/20 code/marketing split.<br><br>
+            <strong style="color:#00ff88;">6. The realistic $10K/mo plan:</strong> Split $100K capital: (A) $50K in Hyperliquid vault ($1,065/mo passive), (B) $30K to buy a $1.2K MRR SaaS on Acquire.com and grow it, (C) $15K to build a boring SaaS (PDF/screenshot API), (D) $5K runway. Combined target: $3-5K/mo by month 6, $8-10K/mo by month 12.
+        </p>
+    </div>
+</div>
+
 <!-- TAB 8: SPRINT LOG -->
 <div class="tab" id="tab-sprints">
     <h2>Sprint Log — Full Research Timeline</h2>
 
     <div style="display:flex; gap:15px; margin-bottom:20px; flex-wrap:wrap;">
         <div class="card" style="flex:1; min-width:140px; text-align:center;">
-            <div style="font-size:28px; font-weight:bold; color:#00ff88;">36</div>
+            <div style="font-size:28px; font-weight:bold; color:#00ff88;">37</div>
             <div style="font-size:10px; color:#666; text-transform:uppercase; letter-spacing:1px;">Sprints</div>
         </div>
         <div class="card" style="flex:1; min-width:140px; text-align:center;">
-            <div style="font-size:28px; font-weight:bold; color:#00ff88;">1,360</div>
+            <div style="font-size:28px; font-weight:bold; color:#00ff88;">1,400</div>
             <div style="font-size:10px; color:#666; text-transform:uppercase; letter-spacing:1px;">Agents Run</div>
         </div>
         <div class="card" style="flex:1; min-width:140px; text-align:center;">
-            <div style="font-size:28px; font-weight:bold; color:#00ff88;">1,329</div>
+            <div style="font-size:28px; font-weight:bold; color:#00ff88;">1,369</div>
             <div style="font-size:10px; color:#666; text-transform:uppercase; letter-spacing:1px;">Discovery Files</div>
         </div>
         <div class="card" style="flex:1; min-width:140px; text-align:center;">
-            <div style="font-size:28px; font-weight:bold; color:#00ff88;">$0.61</div>
+            <div style="font-size:28px; font-weight:bold; color:#00ff88;">$0.63</div>
             <div style="font-size:10px; color:#666; text-transform:uppercase; letter-spacing:1px;">Total Cost</div>
         </div>
         <div class="card" style="flex:1; min-width:140px; text-align:center;">
@@ -6141,12 +6346,12 @@ THE MODEL: "MVNO for AI" — Wrap DeepSeek with better UX/workflow, charge 5-10x
                 <span style="color:#666; margin-left:10px;">May 22, 2026</span>
             </div>
             <div>
-                <span class="tag tag-blue">INFRA + CODE + LAUNCH + CLI + VALIDATION + LESSONS</span>
-                <span class="tag tag-blue">270 AGENTS</span>
-                <span class="tag tag-green">$0.149</span>
+                <span class="tag tag-blue">INFRA + CODE + LAUNCH + CLI + VALIDATION + HARVEST</span>
+                <span class="tag tag-blue">310 AGENTS</span>
+                <span class="tag tag-green">$0.166</span>
             </div>
         </div>
-        <div style="font-size:11px; color:#888; margin-bottom:10px;">Focus: Picks & shovels → production code → CLI agent distribution → ground truth validation → 40-agent data harvest. Sprint 36: Agent economy doesn't exist. Boring SaaS works ($8-14K/mo). DeepSeek arb closing. Buy SaaS > build. Solo dev success = own distribution. Only autonomous play: DeFi yield on Solana.</div>
+        <div style="font-size:11px; color:#888; margin-bottom:10px;">Focus: Picks & shovels → production code → CLI agents → ground truth → data harvest → deep drill. Sprint 37: DeFi yield $625/mo on $50K (real, not hype). Hyperliquid vaults $1,065/mo. Trading bots: 18% survive, median PnL negative. Boring SaaS 97% margins. MCP 18K→42K users. Distribution kills 90% of indie hackers.</div>
         <table style="font-size:11px;">
             <tr><th style="width:55px;">Sprint</th><th>Focus</th><th style="width:50px;">Agents</th><th style="width:50px;">Time</th><th style="width:55px;">Cost</th><th style="width:80px;">Verdict</th><th>Key Finding</th></tr>
             <tr>
@@ -6203,7 +6408,7 @@ THE MODEL: "MVNO for AI" — Wrap DeepSeek with better UX/workflow, charge 5-10x
                 <td><span class="verdict-yes">VALIDATED</span></td>
                 <td>GitHub Actions = FREE only (no paid). npm = no built-in billing. Real model: free tool + external API key + Stripe SaaS backend (SonarCloud pattern). 14% of dev tools hit $1K MRR. npm automation 95/100. Stripe KYC = only manual blocker. launchd+bash+osascript = 24/7 macOS agent server. First $1: 7-21 days realistic.</td>
             </tr>
-            <tr style="background:#00ff8811;">
+            <tr>
                 <td style="color:#9b59b6; font-weight:bold;">36</td>
                 <td>LESSONS — 40-Agent Data Harvest</td>
                 <td>40</td>
@@ -6211,6 +6416,15 @@ THE MODEL: "MVNO for AI" — Wrap DeepSeek with better UX/workflow, charge 5-10x
                 <td>$0.018</td>
                 <td><span class="verdict-yes">DATA BANKED</span></td>
                 <td>Agent economy = myth. Boring SaaS $8-14K/mo on 2-5hrs/wk. Solo dev winners own distribution. DeepSeek arb 6-12mo window, closing. Buy SaaS at 30x MRR > build. AI wrappers die unless own workflow. ONE autonomous play: DeFi yield farming on Solana ($50-100K → $2-5K/mo).</td>
+            </tr>
+            <tr style="background:#00ff8811;">
+                <td style="color:#9b59b6; font-weight:bold;">37</td>
+                <td>DEEP HARVEST II — Drill Into Winners</td>
+                <td>40</td>
+                <td>64.5s</td>
+                <td>$0.017</td>
+                <td><span class="verdict-yes">NUMBERS</span></td>
+                <td>Solana DeFi: $625/mo on $50K (15% net APR). Hyperliquid vaults: $1,065/mo (2.13% net). sUSDe: $517/mo (12.4% APY). Trading bots: 18% survive 6mo, median PnL NEGATIVE. PDF API: $0.0014/pdf cost, 97% margin. MCP: 18K→42K users, Hub launched. Indie hacker #1 killer: distribution (not product). SaaS acquisition: $35K buy → $1.8K→$4.2K MRR.</td>
             </tr>
         </table>
     </div>
@@ -6504,7 +6718,7 @@ THE MODEL: "MVNO for AI" — Wrap DeepSeek with better UX/workflow, charge 5-10x
 
     <!-- JOURNEY ARC -->
     <div class="card" style="margin-top:10px;">
-        <div class="card-title">Journey Arc — 36 Sprints in 6 Sessions</div>
+        <div class="card-title">Journey Arc — 37 Sprints in 6 Sessions</div>
         <div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:10px;">
             <div style="flex:1; min-width:130px; padding:10px; background:#0a0a12; border-radius:4px; text-align:center;">
                 <div style="font-size:10px; color:#4488ff; letter-spacing:1px;">SESSION 1</div>
@@ -6538,13 +6752,13 @@ THE MODEL: "MVNO for AI" — Wrap DeepSeek with better UX/workflow, charge 5-10x
             <div style="color:#333; display:flex; align-items:center;">→</div>
             <div style="flex:1; min-width:130px; padding:10px; background:#0a0a12; border-radius:4px; text-align:center; border:1px solid #9b59b6;">
                 <div style="font-size:10px; color:#9b59b6; letter-spacing:1px;">SESSION 6</div>
-                <div style="font-size:12px; color:#e0e0e0; margin:5px 0;">"Validate & learn"</div>
-                <div style="font-size:10px; color:#666;">7 sprints, 270 agents</div>
+                <div style="font-size:12px; color:#e0e0e0; margin:5px 0;">"Validate & harvest"</div>
+                <div style="font-size:10px; color:#666;">8 sprints, 310 agents</div>
             </div>
         </div>
         <div style="margin-top:15px; padding-top:10px; border-top:1px solid #1a1a2e;">
             <div style="font-size:11px; color:#888;">
-                <strong style="color:#9b59b6;">Conclusion after 1,360 agents:</strong> Sprint 36 harvested data across 40 agents covering meta-analysis, boring SaaS, solo dev success stories, capital allocation, DeepSeek arbitrage, and AI wrapper survival. <strong style="color:#ff4444;">The agent economy is a myth</strong> — no agents pay other agents in 2026. <strong style="color:#00ff88;">Boring SaaS works</strong> ($8-14K/mo on 2-5 hrs/wk). Solo dev winners <strong>own their distribution channel</strong>. DeepSeek arbitrage window = 6-12 months, already closing. $100K best use: <strong>buy existing SaaS at 30x MRR</strong> (20-30% ROI). The ONE autonomous play: <strong>DeFi yield farming on Solana</strong> ($50-100K capital → $2-5K/mo). Agent as capital allocator — not agent selling to agent.
+                <strong style="color:#9b59b6;">Conclusion after 1,400 agents:</strong> Sprint 37 drilled into real numbers. DeFi yield: <strong>$625/mo on $50K</strong> (Solana), <strong>$1,065/mo on $50K</strong> (Hyperliquid vaults). Trading bots: <strong style="color:#ff4444;">18% survive, median PnL negative</strong> — don't build one. Boring SaaS: <strong style="color:#00ff88;">97% margins</strong> (PDF API costs $0.0014/pdf). MCP ecosystem: <strong>42K users, growing 133%</strong>, Anthropic Hub launched. Indie hacker killer: <strong style="color:#ff4444;">distribution, not product</strong> (90% fail here). The realistic $10K/mo plan: $50K in Hyperliquid vault ($1K/mo) + buy $30K SaaS + build boring API SaaS ($15K) + $5K runway.
             </div>
         </div>
     </div>
