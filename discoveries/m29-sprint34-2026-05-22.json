@@ -1,0 +1,82 @@
+{
+  "opportunity": {
+    "name": "Autonomous SEO Content Pipeline with DeepSeek CLI Agents",
+    "description": "A fully automated agentic system that discovers low-competition keywords, generates SEO-optimized articles via DeepSeek, publishes to a CMS, builds internal links, and submits to Google Search Console\u2014all via cron on a VPS. Monetized through AdSense, affiliate links, and lead gen.",
+    "implementation_details": {
+      "agent_1_keyword_research": {
+        "tool": "Google Trends API (free tier) + Ahrefs API (paid, $99/month) or SEMrush API ($119/month)",
+        "action": "Agent queries API for keywords with high search volume (>500/month) and low competition (KD <20). Filters by niche (e.g., 'best budget laptops 2026'). Outputs list of 50 keywords per run.",
+        "cli_example": "curl -s 'https://api.ahrefs.com/v3/keywords-explorer?keyword=best+budget+laptops&limit=50' -H 'Authorization: Bearer YOUR_API_KEY' | jq '.keywords[] | {keyword: .keyword, volume: .volume, difficulty: .difficulty}'"
+      },
+      "agent_2_content_generation": {
+        "tool": "DeepSeek CLI (via deepseek-chat or custom script using DeepSeek API, $0.14/1M tokens)",
+        "action": "For each keyword, agent generates a 1500-word SEO article with H2/H3 tags, meta description, and 2 internal link placeholders. Uses prompt: 'Write an SEO-optimized article for keyword: [keyword]. Include headings, meta description, and 2 internal link slots.'",
+        "cli_example": "deepseek-chat --prompt 'Write an SEO-optimized article for keyword: best budget laptops 2026. Include headings, meta description, and 2 internal link slots.' --max-tokens 2000 > article.md"
+      },
+      "agent_3_publishing": {
+        "tool": "WordPress REST API (free) or Ghost API (free) or Hugo via Git push",
+        "action": "Agent parses generated article, extracts title, content, meta, and posts via CMS API. For WordPress: wp-cli or REST API. For Hugo: commits to GitHub repo and rebuilds via webhook.",
+        "cli_example": "curl -X POST 'https://yoursite.com/wp-json/wp/v2/posts' -H 'Authorization: Bearer YOUR_JWT' -d '{\"title\":\"Best Budget Laptops 2026\",\"content\":\"$(cat article.md)\",\"status\":\"publish\"}'"
+      },
+      "agent_4_internal_linking": {
+        "tool": "Custom script using CMS API to fetch existing posts and update content",
+        "action": "Agent scans all published posts for keywords, then inserts links to related posts. Uses regex to find keyword occurrences and replaces with <a href='/post-slug'>keyword</a>. Runs weekly.",
+        "cli_example": "python3 link_builder.py --site-url https://yoursite.com --api-key YOUR_KEY"
+      },
+      "agent_5_search_console_submission": {
+        "tool": "Google Search Console API (free, quota 2000 URLs/day)",
+        "action": "Agent submits new article URL to Google for indexing via URL Inspection API.",
+        "cli_example": "curl -X POST 'https://searchconsole.googleapis.com/v1/urlInspection/index:inspect?key=YOUR_API_KEY' -d '{\"inspectionUrl\":\"https://yoursite.com/best-budget-laptops-2026\",\"siteUrl\":\"sc:yoursite.com\"}'"
+      },
+      "agent_6_scheduling": {
+        "tool": "Cron on VPS (e.g., DigitalOcean $6/month droplet)",
+        "action": "Cron job runs daily: agent1 (keyword research) \u2192 agent2 (generate 5 articles) \u2192 agent3 (publish) \u2192 agent4 (link building weekly) \u2192 agent5 (submit).",
+        "cron_example": "0 6 * * * /usr/bin/bash /home/user/pipeline.sh"
+      }
+    },
+    "revenue_model": {
+      "primary": "Google AdSense (RPM $5-$15 for informational content)",
+      "secondary": "Affiliate links (Amazon Associates, 3-10% commission, e.g., $0.50-$2 per click)",
+      "tertiary": "Lead gen (email capture for newsletter, sold to advertisers at $0.10-$0.50 per lead)",
+      "estimated_monthly_revenue": {
+        "articles_per_month": 150,
+        "traffic_per_article": "200 visits/month after 3 months",
+        "total_monthly_visits": 30000,
+        "adsense_rpm": 10,
+        "adsense_revenue": 300,
+        "affiliate_revenue": 150,
+        "lead_gen_revenue": 50,
+        "total_revenue": 500
+      }
+    },
+    "implementation_complexity": "Medium (requires basic scripting, API integration, and cron management)",
+    "capital_required": {
+      "vps": 6,
+      "ahrefs_api": 99,
+      "deepseek_api": 10,
+      "domain": 10,
+      "total_monthly": 125
+    },
+    "risks_and_mitigations": {
+      "google_ai_content_policy": "Google's 2026 policy allows AI content if it's helpful, original, and demonstrates E-E-A-T. Risk is low if content is fact-checked and edited. Mitigation: Use DeepSeek to generate outlines, then human review (or agent2 adds citations from real sources).",
+      "content_quality": "DeepSeek can rank if optimized for search intent, includes unique insights, and avoids keyword stuffing. Test with 10 articles first. Example: niche 'best budget laptops' ranks well with product comparisons and affiliate links.",
+      "competition": "Low-competition keywords (KD <20) have fewer high-authority sites. Use Ahrefs to filter."
+    },
+    "real_examples": [
+      {
+        "site": "Bankrate.com (uses AI for some articles, earns via AdSense and affiliate)",
+        "revenue": "$500k+/month (not fully AI, but similar model)"
+      },
+      {
+        "site": "The Hustle (newsletter with AI-generated summaries, lead gen)",
+        "revenue": "$200k/month"
+      },
+      {
+        "site": "Niche sites like 'BestReviews' (AI-generated product reviews, affiliate)",
+        "revenue": "$10k-$50k/month"
+      }
+    ],
+    "feasibility_score": 8.5,
+    "notes": "Start with 10 articles/day, scale to 50/day. Use DeepSeek's 1M context for long-form content. Monitor Google Search Console for indexing issues. Revenue grows exponentially after 6 months."
+  }
+}

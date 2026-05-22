@@ -1,0 +1,68 @@
+{
+  "opportunity": "Paid MCP Tool for Agent-to-Agent Calls",
+  "feasibility": "PARTIALLY POSSIBLE TODAY",
+  "research_findings": {
+    "claude_desktop_mcp_charging": {
+      "status": "NOT SUPPORTED",
+      "detail": "Claude Desktop MCP servers are local-only; no built-in metering or payment. You must implement external billing via a proxy or webhook."
+    },
+    "cursor_mcp_charging": {
+      "status": "NOT SUPPORTED",
+      "detail": "Cursor MCP servers are local; no native payment. Requires custom middleware."
+    },
+    "openai_function_calling_charging": {
+      "status": "NOT SUPPORTED",
+      "detail": "OpenAI function calling does not support charging. The called function is stateless; you must use a third-party payment gateway."
+    },
+    "google_a2a_protocol_payment": {
+      "status": "NOT SUPPORTED",
+      "detail": "Google A2A (Agent-to-Agent) protocol is in early stages; no payment layer. You'd need to integrate a separate billing system."
+    },
+    "stripe_agent_mode": {
+      "status": "PARTIALLY SUPPORTED",
+      "detail": "Stripe Agent Mode (beta) allows agents to create payment links and invoices via API. It can be used to charge per call if the calling agent can execute a Stripe payment intent. Requires the calling agent to have a Stripe account or use a shared payment method."
+    }
+  },
+  "implementation": {
+    "architecture": {
+      "description": "Build a paid MCP tool using a reverse proxy that meters usage and collects payments via Stripe. The tool is exposed as an MCP server, but all requests go through a proxy that checks payment status before forwarding.",
+      "components": [
+        "MCP server (Python/Node.js) exposing a tool (e.g., 'analyze_data')",
+        "Reverse proxy (e.g., Nginx + Lua or custom Go service) that intercepts MCP requests",
+        "Stripe API for payment intents and subscription management",
+        "SQLite/Postgres database for usage tracking and API keys",
+        "Public endpoint (e.g., https://paid-mcp.example.com) that other agents can call via HTTP"
+      ]
+    },
+    "step_by_step": {
+      "1": "Create an MCP server with a tool (e.g., 'analyze_data') that accepts JSON input and returns JSON output. Use the official MCP SDK.",
+      "2": "Deploy the MCP server behind a reverse proxy. The proxy requires an API key in the request header.",
+      "3": "Implement a Stripe payment flow: agents purchase credits (e.g., $10 for 100 calls) via a Stripe Checkout session. Store credits in DB.",
+      "4": "When an agent calls the MCP tool, the proxy deducts 1 credit from the agent's balance. If insufficient, return 402 Payment Required.",
+      "5": "Expose the MCP server as an HTTP endpoint (not local). Other agents (Claude, GPT, Gemini) can call it via HTTP POST with the API key.",
+      "6": "For Claude Desktop: the agent must use a custom MCP client that supports HTTP and API keys. For GPT: use function calling with an HTTP call. For Gemini: use Google's function calling with HTTP."
+    },
+    "code_snippet_mcp_server": {
+      "language": "python",
+      "code": "from mcp.server import Server, Tool\nimport json\n\nserver = Server('paid-analyzer')\n\n@server.tool('analyze_data')\nasync def analyze_data(data: dict) -> dict:\n    # Your analysis logic here\n    return {'result': 'analysis complete', 'input': data}\n\nif __name__ == '__main__':\n    server.run()"
+    },
+    "code_snippet_proxy": {
+      "language": "python",
+      "code": "from fastapi import FastAPI, Request, HTTPException\nimport stripe\n\napp = FastAPI()\nstripe.api_key = 'sk_test_...'\n\n@app.post('/mcp')\nasync def mcp_proxy(request: Request):\n    api_key = request.headers.get('X-API-Key')\n    if not api_key:\n        raise HTTPException(status_code=401, detail='Missing API key')\n    # Check credits in DB\n    credits = get_credits(api_key)\n    if credits < 1:\n        raise HTTPException(status_code=402, detail='Insufficient credits')\n    # Deduct credit\n    deduct_credit(api_key, 1)\n    # Forward to MCP server\n    response = await forward_to_mcp(request)\n    return response"
+    }
+  },
+  "revenue_model": {
+    "per_call_pricing": "$0.10 per call (or $10 for 100 calls)",
+    "estimated_monthly_revenue": "$500-$5,000 (assuming 5,000-50,000 calls/month from multiple agents)",
+    "target_market": "AI agents needing specialized data analysis, code generation, or API integrations"
+  },
+  "complexity": "MEDIUM",
+  "capital_required": "$500 (Stripe fees, server hosting, domain)",
+  "limitations": {
+    "1": "No native MCP payment standard; you must build custom billing.",
+    "2": "Calling agents must be configured to send API keys and handle 402 errors.",
+    "3": "Claude Desktop and Cursor cannot directly call remote MCP servers without custom clients.",
+    "4": "OpenAI function calling requires the agent to make an HTTP call; not all agents support this."
+  },
+  "recommendation": "Build a paid MCP tool with Stripe credits. Target advanced users who can configure their agents to call HTTP endpoints. This is viable today for developer communities, but not for mass adoption."
+}

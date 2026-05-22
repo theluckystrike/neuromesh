@@ -1,0 +1,94 @@
+{
+  "license_infrastructure": {
+    "free_tier": {
+      "default": true,
+      "metered_cap": "100 API calls/month",
+      "storage": "~/.config/agent/license",
+      "validation": "on each run"
+    },
+    "payment_processors": [
+      {
+        "name": "Keygen.sh",
+        "cost": "Free tier: 100 licenses, $29/month for 1,000 licenses, $99/month for unlimited",
+        "features": "License keys, metering, webhooks, offline validation via HMAC, automatic expiration, tiered pricing, usage caps",
+        "api_quality": "Excellent: RESTful, SDKs for Node/Python/Go, webhook events, idempotent endpoints",
+        "cli_integration_effort": "Low: 3 API calls (create license, validate, report usage), 50 lines of code",
+        "estimated_monthly_revenue": "$500-$5,000 (assuming 100-1,000 paid users at $5-$50/month)",
+        "implementation_complexity": "Low",
+        "capital_required": "$0 (free tier start)"
+      },
+      {
+        "name": "LemonSqueezy License Keys",
+        "cost": "5% + $0.50 per transaction, no monthly fee",
+        "features": "License key generation, validation API, webhooks, customer portal, subscription management",
+        "api_quality": "Good: RESTful, but limited metering (no usage caps built-in, must implement externally)",
+        "cli_integration_effort": "Medium: 2 API calls (validate key, track usage via custom endpoint), 80 lines of code",
+        "estimated_monthly_revenue": "$500-$3,000 (after transaction fees)",
+        "implementation_complexity": "Medium",
+        "capital_required": "$0"
+      },
+      {
+        "name": "Gumroad License Keys",
+        "cost": "8.5% + $0.30 per transaction, no monthly fee",
+        "features": "License key generation, validation API, webhooks, no metering or usage caps",
+        "api_quality": "Fair: RESTful, but limited to key validation only, no usage tracking",
+        "cli_integration_effort": "Low: 1 API call (validate key), 30 lines of code, but metering must be self-built",
+        "estimated_monthly_revenue": "$200-$2,000 (after fees, limited by no metering)",
+        "implementation_complexity": "Low (but metering adds complexity)",
+        "capital_required": "$0"
+      },
+      {
+        "name": "Self-hosted via Supabase",
+        "cost": "Free tier: 500 MB database, 50,000 monthly active users; Pro: $25/month for 8 GB, 100,000 users",
+        "features": "Full control: custom license table, usage tracking, webhooks, Stripe integration via Edge Functions",
+        "api_quality": "Excellent: PostgreSQL, RESTful auto-generated APIs, real-time subscriptions, Row Level Security",
+        "cli_integration_effort": "High: 4 API calls (validate key, check usage, increment usage, handle errors), 150 lines of code, plus Stripe webhook setup",
+        "estimated_monthly_revenue": "$500-$10,000 (full control, no per-license fees)",
+        "implementation_complexity": "High",
+        "capital_required": "$0 (free tier) or $25/month (pro)"
+      },
+      {
+        "name": "Stripe + Custom Validation",
+        "cost": "2.9% + $0.30 per transaction, no monthly fee",
+        "features": "Stripe Checkout for payment, custom license key generation (UUID), metering via Stripe Billing (usage records), webhooks",
+        "api_quality": "Excellent: Stripe API is top-tier, but metering requires custom implementation for license keys (Stripe doesn't natively generate keys)",
+        "cli_integration_effort": "High: 3 API calls (validate key against your DB, check usage from Stripe, report usage), 200 lines of code, plus Stripe webhook for key generation",
+        "estimated_monthly_revenue": "$500-$5,000 (after fees, but high dev cost)",
+        "implementation_complexity": "High",
+        "capital_required": "$0"
+      }
+    ],
+    "offline_validation": {
+      "possible": true,
+      "method": "HMAC-based license key with embedded expiry and usage cap (e.g., key = HMAC(user_id + tier + expiry + cap, secret)). CLI decrypts locally, checks expiry, and decrements a local counter. Requires periodic online sync to prevent replay attacks.",
+      "pros": "Works without internet, simple implementation",
+      "cons": "Vulnerable to clock tampering, key sharing, and counter reset. Not recommended for production without additional obfuscation.",
+      "recommendation": "Use only for low-value agents; combine with online validation for critical metering."
+    },
+    "anti_piracy": {
+      "difficulty_to_crack": "Low to Medium. CLI agents are easy to reverse-engineer (Python/Node scripts). License keys can be extracted from memory or config files. Obfuscation (e.g., PyArmor, pkg) adds minor friction but not security.",
+      "does_it_matter": "For B2B agents targeting developers, piracy is minimal due to ethical norms and need for updates. For B2C, it matters more. Focus on value-add (cloud features, updates) rather than DRM.",
+      "mitigation": "Use online validation with rate limiting, ban keys on abuse, and offer a generous free tier to reduce incentive."
+    },
+    "simplest_implementation": {
+      "recommendation": "Keygen.sh",
+      "steps": [
+        "1. Sign up for Keygen.sh free tier (100 licenses).",
+        "2. Create a product with two tiers: free (100 calls/month) and pro (unlimited).",
+        "3. Integrate Stripe Checkout via Keygen's webhooks to auto-generate license keys on payment.",
+        "4. In CLI agent: on first run, check ~/.config/agent/license for key. If missing, set free tier key (generated via Keygen API).",
+        "5. On each run, call Keygen validate endpoint with key. If invalid or expired, prompt user to upgrade.",
+        "6. Report usage via Keygen's usage endpoint after each API call.",
+        "7. Cap free tier at 100 calls/month via Keygen metering."
+      ],
+      "code_snippet": {
+        "language": "Python",
+        "lines": 50,
+        "key_function": "def validate_and_meter(key):\n    import requests\n    resp = requests.post('https://api.keygen.sh/v1/accounts/{account}/licenses/{key}/actions/validate', headers={'Authorization': 'Bearer {token}'})\n    data = resp.json()\n    if data['meta']['valid']:\n        # Check usage\n        usage_resp = requests.get(f'https://api.keygen.sh/v1/accounts/{account}/licenses/{key}/usage', headers={'Authorization': 'Bearer {token}'})\n        usage = usage_resp.json()['data'][0]['attributes']['count']\n        if usage < 100 or data['data']['attributes']['tier'] == 'pro':\n            # Report usage\n            requests.post(f'https://api.keygen.sh/v1/accounts/{account}/licenses/{key}/usage', json={'data': {'type': 'usage', 'attributes': {'count': 1}}}, headers={'Authorization': 'Bearer {token}'})\n            return True\n    return False"
+      },
+      "estimated_monthly_revenue": "$500-$2,000 (with minimal effort)",
+      "implementation_complexity": "Low",
+      "capital_required": "$0"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "opportunity": {
+    "name": "Docker-distributed AI agent with MCP server and monetized pulls",
+    "summary": "Publish a Docker image containing a DeepSeek-powered MCP server that other agents can pull and run via `docker run neuromesh/sprint --query '...'`. Monetize through pull-based licensing, premium tier images, or usage metering via a companion API.",
+    "implementation_details": {
+      "publish_deepseek_agent_image": {
+        "answer": "Yes. Create a Dockerfile that installs Python, the DeepSeek API client (or local model via Ollama), and an MCP server (e.g., FastMCP). Build and push to Docker Hub as `neuromesh/sprint`.",
+        "steps": [
+          "Write Dockerfile: FROM python:3.12-slim, COPY agent.py, RUN pip install fastmcp deepseek-ai, CMD [\"python\", \"agent.py\"]",
+          "Build: docker build -t neuromesh/sprint .",
+          "Push: docker push neuromesh/sprint"
+        ]
+      },
+      "docker_hub_discovery": {
+        "answer": "Users find images via Docker Hub search (web or CLI `docker search`), ranking by pulls/stars, tags, and official vs community badges. Discovery is limited compared to npm/GitHub; images are found by exact name or category.",
+        "stats": "Top AI images (e.g., ollama/ollama) have 100M+ pulls; typical new images get <1K pulls/month without promotion."
+      },
+      "docker_hub_stats": {
+        "pulls": "neuromesh/sprint estimated 500-2000 pulls/month initially, growing with SEO and cross-posting.",
+        "stars": "5-50 stars typical for niche agent images.",
+        "ranking": "Influenced by pull count, freshness, and official status. New images rank low without external links."
+      },
+      "monetization_possibility": {
+        "answer": "Yes, limited. Docker Hub does not natively support paid pulls. Monetize via: (1) Freemium: free tier with rate limits, paid API key for unlimited queries (metered via external service). (2) Sponsored pulls: partner with cloud providers. (3) Premium images: private repo with subscription (Docker Hub charges for private repos, but you can gate access).",
+        "model": "Use a companion API at api.neuromesh.io/check-license that the container calls on startup. Free tier: 100 queries/day. Paid: $10/month for unlimited."
+      },
+      "docker_run_agent_design": {
+        "command": "docker run neuromesh/sprint --query 'your question'",
+        "implementation": "Agent.py uses argparse to parse --query, sends to DeepSeek API (or local model), prints result. MCP server runs in background for agent-to-agent communication.",
+        "example_output": "Answer: The sprint velocity is 42 story points."
+      },
+      "docker_vs_npx_friction": {
+        "answer": "npx has lower friction: no Docker installation, no daemon, no pull time. Docker requires Docker Desktop/Engine, 1-5s pull, and more disk space. For agent-to-agent, Docker provides isolation and reproducibility; npx is simpler for end-users.",
+        "recommendation": "Offer both: `npx neuromesh-sprint` for quick use, `docker run` for production/agent orchestration."
+      },
+      "docker_hub_vs_ghcr_discovery": {
+        "answer": "Docker Hub has larger user base and better search ranking for generic images. GitHub Container Registry (GHCR) integrates with GitHub packages, has no pull limits for public images, and is preferred by developers already on GitHub. Discovery is worse on GHCR due to less traffic.",
+        "verdict": "Docker Hub for discovery; GHCR for cost (free pulls) and CI integration."
+      },
+      "docker_based_mcp_server": {
+        "answer": "Yes. Build an MCP server (e.g., using FastMCP) that exposes tools like `query_deepseek`. Package in Docker image. Other agents can pull and run: `docker run -d neuromesh/mcp-server --port 8000`. They then connect via MCP protocol (JSON-RPC over HTTP/SSE).",
+        "example": "Agent A sends MCP request to Agent B's container: `curl -X POST http://agent-b:8000/mcp -d '{\"tool\":\"ask\",\"params\":{\"query\":\"...\"}}'`"
+      },
+      "compose_files_for_orchestration": {
+        "answer": "Yes. Provide a docker-compose.yml that spins up multiple agents (e.g., neuromesh/sprint, neuromesh/planner, neuromesh/executor) with shared network and volume. Example:",
+        "compose_content": "version: '3.8'\nservices:\n  sprint:\n    image: neuromesh/sprint\n    environment:\n      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}\n    ports:\n      - '8000:8000'\n  planner:\n    image: neuromesh/planner\n    depends_on:\n      - sprint\n    environment:\n      - MCP_ENDPOINT=http://sprint:8000/mcp"
+      },
+      "revenue_model": {
+        "primary": "Usage-based licensing via external API: container calls api.neuromesh.io/check-license on startup. Free tier: 100 queries/day. Paid: $10/month (unlimited).",
+        "secondary": "Premium images: `neuromesh/sprint-pro` with advanced features (e.g., multi-model, caching) available via Docker Hub private repo subscription ($5/month).",
+        "tertiary": "Sponsored pulls: partner with cloud GPU providers (e.g., RunPod, Vast.ai) to offer optimized images with referral fees.",
+        "estimated_monthly_revenue": "At 1000 active users, 5% conversion to paid: 50 * $10 = $500/month. Plus premium images: 20 * $5 = $100/month. Total ~$600/month.",
+        "implementation_complexity": "Medium (Dockerfile, MCP server, licensing API, billing integration).",
+        "capital_required": "$50/month for Docker Hub subscription (if private repos) + $20/month for API hosting (e.g., Vercel/Heroku)."
+      }
+    },
+    "real_platforms": {
+      "docker_hub": "hub.docker.com",
+      "ghcr": "ghcr.io",
+      "deepseek_api": "platform.deepseek.com",
+      "fastmcp": "pypi.org/project/fastmcp",
+      "ollama": "ollama.com (for local model option)"
+    },
+    "date": "2026-05-22"
+  }
+}

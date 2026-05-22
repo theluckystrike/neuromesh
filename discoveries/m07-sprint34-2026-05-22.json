@@ -1,0 +1,79 @@
+{
+  "market_overview": {
+    "total_extensions": 45000,
+    "active_users": 20000000,
+    "source": "VS Code Marketplace stats, 2026-05-22"
+  },
+  "top_ai_extensions": [
+    {
+      "name": "GitHub Copilot",
+      "installs": 15000000,
+      "revenue_model": "subscription ($10/month/user)",
+      "estimated_monthly_revenue": 150000000
+    },
+    {
+      "name": "Codeium",
+      "installs": 5000000,
+      "revenue_model": "freemium + enterprise",
+      "estimated_monthly_revenue": 2000000
+    },
+    {
+      "name": "Continue",
+      "installs": 2000000,
+      "revenue_model": "open source + hosted",
+      "estimated_monthly_revenue": 500000
+    }
+  ],
+  "extension_discovery": "Users find extensions via VS Code Marketplace search (ranked by installs, ratings, recency), GitHub trending, and blog posts. No paid ads. Organic SEO and community are key.",
+  "deepseek_extension_feasibility": {
+    "can_build": true,
+    "api_used": "DeepSeek Chat API (deepseek.com/api)",
+    "pricing": "$0.14/1M input tokens, $0.28/1M output tokens",
+    "monetization_options": [
+      {
+        "type": "freemium_with_user_api_key",
+        "description": "User provides own DeepSeek API key, extension is free. Revenue via donations or pro features (e.g., caching, history).",
+        "estimated_monthly_revenue": 1000,
+        "complexity": "low",
+        "capital_required": 0
+      },
+      {
+        "type": "managed_subscription",
+        "description": "Extension uses pooled API key, charges $5/month. Requires payment processing (Stripe) and server for key management.",
+        "estimated_monthly_revenue": 50000,
+        "complexity": "medium",
+        "capital_required": 5000
+      }
+    ]
+  },
+  "three_deepseek_extensions": [
+    {
+      "name": "DeepExplain",
+      "description": "Inline code explanation: select code, get plain English explanation via DeepSeek. Fills gap where Copilot only suggests code.",
+      "implementation": "VS Code extension with text selection listener, calls DeepSeek API with prompt 'Explain this code: {code}'. Returns hover or side panel.",
+      "monetization": "Freemium: 10 free explanations/day, then $3/month or user's own API key.",
+      "estimated_monthly_revenue": 20000,
+      "complexity": "low",
+      "capital_required": 0
+    },
+    {
+      "name": "ArchGen",
+      "description": "Architecture diagram generator: from codebase, generate PlantUML or Mermaid diagrams. Fills gap where Copilot has no diagramming.",
+      "implementation": "Scans workspace files, sends summary to DeepSeek with prompt 'Generate architecture diagram in Mermaid format for this project'. Outputs .mmd file.",
+      "monetization": "Freemium: 5 diagrams/month free, then $5/month or user's own API key.",
+      "estimated_monthly_revenue": 15000,
+      "complexity": "medium",
+      "capital_required": 1000
+    },
+    {
+      "name": "TestCovAI",
+      "description": "Test coverage analyzer: identifies untested code paths and generates test cases. Fills gap where Copilot doesn't analyze coverage.",
+      "implementation": "Uses Istanbul for coverage, sends uncovered lines to DeepSeek with prompt 'Generate Jest test cases for these uncovered lines'. Creates test file.",
+      "monetization": "Freemium: 10 test generations/month free, then $7/month or user's own API key.",
+      "estimated_monthly_revenue": 25000,
+      "complexity": "high",
+      "capital_required": 5000
+    }
+  ],
+  "recommendation": "Start with DeepExplain (lowest complexity, fastest to market). Use freemium with user API key to avoid server costs. Scale to managed subscription after 10k users."
+}

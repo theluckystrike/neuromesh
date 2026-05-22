@@ -1,0 +1,70 @@
+{
+  "opportunities": [
+    {
+      "platform": "Zapier",
+      "integration_type": "Public Zapier App via CLI (Zapier Platform CLI)",
+      "revenue_model": "Paid plan tiers (e.g., $19.99/month for 5 Zaps, $49.99/month for 20 Zaps) with revenue share (20% to Zapier, 80% to developer). Estimated monthly revenue per user: $4\u2013$10 (after split).",
+      "user_base": "Over 3 million active users (2026 estimate). Discovery via Zapier's App Directory (searchable, categorized). Monetization via subscription fees.",
+      "implementation_complexity": "Medium. Requires Node.js, Zapier CLI, OAuth2 setup, and DeepSeek API key. Build time: 2\u20134 weeks.",
+      "capital_required": "$500\u2013$1,000 (API credits, hosting, testing).",
+      "competition_level": "High. ~200 AI integrations exist (e.g., OpenAI, Anthropic, Cohere). Differentiation via specialized DeepSeek models (e.g., code, math)."
+    },
+    {
+      "platform": "Make.com",
+      "integration_type": "Public Make App via API (Make Developer Platform)",
+      "revenue_model": "Paid plan tiers (e.g., $9/month for 1,000 ops, $29/month for 10,000 ops) with revenue share (30% to Make, 70% to developer). Estimated monthly revenue per user: $3\u2013$8.",
+      "user_base": "Over 2 million active users (2026 estimate). Discovery via Make's App Marketplace (searchable, rated). Monetization via subscription fees.",
+      "implementation_complexity": "Medium. Requires Python/Node.js, Make's API SDK, OAuth2, and DeepSeek API. Build time: 3\u20135 weeks.",
+      "capital_required": "$500\u2013$1,000 (API credits, hosting, testing).",
+      "competition_level": "Medium. ~150 AI integrations exist (e.g., OpenAI, Gemini, Claude). Differentiation via DeepSeek's cost-efficiency ($0.14/M tokens vs OpenAI $0.50/M)."
+    },
+    {
+      "platform": "n8n",
+      "integration_type": "Community Node (npm package) for n8n",
+      "revenue_model": "Freemium: free node with rate limits (e.g., 100 calls/day), paid license ($10\u2013$20/month) for unlimited calls. Estimated monthly revenue per user: $2\u2013$5.",
+      "user_base": "Over 500,000 active users (2026 estimate). Discovery via n8n's community node registry (npm, GitHub). Monetization via Patreon or Gumroad license keys.",
+      "implementation_complexity": "Low\u2013Medium. Requires TypeScript, n8n node SDK, and DeepSeek API. Build time: 1\u20133 weeks.",
+      "capital_required": "$200\u2013$500 (API credits, npm publishing, hosting).",
+      "competition_level": "Low. ~50 AI nodes exist (e.g., OpenAI, Hugging Face). First-mover advantage for DeepSeek."
+    },
+    {
+      "agent_name": "Email Classifier",
+      "description": "Classifies incoming emails (via Gmail API) into categories (urgent, spam, newsletter, personal) using DeepSeek's chat completion. Integrates with Zapier/Make via webhook triggers.",
+      "implementation": "Zapier: Webhook trigger \u2192 DeepSeek API action \u2192 Gmail label. Make: Gmail watch \u2192 DeepSeek module \u2192 Gmail label. n8n: Gmail trigger \u2192 DeepSeek node \u2192 Gmail node.",
+      "estimated_monthly_revenue": "$5\u2013$15 per user (based on 1,000\u20135,000 emails/month).",
+      "capital_required": "$100 (API credits, hosting)."
+    },
+    {
+      "agent_name": "Lead Scorer",
+      "description": "Scores CRM leads (via HubSpot API) based on intent, company size, and engagement using DeepSeek's structured output. Integrates with Zapier/Make via CRM triggers.",
+      "implementation": "Zapier: HubSpot new contact \u2192 DeepSeek score \u2192 HubSpot custom field. Make: HubSpot watch \u2192 DeepSeek module \u2192 HubSpot update. n8n: HubSpot trigger \u2192 DeepSeek node \u2192 HubSpot node.",
+      "estimated_monthly_revenue": "$10\u2013$30 per user (based on 500\u20132,000 leads/month).",
+      "capital_required": "$200 (API credits, CRM access)."
+    },
+    {
+      "agent_name": "Content Repurposer",
+      "description": "Repurposes blog posts (via WordPress API) into social media posts (Twitter, LinkedIn) using DeepSeek's text generation. Integrates with Zapier/Make via content triggers.",
+      "implementation": "Zapier: WordPress new post \u2192 DeepSeek generate \u2192 Twitter/LinkedIn action. Make: WordPress watch \u2192 DeepSeek module \u2192 social media modules. n8n: WordPress trigger \u2192 DeepSeek node \u2192 social media nodes.",
+      "estimated_monthly_revenue": "$8\u2013$20 per user (based on 10\u201350 posts/month).",
+      "capital_required": "$150 (API credits, social media API access)."
+    },
+    {
+      "agent_name": "Invoice Processor",
+      "description": "Extracts and categorizes invoice data (via Stripe or PDF API) using DeepSeek's vision and text models. Integrates with Zapier/Make via file triggers.",
+      "implementation": "Zapier: Gmail attachment \u2192 DeepSeek vision \u2192 accounting software (QuickBooks). Make: Dropbox file \u2192 DeepSeek module \u2192 QuickBooks module. n8n: Email trigger \u2192 DeepSeek node \u2192 accounting node.",
+      "estimated_monthly_revenue": "$15\u2013$40 per user (based on 100\u2013500 invoices/month).",
+      "capital_required": "$300 (API credits, PDF parsing service)."
+    },
+    {
+      "agent_name": "Support Ticket Categorizer",
+      "description": "Categorizes support tickets (via Zendesk API) into topics (billing, technical, feature request) using DeepSeek's classification. Integrates with Zapier/Make via ticket triggers.",
+      "implementation": "Zapier: Zendesk new ticket \u2192 DeepSeek classify \u2192 Zendesk tag. Make: Zendesk watch \u2192 DeepSeek module \u2192 Zendesk update. n8n: Zendesk trigger \u2192 DeepSeek node \u2192 Zendesk node.",
+      "estimated_monthly_revenue": "$10\u2013$25 per user (based on 500\u20132,000 tickets/month).",
+      "capital_required": "$200 (API credits, Zendesk access)."
+    }
+  ],
+  "summary": {
+    "total_ai_integrations_zapier": "~200 (2026 estimate). Competition: high but DeepSeek's cost advantage (70% cheaper than OpenAI) provides niche.",
+    "api_cli_manageable": "Yes. All platforms (Zapier CLI, Make API, n8n CLI) support headless deployment. DeepSeek API is RESTful. Automation via cron jobs or serverless functions (AWS Lambda, Vercel)."
+  }
+}

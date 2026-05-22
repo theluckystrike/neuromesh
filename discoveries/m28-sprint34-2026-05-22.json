@@ -1,0 +1,105 @@
+{
+  "system_name": "AgentForge",
+  "architecture": {
+    "cli_tool": {
+      "package_manager": "npm",
+      "package_name": "agentforge-cli",
+      "free_tier": {
+        "requests_per_month": 1000,
+        "models": [
+          "deepseek-chat"
+        ],
+        "rate_limit": "10 req/min"
+      },
+      "authentication": "API key generated via CLI login or web signup"
+    },
+    "web_app": {
+      "framework": "Next.js (static export)",
+      "deployment": "Vercel or Netlify",
+      "paid_tier": {
+        "monthly_price": 29,
+        "requests_per_month": 50000,
+        "models": [
+          "deepseek-chat",
+          "deepseek-coder"
+        ],
+        "features": [
+          "dashboard analytics",
+          "team management",
+          "priority support"
+        ]
+      },
+      "backend_api": "Same as CLI \u2014 calls DeepSeek API via your own proxy (for rate limiting, billing)"
+    },
+    "backend": {
+      "api_gateway": "FastAPI or Express.js",
+      "llm_provider": "DeepSeek API (deepseek.com/api)",
+      "billing": "Stripe (stripe.com)",
+      "database": "PostgreSQL (for user keys, usage logs)"
+    }
+  },
+  "revenue_comparison": {
+    "cli_users": {
+      "typical_monthly_revenue_per_user": 0,
+      "conversion_rate_to_paid": "5-10%",
+      "lifetime_value": "~$150 (if upgrade to $29/mo for 6 months)",
+      "primary_value": "organic distribution, word-of-mouth, developer ecosystem"
+    },
+    "web_users": {
+      "typical_monthly_revenue_per_user": 29,
+      "average_retention_months": 12,
+      "lifetime_value": "~$348",
+      "primary_value": "higher willingness to pay, less churn"
+    },
+    "conclusion": "Web users generate 2-3x more revenue per user, but CLI users drive acquisition. For a bootstrapped system, web revenue dominates after 6 months."
+  },
+  "web_dashboard_feasibility": {
+    "answer": "Yes, a static HTML/JS page can call your API directly. Use client-side API keys with CORS restrictions and rate limiting. For Stripe, use Stripe Checkout (redirect) \u2014 no server needed. Example: static site on Vercel with environment variables for API endpoint."
+  },
+  "build_time_estimate": {
+    "cli_tool": {
+      "hours": 40,
+      "tasks": [
+        "npm package scaffolding",
+        "DeepSeek API integration",
+        "rate limiting",
+        "API key management",
+        "usage tracking"
+      ]
+    },
+    "minimal_web_wrapper": {
+      "hours": 20,
+      "tasks": [
+        "Next.js static export",
+        "login/signup page",
+        "Stripe Checkout integration",
+        "dashboard (usage chart)",
+        "deployment"
+      ]
+    },
+    "total": 60
+  },
+  "implementation_steps": [
+    "1. Set up DeepSeek API account and get API key.",
+    "2. Build backend proxy (FastAPI) with user auth, rate limiting, usage logging.",
+    "3. Create Stripe product and price IDs.",
+    "4. Build CLI tool (Node.js) \u2014 use 'commander' for CLI, 'axios' for API calls.",
+    "5. Build web app (Next.js static export) \u2014 use 'next-auth' for login, Stripe Checkout for payment.",
+    "6. Deploy backend to Railway or Fly.io, web to Vercel, CLI to npm.",
+    "7. Test end-to-end: CLI free tier -> web upgrade -> usage tracking."
+  ],
+  "estimated_monthly_revenue": {
+    "year_1": {
+      "cli_free_users": 10000,
+      "cli_paid_conversions": 500,
+      "web_paid_users": 200,
+      "total_monthly_revenue": "(500 * 29) + (200 * 29) = $20,300"
+    }
+  },
+  "capital_required": {
+    "development": "$0 (self-built, 60 hours)",
+    "hosting": "$20/month (Railway + Vercel)",
+    "stripe_fees": "2.9% + $0.30 per transaction",
+    "deepseek_api_costs": "~$0.50 per 1M tokens (estimate $50/month for 10k users)"
+  }
+}

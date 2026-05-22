@@ -1,0 +1,84 @@
+{
+  "opportunities": [
+    {
+      "name": "PR Review Webhook Agent",
+      "description": "Agent listens for GitHub pull request webhooks, processes diffs with DeepSeek API, and posts review comments via GitHub API.",
+      "architecture": "User registers webhook URL at your endpoint. GitHub sends PR event \u2192 agent fetches diff via GitHub API \u2192 sends to DeepSeek for review \u2192 posts comments back via GitHub API.",
+      "platforms": [
+        "GitHub Webhooks",
+        "DeepSeek API",
+        "GitHub API"
+      ],
+      "price": "$9/mo per repo",
+      "revenue_at_100_customers": "$900/mo",
+      "implementation_complexity": "Medium",
+      "capital_required": "$50/mo (DeepSeek API credits, server costs)",
+      "fully_automatable": true,
+      "agent_to_agent": true,
+      "currently_possible": true,
+      "estimated_monthly_revenue_per_customer": "$9",
+      "notes": "Assume 1 repo per customer average. DeepSeek cost ~$0.01 per review, profit $8.99 per review."
+    },
+    {
+      "name": "Lead Enrichment Webhook Agent",
+      "description": "Agent receives form submission webhooks (e.g., from Typeform, HubSpot), extracts company domain, uses DeepSeek to research company (via web search or API), and sends enriched data (industry, size, contacts) back via webhook response or email.",
+      "architecture": "User registers webhook URL. Form submission event \u2192 agent extracts email/domain \u2192 queries DeepSeek with company name \u2192 returns enriched JSON to user's callback URL.",
+      "platforms": [
+        "Typeform Webhooks",
+        "HubSpot Webhooks",
+        "DeepSeek API",
+        "Clearbit API (optional)"
+      ],
+      "price": "$0.10/lead",
+      "revenue_at_100_customers": "Assuming 1000 leads/mo per customer = $10,000/mo",
+      "implementation_complexity": "Medium",
+      "capital_required": "$100/mo (DeepSeek API, Clearbit API if used)",
+      "fully_automatable": true,
+      "agent_to_agent": true,
+      "currently_possible": true,
+      "estimated_monthly_revenue_per_customer": "$100 (1000 leads)",
+      "notes": "DeepSeek cost ~$0.02 per enrichment, profit $0.08 per lead."
+    },
+    {
+      "name": "Support Ticket Classifier Webhook Agent",
+      "description": "Agent receives email webhooks (via SendGrid or similar) containing support tickets, uses DeepSeek to categorize (billing, technical, feature request), and routes to appropriate Slack channel or email address.",
+      "architecture": "User registers webhook URL. Email sent to your endpoint \u2192 agent parses email body \u2192 sends to DeepSeek for classification \u2192 sends result to user's Slack webhook or email.",
+      "platforms": [
+        "SendGrid Inbound Parse Webhook",
+        "DeepSeek API",
+        "Slack Webhooks"
+      ],
+      "price": "$0.05/ticket",
+      "revenue_at_100_customers": "Assuming 500 tickets/mo per customer = $2,500/mo",
+      "implementation_complexity": "Low",
+      "capital_required": "$50/mo (DeepSeek API, server costs)",
+      "fully_automatable": true,
+      "agent_to_agent": true,
+      "currently_possible": true,
+      "estimated_monthly_revenue_per_customer": "$25 (500 tickets)",
+      "notes": "DeepSeek cost ~$0.01 per classification, profit $0.04 per ticket."
+    },
+    {
+      "name": "Invoice Processor Webhook Agent",
+      "description": "Agent receives invoice PDFs via webhook (e.g., from email or upload), uses DeepSeek to extract fields (invoice number, date, amount, line items), and sends data to accounting API (e.g., QuickBooks, Xero).",
+      "architecture": "User registers webhook URL. Invoice PDF sent as attachment \u2192 agent downloads PDF, converts to text (e.g., via PyPDF2), sends to DeepSeek for extraction \u2192 posts to accounting API.",
+      "platforms": [
+        "Email Webhooks (SendGrid)",
+        "DeepSeek API",
+        "QuickBooks API",
+        "Xero API"
+      ],
+      "price": "$0.25/invoice",
+      "revenue_at_100_customers": "Assuming 200 invoices/mo per customer = $5,000/mo",
+      "implementation_complexity": "High",
+      "capital_required": "$100/mo (DeepSeek API, PDF parsing, server costs)",
+      "fully_automatable": true,
+      "agent_to_agent": true,
+      "currently_possible": true,
+      "estimated_monthly_revenue_per_customer": "$50 (200 invoices)",
+      "notes": "DeepSeek cost ~$0.05 per invoice, profit $0.20 per invoice."
+    }
+  ],
+  "total_revenue_at_100_customers": "$18,400/mo",
+  "notes": "All services use webhook registration, DeepSeek processing, and response via webhook/email. CLI management via simple Node.js or Python script. Capital includes API costs and basic server (e.g., $20/mo VPS). Implementation complexity: Low = <1 week, Medium = 1-2 weeks, High = 2-4 weeks."
+}

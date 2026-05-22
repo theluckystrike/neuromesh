@@ -1,0 +1,44 @@
+{
+  "opportunity": {
+    "name": "Edge-Powered CLI Agent Backend",
+    "description": "Use Cloudflare Workers as a zero-ops backend for CLI agents that call DeepSeek API. The CLI (npm-installed) sends requests to a Worker, which proxies to DeepSeek and returns results. Fully automatable via CLI/API, agent-to-agent (CLI agent to Worker agent), currently possible in 2026.",
+    "platforms": {
+      "compute": "Cloudflare Workers",
+      "storage": "Cloudflare Workers KV",
+      "ai_api": "DeepSeek API (deepseek.com)",
+      "cli_tool": "Node.js CLI via npm (e.g., oclif or commander)"
+    },
+    "architecture": {
+      "step1": "CLI tool installed via npm, sends HTTP POST to Worker URL with prompt.",
+      "step2": "Worker receives request, validates API key from KV, calls DeepSeek API.",
+      "step3": "Worker streams or returns response to CLI.",
+      "step4": "CLI displays result. Billing handled via Worker (e.g., Stripe or crypto)."
+    },
+    "feasibility_analysis": {
+      "free_tier_limits": {
+        "cloudflare_workers": "100,000 requests/day free (paid: unlimited at $5/month for 10M requests). Sufficient for small-scale agents.",
+        "vercel_edge": "1M requests/month free (100ms execution), but 10s timeout limit (too low for DeepSeek). Workers better."
+      },
+      "latency": "Edge adds ~50-100ms vs direct DeepSeek call. Negligible for LLM responses (1-5s). Workers in 300+ locations reduce global latency for CLI users.",
+      "timeout": "Cloudflare Workers: 30s default, up to 900s (15 min) with paid plan ($5/month). DeepSeek calls <60s, so 30s default may fail. Use paid plan or upgrade to 60s via `requestTimeoutMs` (not supported). Workaround: use Durable Objects (no timeout) or split calls. Viable with paid Workers.",
+      "state_and_keys": "Yes, Workers KV stores API keys, user state, and usage counters. 1GB free, $0.50/GB after. Key-value pairs with TTL.",
+      "billing": "Yes, implement usage-based billing via Stripe API (checkout sessions) or crypto (Solana Pay). Worker handles webhooks and KV for credits."
+    },
+    "cost_comparison": {
+      "cloudflare_workers_paid": "$5/month for 10M requests + $0.50/GB KV. Total ~$10/month for 1M requests.",
+      "vps_4_49": "$4.49/month (e.g., RackNerd) + $0.50 for domain + maintenance. Requires setup, monitoring, scaling. At 1M requests, VPS may need upgrade ($10-20/month).",
+      "aws_lambda": "$0.20 per 1M requests + $0.0000166667/GB-second. For 1M requests at 1s each: ~$16.67/month. More expensive.",
+      "conclusion": "Workers cheaper than Lambda and comparable to VPS at low scale. At high scale (10M+ req), Workers $5/month beats VPS ($20+)."
+    },
+    "revenue_model": "Usage-based billing: $0.001 per request (1000 requests for $1). With 100K requests/month, revenue $100. Cost: $10 (Workers) + DeepSeek API ($0.14/1M tokens, ~$14 for 1M requests at 100 tokens each) = $24. Profit: $76/month.",
+    "estimated_monthly_revenue": "$76 (low scale, 100K req) to $760 (1M req).",
+    "implementation_complexity": "Medium (2-3 days). Steps: (1) Write Worker in JavaScript/TypeScript with DeepSeek API call. (2) Set up KV for keys/state. (3) Build CLI tool with npm. (4) Integrate Stripe for billing. (5) Deploy via wrangler CLI.",
+    "capital_required": "$10 (Cloudflare Workers paid plan) + $0 (DeepSeek free tier for testing) + $0 (Stripe free). Total: $10.",
+    "risks": {
+      "timeout": "DeepSeek calls >30s may fail on free plan. Use paid Workers with Durable Objects or split requests.",
+      "rate_limits": "DeepSeek API rate limits (unknown, but typical 60 req/min). Implement queue in Worker.",
+      "billing_complexity": "Stripe integration requires webhook handling. Use crypto for simpler on-chain billing."
+    },
+    "recommendation": "Viable and profitable. Use Cloudflare Workers paid plan ($5/month) with Durable Objects for long-running DeepSeek calls. Start with 100K requests/day, scale up. Cheaper than VPS at scale, zero ops."
+  }
+}

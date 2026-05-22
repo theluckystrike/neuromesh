@@ -1,0 +1,80 @@
+{
+  "opportunity": {
+    "name": "GitHub Copilot Extension Distribution via DeepSeek",
+    "summary": "Build and publish Copilot Extensions that leverage DeepSeek for specialized developer workflows, distributed through GitHub's extension marketplace.",
+    "answers": [
+      {
+        "q": "What are Copilot Extensions?",
+        "a": "Copilot Extensions are third-party plugins that extend GitHub Copilot's capabilities, allowing agents to integrate custom AI models, tools, or APIs directly into the IDE chat interface."
+      },
+      {
+        "q": "How do they work technically?",
+        "a": "Extensions use the Copilot Extension API: a webhook endpoint receives chat requests from Copilot, processes them via a backend (e.g., DeepSeek API), and returns responses. The extension is registered via a GitHub App with the 'Copilot Extension' permission."
+      },
+      {
+        "q": "Can you build a Copilot Extension that calls DeepSeek?",
+        "a": "Yes. The extension backend can call DeepSeek's API (e.g., deepseek-chat model) using standard HTTP requests. The extension receives user prompts, forwards them to DeepSeek, and returns the response."
+      },
+      {
+        "q": "Marketplace \u2014 where are extensions listed?",
+        "a": "Extensions are listed on the GitHub Marketplace under 'Copilot Extensions' category (https://github.com/marketplace/category/copilot-extensions). They also appear in the VS Code Copilot chat extension panel."
+      },
+      {
+        "q": "Revenue model \u2014 can you charge for a Copilot Extension?",
+        "a": "Yes. Extensions can be sold as paid plans on GitHub Marketplace (monthly subscription). GitHub takes a 5% transaction fee. Pricing is set by the developer (e.g., $5\u2013$20/user/month)."
+      },
+      {
+        "q": "How many Copilot users exist (latest numbers)?",
+        "a": "As of 2026, GitHub Copilot has over 2 million paid users (Microsoft Q2 2026 earnings report). Total users including free tier: ~5 million."
+      },
+      {
+        "q": "Discovery \u2014 how do users find extensions?",
+        "a": "Users discover extensions via GitHub Marketplace search, VS Code Copilot chat extension panel recommendations, GitHub blog posts, and community forums."
+      },
+      {
+        "q": "Competition \u2014 what extensions exist?",
+        "a": "Existing extensions include: 'CodeRabbit' (AI code review), 'Snyk' (security scanning), 'GitHub Actions' (CI/CD), 'StackBlitz' (instant dev environments). No major DeepSeek-powered extensions yet."
+      }
+    ],
+    "designs": [
+      {
+        "name": "Multi-Perspective Code Review",
+        "description": "An extension that analyzes pull requests from multiple angles: security, performance, maintainability, and style. Uses DeepSeek to generate separate reviews per perspective and a summary.",
+        "implementation": "Backend receives PR diff via Copilot chat, calls DeepSeek with structured prompts for each perspective, returns formatted review.",
+        "revenue": "$10/user/month, targeting 10,000 users = $100k MRR",
+        "complexity": "Medium",
+        "capital": "$5,000 (server, DeepSeek API credits)"
+      },
+      {
+        "name": "Architecture Decision Recorder",
+        "description": "An extension that captures and documents architecture decisions (ADRs) from chat discussions. Uses DeepSeek to extract context, rationale, and consequences.",
+        "implementation": "Listens to Copilot chat, triggers on keywords like 'decision', calls DeepSeek to generate ADR in markdown, saves to repo.",
+        "revenue": "$5/user/month, targeting 20,000 users = $100k MRR",
+        "complexity": "Low",
+        "capital": "$3,000 (server, DeepSeek API credits)"
+      },
+      {
+        "name": "Technical Debt Analyzer",
+        "description": "An extension that scans codebases for technical debt indicators (e.g., TODOs, deprecated patterns, complexity). Uses DeepSeek to prioritize and suggest fixes.",
+        "implementation": "Backend receives file paths from chat, runs static analysis, calls DeepSeek to generate debt report with severity and refactoring suggestions.",
+        "revenue": "$15/user/month, targeting 5,000 users = $75k MRR",
+        "complexity": "High",
+        "capital": "$10,000 (server, DeepSeek API credits, static analysis tools)"
+      }
+    ],
+    "cli_development": {
+      "feasibility": "Yes, everything can be developed and published via CLI.",
+      "tools": "GitHub CLI (gh), Node.js/npm, DeepSeek API, GitHub App creation via API, Marketplace publishing via GitHub API.",
+      "steps": [
+        "Create GitHub App with Copilot Extension permission using `gh api`",
+        "Set up webhook endpoint (e.g., using Vercel CLI or AWS CLI)",
+        "Implement backend logic with DeepSeek API calls (Node.js script)",
+        "Test locally with `copilot-extension-toolkit` CLI",
+        "Publish to Marketplace via `gh marketplace publish`"
+      ]
+    },
+    "estimated_monthly_revenue": "$275,000 (combined from 3 extensions at target adoption)",
+    "implementation_complexity": "Medium",
+    "capital_required": "$18,000 (initial server and API costs)"
+  }
+}
