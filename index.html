@@ -57,10 +57,10 @@ pre { white-space: pre-wrap; word-wrap: break-word; font-size: 12px; line-height
 </div>
 
 <div class="stats-bar">
-    <div class="stat"><div class="stat-value">32</div><div class="stat-label">Sprints</div></div>
-    <div class="stat"><div class="stat-value">1200</div><div class="stat-label">Agents Run</div></div>
-    <div class="stat"><div class="stat-value">1169</div><div class="stat-label">Discoveries</div></div>
-    <div class="stat"><div class="stat-value">$0.53</div><div class="stat-label">Total Cost</div></div>
+    <div class="stat"><div class="stat-value">33</div><div class="stat-label">Sprints</div></div>
+    <div class="stat"><div class="stat-value">1240</div><div class="stat-label">Agents Run</div></div>
+    <div class="stat"><div class="stat-value">1209</div><div class="stat-label">Discoveries</div></div>
+    <div class="stat"><div class="stat-value">$0.55</div><div class="stat-label">Total Cost</div></div>
     <div class="stat"><div class="stat-value">$1M</div><div class="stat-label">ARR Target</div></div>
 </div>
 
@@ -92,6 +92,7 @@ pre { white-space: pre-wrap; word-wrap: break-word; font-size: 12px; line-height
     <button onclick="showTab('buildplan')">BUILD PLAN</button>
     <button onclick="showTab('code')">CODE</button>
     <button onclick="showTab('launch')">LAUNCH</button>
+    <button onclick="showTab('botempire')">BOT EMPIRE</button>
     <button onclick="showTab('sprints')">SPRINT LOG</button>
 </div>
 
@@ -5139,25 +5140,247 @@ THE MODEL: "MVNO for AI" — Wrap DeepSeek with better UX/workflow, charge 5-10x
     </div>
 </div>
 
+<!-- TAB: BOT EMPIRE (Sprint 33 — Agentic Distribution via Telegram) -->
+<div class="tab" id="tab-botempire">
+    <h2>Bot Empire — Sprint 33: Fully Agentic Distribution via Telegram</h2>
+
+    <!-- Critical Finding -->
+    <div class="card risk-high" style="margin-bottom:20px;">
+        <div class="card-title">DISTRIBUTION DEATH — The #1 Problem (M01)</div>
+        <div style="font-size:13px; line-height:1.8;">
+            <strong class="verdict-no">90% of Product Hunt #1 products lose 95%+ of traffic within 90 days.</strong><br>
+            PH launch median: 12,000 DAU peak → <strong>47 DAU at day 90</strong> (99.6% drop). Power-law decay exponent ~1.4.<br><br>
+            <strong>Standalone API product = NOT VIABLE.</strong> Sprint-as-a-Service as a web API will die within 90 days.<br><br>
+            <strong>Solution: Embed in a distribution channel that already has users.</strong><br>
+            <table style="font-size:11px; margin-top:8px;">
+                <tr><th>Distribution Channel</th><th>Median 90-Day DAU</th><th>vs PH Launch</th></tr>
+                <tr><td>WordPress Plugin</td><td style="color:#00ff88; font-weight:bold;">2,100</td><td>45x PH</td></tr>
+                <tr><td>Browser Extension</td><td style="color:#00ff88; font-weight:bold;">1,200</td><td>26x PH</td></tr>
+                <tr><td>Slack Bot</td><td style="color:#00ff88; font-weight:bold;">890</td><td>19x PH</td></tr>
+                <tr><td>Telegram Bot</td><td style="color:#ffaa00; font-weight:bold;">340</td><td>7x PH</td></tr>
+                <tr><td style="color:#ff4444;">Product Hunt Launch</td><td style="color:#ff4444;">47</td><td>Baseline</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Telegram Revenue Reality -->
+    <h3>Telegram Bot Revenue Reality (M02) — Real Money Being Made</h3>
+    <div class="card">
+        <table>
+            <tr><th>Bot</th><th>Category</th><th>Monthly Revenue</th><th>Users</th><th>Monetization</th></tr>
+            <tr><td style="color:#00ff88; font-weight:bold;">Notcoin Mini App</td><td>Gaming/Crypto</td><td style="color:#00ff88; font-weight:bold;">$2,500,000</td><td>35M</td><td>Stars + airdrops + ads</td></tr>
+            <tr><td style="color:#00ff88; font-weight:bold;">Catizen Mini App</td><td>Gaming</td><td style="color:#00ff88; font-weight:bold;">$1,800,000</td><td>25M</td><td>Stars + NFTs + subscription</td></tr>
+            <tr><td style="color:#00ff88; font-weight:bold;">@ChatGPT_Bot</td><td>AI Assistant</td><td style="color:#00ff88; font-weight:bold;">$120,000</td><td>50M</td><td>Stars + subscription $9.99/mo</td></tr>
+            <tr><td style="color:#ffaa00; font-weight:bold;">@TradeSanta_bot</td><td>Crypto Trading</td><td style="color:#ffaa00; font-weight:bold;">$95,000</td><td>350K</td><td>Subs $14.99-29.99/mo + Stars</td></tr>
+            <tr><td style="color:#ffaa00; font-weight:bold;">@SummarizeBot</td><td>Content</td><td style="color:#ffaa00; font-weight:bold;">$45,000</td><td>8M</td><td>Freemium + Stars + sub $4.99/mo</td></tr>
+            <tr><td>@Remindly_bot</td><td>Productivity</td><td>$18,000</td><td>1.2M</td><td>Stars + one-time $2.99</td></tr>
+        </table>
+        <div style="margin-top:10px; font-size:11px; color:#888;">
+            <strong>Total AI bot users on Telegram:</strong> 120M active | <strong>Average ARPU:</strong> $0.85/mo | <strong>Market growth:</strong> 35% YoY | <strong>Stars dominate:</strong> 70% of bot revenue in 2025-2026
+        </div>
+    </div>
+
+    <!-- The Pivot -->
+    <h3>THE PIVOT: Telegram-First, Not API-First (M08)</h3>
+    <div class="card" style="border-left:3px solid #00ff88;">
+        <div class="card-title">SprintBot — The Bot IS the Product</div>
+        <div class="grid">
+            <div>
+                <div style="font-size:12px; line-height:1.8;">
+                    <strong style="color:#00ff88;">User sends:</strong> /sprint How to reduce churn by 20%?<br>
+                    <strong style="color:#ffaa00;">Progress:</strong> Real-time bar updated every 30s via edit_message_text<br>
+                    <strong style="color:#00ff88;">Results:</strong> Top 3 strategies with expandable sections + confidence scores<br>
+                    <strong style="color:#9b59b6;">Long output:</strong> Chunked at 3500 chars with pagination buttons (Prev/Page/Next)<br>
+                    <strong style="color:#ff6b35;">Full report:</strong> PDF via ReportLab, sent as Telegram document<br>
+                    <strong style="color:#00ff88;">Viral:</strong> "Share this insight" button generates referral deep link
+                </div>
+            </div>
+            <div>
+                <div style="font-size:12px; font-weight:bold; color:#ff6b35; margin-bottom:8px;">Free vs Paid</div>
+                <table style="font-size:11px;">
+                    <tr><th></th><th>Free</th><th>Paid (100 Stars/$1)</th></tr>
+                    <tr><td>Sprints/day</td><td>3</td><td>Unlimited</td></tr>
+                    <tr><td>Agents</td><td>10</td><td>40</td></tr>
+                    <tr><td>Output</td><td>Summary only</td><td>Full + expandable</td></tr>
+                    <tr><td>PDF export</td><td>No</td><td>Yes</td></tr>
+                    <tr><td>Priority queue</td><td>No</td><td>Yes</td></tr>
+                </table>
+                <div style="margin-top:8px; font-size:11px; color:#00ff88;">Est. revenue: $2K-5K/mo at 100-200 paid sprints/day</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Telegram Stars Economics -->
+    <h3>Telegram Stars Economics (M05)</h3>
+    <div class="grid">
+        <div class="card">
+            <div class="card-title">Revenue Share</div>
+            <table style="font-size:11px;">
+                <tr><td>User cost</td><td>$0.014-0.020 per Star (iOS/Android)</td></tr>
+                <tr><td>Developer receives</td><td style="color:#00ff88; font-weight:bold;">$0.01 per Star (fixed)</td></tr>
+                <tr><td>Telegram keeps</td><td>30% (negotiable to 20% at >$100K/yr)</td></tr>
+                <tr><td>Min withdrawal</td><td>1,000 Stars ($10) via Fragment.com</td></tr>
+                <tr><td>Payout</td><td>Weekly (auto) or instant (crypto)</td></tr>
+                <tr><td>Chargebacks</td><td style="color:#00ff88;">Zero — Stars non-refundable after 24h</td></tr>
+            </table>
+        </div>
+        <div class="card">
+            <div class="card-title">Stars vs TON vs Stripe</div>
+            <table style="font-size:11px;">
+                <tr><th></th><th>Stars</th><th>TON</th><th>Stripe</th></tr>
+                <tr><td>Commission</td><td>30%</td><td style="color:#00ff88;">~0%</td><td>2.9%+$0.30</td></tr>
+                <tr><td>Friction</td><td style="color:#00ff88;">Zero</td><td>Need wallet</td><td>Need card</td></tr>
+                <tr><td>Chargebacks</td><td style="color:#00ff88;">None</td><td style="color:#00ff88;">None</td><td style="color:#ff4444;">Yes</td></tr>
+                <tr><td>Best for</td><td>Micro-txns</td><td>High-value</td><td>Physical goods</td></tr>
+            </table>
+            <div style="margin-top:8px; font-size:11px; color:#00ff88;"><strong>Verdict:</strong> Stars first. Zero friction wins.</div>
+        </div>
+    </div>
+
+    <!-- Bot Portfolio -->
+    <h3>5-Bot Portfolio Strategy (M30) — 64 Hours to Build</h3>
+    <div class="card">
+        <table>
+            <tr><th>#</th><th>Bot Name</th><th>Niche</th><th>Price</th><th>Conv %</th><th>M6 Revenue</th><th>Build (hrs)</th></tr>
+            <tr><td>1</td><td style="color:#00ff88; font-weight:bold;">CryptoWhaleWatcher</td><td>Solana/ETH whale alerts</td><td>$9.99/mo</td><td>5%</td><td>$250</td><td>8</td></tr>
+            <tr><td>2</td><td style="color:#00ff88; font-weight:bold;">JobHuntAI</td><td>Remote job aggregator</td><td>$4.99/mo + $19.99 resume</td><td>3%+1%</td><td>$700</td><td>12</td></tr>
+            <tr><td>3</td><td style="color:#ffaa00; font-weight:bold;">DealDetective</td><td>Amazon price drops</td><td>$2.99/mo</td><td>4%</td><td>$180</td><td>10</td></tr>
+            <tr><td>4</td><td style="color:#ff6b35; font-weight:bold;">MemeCoinSniper</td><td>Pump.fun new launches</td><td>$14.99/mo</td><td>8%</td><td>$360</td><td>15</td></tr>
+            <tr><td>5</td><td style="color:#9b59b6; font-weight:bold;">ContentPilot</td><td>AI social media posts</td><td>$7.99/mo</td><td>6%</td><td>$380</td><td>14</td></tr>
+        </table>
+        <div style="display:flex; gap:15px; margin-top:15px; flex-wrap:wrap;">
+            <div class="card" style="flex:1; min-width:140px; text-align:center; padding:12px;">
+                <div style="font-size:20px; font-weight:bold; color:#00ff88;">$1,870</div>
+                <div style="font-size:10px; color:#666;">M6 Total Revenue</div>
+            </div>
+            <div class="card" style="flex:1; min-width:140px; text-align:center; padding:12px;">
+                <div style="font-size:20px; font-weight:bold; color:#00ff88;">$67</div>
+                <div style="font-size:10px; color:#666;">Monthly Costs</div>
+            </div>
+            <div class="card" style="flex:1; min-width:140px; text-align:center; padding:12px;">
+                <div style="font-size:20px; font-weight:bold; color:#00ff88;">64h</div>
+                <div style="font-size:10px; color:#666;">Total Build Time</div>
+            </div>
+            <div class="card" style="flex:1; min-width:140px; text-align:center; padding:12px;">
+                <div style="font-size:20px; font-weight:bold; color:#00ff88;">96%</div>
+                <div style="font-size:10px; color:#666;">Profit Margin</div>
+            </div>
+        </div>
+        <div style="margin-top:10px; font-size:11px; color:#888;">
+            <strong>To hit $5K/mo:</strong> Add $500/mo ad spend (doubles users) + $29.99 all-access tier at 2% conversion → $4,940/mo by M6. Shared infra: 1x Hetzner CX22 ($4.49), Supabase free tier, Redis free tier, 1 domain.
+        </div>
+    </div>
+
+    <!-- Bot Empire Economics -->
+    <h3>Bot Empire Economics (M10)</h3>
+    <div class="card">
+        <table style="font-size:11px;">
+            <tr><th>Scale</th><th>VPS</th><th>Cost/mo</th><th>Revenue Range</th><th>Margin</th><th>Maintenance</th></tr>
+            <tr><td style="color:#00ff88;">5 bots</td><td>CX22 (2vCPU/4GB)</td><td>$4.49</td><td>$250-$2,500</td><td>90-98%</td><td>10 hrs/mo</td></tr>
+            <tr><td style="color:#ffaa00;">10 bots</td><td>CX32 (4vCPU/8GB)</td><td>$8.49</td><td>$500-$5,000</td><td>85-98%</td><td>20 hrs/mo</td></tr>
+            <tr><td style="color:#9b59b6;">20 bots</td><td>CX42 + CX22</td><td>$21.98</td><td>$1,000-$10,000</td><td>80-97%</td><td>35 hrs/mo</td></tr>
+        </table>
+        <div style="margin-top:10px; font-size:12px; color:#00ff88; font-weight:bold;">
+            Key insight: 10 bots x 1K users BEATS 1 bot x 10K users — risk diversification, higher engagement, 10x API throughput via separate keys.
+        </div>
+    </div>
+
+    <!-- First 1000 Users Playbook -->
+    <h3>First 1,000 Users in 30 Days — $500 Budget (M24)</h3>
+    <div class="card">
+        <table style="font-size:11px;">
+            <tr><th>Phase</th><th>Days</th><th>Strategy</th><th>Users Gained</th><th>Cost</th><th>Auto?</th></tr>
+            <tr><td style="color:#00ff88;">Seed</td><td>1-3</td><td>Personal groups + referral system + bot directories + Reddit</td><td>35</td><td>$0</td><td>Mixed</td></tr>
+            <tr><td style="color:#ffaa00;">Traction</td><td>4-7</td><td>Telegram Ads ($100) + group posting + Twitter bot + influencer DMs</td><td>290</td><td>$100</td><td>95%</td></tr>
+            <tr><td style="color:#ff6b35;">Growth</td><td>8-14</td><td>Product Hunt + HN + channel promo ($50 each) + sprint challenge + retargeting ($100)</td><td>530</td><td>$200</td><td>80%</td></tr>
+            <tr><td style="color:#9b59b6;">Scale</td><td>15-30</td><td>Referral contest ($100) + channel ads ($90) + daily ads ($70) + viral loops</td><td>145</td><td>$200</td><td>95%</td></tr>
+            <tr style="background:#00ff8811;"><td style="font-weight:bold;">Total</td><td>30 days</td><td></td><td style="color:#00ff88; font-weight:bold;">1,000</td><td style="font-weight:bold;">$500</td><td>10h human</td></tr>
+        </table>
+    </div>
+
+    <!-- 10 Bot Revenue Ideas -->
+    <h3>Top Revenue Bots by Margin (M09) — All DeepSeek Powered</h3>
+    <div class="card">
+        <table style="font-size:11px;">
+            <tr><th>Bot</th><th>Niche</th><th>Price</th><th>API Cost/Use</th><th>Revenue @ Scale</th><th>Margin</th><th>Build (hrs)</th></tr>
+            <tr><td style="color:#00ff88;">Job Auto-Filler</td><td>Job seekers</td><td>$29/mo</td><td>$0.001</td><td>$12,500/mo</td><td>>99%</td><td>60</td></tr>
+            <tr><td style="color:#00ff88;">Dropship Research</td><td>E-commerce</td><td>$5/report</td><td>$0.001</td><td>$10,000/mo</td><td>>99%</td><td>30</td></tr>
+            <tr><td style="color:#00ff88;">SEO Audit</td><td>SMBs</td><td>$10/audit</td><td>$0.004</td><td>$10,000/mo</td><td>>99%</td><td>45</td></tr>
+            <tr><td style="color:#00ff88;">Homework Solver</td><td>Students</td><td>$9.99/mo</td><td>$0.003</td><td>$10,000/mo</td><td>99.4%</td><td>35</td></tr>
+            <tr><td style="color:#ffaa00;">Crypto Signals</td><td>Traders</td><td>$29-99/mo</td><td>$0.002</td><td>$2,900/mo</td><td>>99%</td><td>40</td></tr>
+            <tr><td style="color:#ffaa00;">Real Estate Leads</td><td>Agents</td><td>$199/mo</td><td>$0.002</td><td>$10,000/mo</td><td>>99%</td><td>70</td></tr>
+        </table>
+        <div style="margin-top:8px; font-size:11px; color:#00ff88;">
+            <strong>Highest willingness to pay:</strong> Crypto traders + Real estate agents. <strong>Highest volume:</strong> Students + Job seekers.
+        </div>
+    </div>
+
+    <!-- Agenticness Ranking -->
+    <h3>Agenticness Score — Business Models (M03)</h3>
+    <div class="card">
+        <table style="font-size:11px;">
+            <tr><th>Business Model</th><th>Score</th><th>Revenue Range</th><th>Capital</th><th>What Breaks</th></tr>
+            <tr><td>Data Feed API</td><td><span class="score score-high">95/100</span></td><td>$500-$3K/mo</td><td>$200-$1K</td><td>Source API changes</td></tr>
+            <tr><td>Monitoring Service</td><td><span class="score score-high">95/100</span></td><td>$300-$2K/mo</td><td>$100-$500</td><td>False positives</td></tr>
+            <tr><td>SaaS Image/Video API</td><td><span class="score score-high">90/100</span></td><td>$1K-$5K/mo</td><td>$500-$2K</td><td>Model API downtime</td></tr>
+            <tr><td>DeFi Yield Bot</td><td><span class="score score-high">90/100</span></td><td>$200-$2K/mo</td><td>$5K-$20K</td><td>Smart contract bugs</td></tr>
+            <tr><td>Crypto Arb Bot</td><td><span class="score score-mid">85/100</span></td><td>$500-$3K/mo</td><td>$10K-$50K</td><td>Flash loans, gas spikes</td></tr>
+            <tr><td>Telegram Trading Bot</td><td><span class="score score-mid">80/100</span></td><td>$200-$1.5K/mo</td><td>$100-$500</td><td>Exchange API outages</td></tr>
+            <tr><td>Shopify App</td><td><span class="score score-mid">80/100</span></td><td>$1K-$5K/mo</td><td>$500-$2K</td><td>API rate limits</td></tr>
+        </table>
+    </div>
+
+    <!-- 48-Hour Telegram-First Launch -->
+    <h3>48-Hour Telegram-First Launch Plan (M40)</h3>
+    <div class="card">
+        <div style="display:grid; grid-template-columns:80px 1fr 180px; gap:8px; font-size:12px;">
+            <div style="color:#00ff88; font-weight:bold;">0-4h</div><div>Provision Hetzner CX22, deploy bot via systemd, test /start</div><div><span class="tag tag-green">Bot online</span></div>
+            <div style="color:#00ff88; font-weight:bold;">4-8h</div><div>Stars payment (sendInvoice XTR) + Stripe fallback + SQLite logging</div><div><span class="tag tag-green">Payments working</span></div>
+            <div style="color:#ffaa00; font-weight:bold;">8-12h</div><div>Create Telegram channel, 5 posts, RSS auto-posting, deep link to bot</div><div><span class="tag tag-yellow">Content channel live</span></div>
+            <div style="color:#ffaa00; font-weight:bold;">12-16h</div><div>Seed 5 groups (AI, crypto, dev, python, startups) with utility feature demo</div><div><span class="tag tag-yellow">~20-30 users</span></div>
+            <div style="color:#ff6b35; font-weight:bold;">16-20h</div><div>Submit to 5 bot directories + first Reddit/HN posts</div><div><span class="tag tag-yellow">~10-15 more users</span></div>
+            <div style="color:#ff6b35; font-weight:bold;">20-24h</div><div>Telegram Ads campaign ($100, CPM $2-5, target AI/automation interests)</div><div><span class="tag tag-yellow">~30-50 more users</span></div>
+            <div style="color:#9b59b6; font-weight:bold;">24-36h</div><div>Reddit amplification (r/Entrepreneur, r/SaaS, r/Startups) + HN Show HN</div><div><span class="tag tag-yellow">~20-30 more users</span></div>
+            <div style="color:#9b59b6; font-weight:bold;">36-48h</div><div>Analyze funnel, optimize onboarding, A/B test pricing, broadcast milestone</div><div><span class="tag tag-green">100 users + 1st payment</span></div>
+        </div>
+        <div style="margin-top:10px; font-size:11px; color:#888;">
+            <strong>Total capital required:</strong> $100 (Telegram Ads) + $5 (VPS) = <strong style="color:#00ff88;">$105</strong>. Bot is the product — no web API needed.
+        </div>
+    </div>
+
+    <!-- Sprint 33 Verdict -->
+    <div class="card" style="margin-top:20px; border-left:3px solid #00ff88;">
+        <div class="card-title">Sprint 33 Verdict — Kill the API, Build the Bot</div>
+        <p style="font-size:13px; line-height:1.8;">
+            <strong class="verdict-no">Product Hunt is a vanity metric.</strong> 99.6% traffic loss in 90 days. Standalone APIs die.<br><br>
+            <strong class="verdict-yes">Telegram is the distribution.</strong> 120M active AI bot users. $0 Bot API cost. Stars = zero-friction payments with 0% chargebacks. Bots earning $18K-$2.5M/mo in production today.<br><br>
+            <strong style="color:#00ff88;">The play:</strong> Build SprintBot as Telegram-first product. Free tier (3 sprints/day, 10 agents) → Paid via Stars (100 Stars = $1 per sprint, 40 agents). 48h to launch for $105. 1,000 users in 30 days for $500.<br><br>
+            <strong style="color:#9b59b6;">Scale path:</strong> 5-bot portfolio (64h build) → $1.87K/mo by M6 → 10 bots ($8.49/mo hosting) → $5K/mo. All managed via CLI on one VPS. Cross-promote between bots. 2 hrs/week maintenance.<br><br>
+            <strong style="color:#ff6b35;">Highest-value niches:</strong> Crypto traders (WTP $29-99/mo), real estate agents ($199/mo), dropshippers ($5/report). Students = volume play (10K users, $9.99/mo).<br><br>
+            <strong>The bot IS the product. The bot IS the distribution. Ship it.</strong>
+        </p>
+    </div>
+</div>
+
 <!-- TAB 8: SPRINT LOG -->
 <div class="tab" id="tab-sprints">
     <h2>Sprint Log — Full Research Timeline</h2>
 
     <div style="display:flex; gap:15px; margin-bottom:20px; flex-wrap:wrap;">
         <div class="card" style="flex:1; min-width:140px; text-align:center;">
-            <div style="font-size:28px; font-weight:bold; color:#00ff88;">32</div>
+            <div style="font-size:28px; font-weight:bold; color:#00ff88;">33</div>
             <div style="font-size:10px; color:#666; text-transform:uppercase; letter-spacing:1px;">Sprints</div>
         </div>
         <div class="card" style="flex:1; min-width:140px; text-align:center;">
-            <div style="font-size:28px; font-weight:bold; color:#00ff88;">1,200</div>
+            <div style="font-size:28px; font-weight:bold; color:#00ff88;">1,240</div>
             <div style="font-size:10px; color:#666; text-transform:uppercase; letter-spacing:1px;">Agents Run</div>
         </div>
         <div class="card" style="flex:1; min-width:140px; text-align:center;">
-            <div style="font-size:28px; font-weight:bold; color:#00ff88;">1,169</div>
+            <div style="font-size:28px; font-weight:bold; color:#00ff88;">1,209</div>
             <div style="font-size:10px; color:#666; text-transform:uppercase; letter-spacing:1px;">Discovery Files</div>
         </div>
         <div class="card" style="flex:1; min-width:140px; text-align:center;">
-            <div style="font-size:28px; font-weight:bold; color:#00ff88;">$0.53</div>
+            <div style="font-size:28px; font-weight:bold; color:#00ff88;">$0.55</div>
             <div style="font-size:10px; color:#666; text-transform:uppercase; letter-spacing:1px;">Total Cost</div>
         </div>
         <div class="card" style="flex:1; min-width:140px; text-align:center;">
@@ -5178,12 +5401,12 @@ THE MODEL: "MVNO for AI" — Wrap DeepSeek with better UX/workflow, charge 5-10x
                 <span style="color:#666; margin-left:10px;">May 22, 2026</span>
             </div>
             <div>
-                <span class="tag tag-blue">AGENT INFRASTRUCTURE + CODE + LAUNCH</span>
-                <span class="tag tag-blue">110 AGENTS</span>
-                <span class="tag tag-green">$0.072</span>
+                <span class="tag tag-blue">INFRASTRUCTURE + CODE + LAUNCH + BOT EMPIRE</span>
+                <span class="tag tag-blue">150 AGENTS</span>
+                <span class="tag tag-green">$0.093</span>
             </div>
         </div>
-        <div style="font-size:11px; color:#888; margin-bottom:10px;">Focus: Picks & shovels for 100M dev agent economy. Pivoted from earning AS agent → building FOR agents. 39 ideas evaluated, 10 viable. Sprint 32: 40 production code files + complete launch kit generated.</div>
+        <div style="font-size:11px; color:#888; margin-bottom:10px;">Focus: Picks & shovels for 100M dev agent economy. Pivoted from earning AS agent → building FOR agents. Sprint 32: 40 production code files. Sprint 33: Distribution death analysis — pivot to Telegram-first bot empire.</div>
         <table style="font-size:11px;">
             <tr><th style="width:55px;">Sprint</th><th>Focus</th><th style="width:50px;">Agents</th><th style="width:50px;">Time</th><th style="width:55px;">Cost</th><th style="width:80px;">Verdict</th><th>Key Finding</th></tr>
             <tr>
@@ -5204,7 +5427,7 @@ THE MODEL: "MVNO for AI" — Wrap DeepSeek with better UX/workflow, charge 5-10x
                 <td><span class="verdict-yes">BUILD NOW</span></td>
                 <td>Full blueprints for 3 plays. First 3 Telegram bots specced (Research/Crypto/Code, 11 days build). $5K→13mo runway at $381/mo burn. Self-sustain at $381 MRR. P($10K MRR/6mo)=35%. 15hrs/wk human time (→5hrs with automation). Kill scenario: DeepSeek US/EU ban. Build sequence: Sprint-as-a-Service Week 1-2 → Telegram bots Week 3-4 → Shopify app Week 5-8.</td>
             </tr>
-            <tr style="background:#00ff8811;">
+            <tr>
                 <td style="color:#9b59b6; font-weight:bold;">32</td>
                 <td>BUILD — Sprint-as-a-Service Production Code</td>
                 <td>40</td>
@@ -5212,6 +5435,15 @@ THE MODEL: "MVNO for AI" — Wrap DeepSeek with better UX/workflow, charge 5-10x
                 <td>$0.041</td>
                 <td><span class="verdict-yes">CODE READY</span></td>
                 <td>40 production code files generated: FastAPI app, sprint runner, MCP server, Telegram bot, Stripe billing, Redis queue, S3 storage, Supabase auth, tests, CI/CD, Docker deploy, landing page, Python SDK, CLI tool, admin dashboard, launch kit. 152K tokens. Ship target: 48h. Cost: $4.61/mo hosting + $0.0017/sprint.</td>
+            </tr>
+            <tr style="background:#00ff8811;">
+                <td style="color:#9b59b6; font-weight:bold;">33</td>
+                <td>AGENTIC DISTRIBUTION — Telegram Bot Empire</td>
+                <td>40</td>
+                <td>88.3s</td>
+                <td>$0.021</td>
+                <td><span class="verdict-yes">PIVOT TO TG</span></td>
+                <td>PH = 99.6% traffic death in 90d. Telegram: 120M AI bot users, $0 API cost, Stars payments (0 chargebacks). Real bots: $18K-$2.5M/mo. 5-bot portfolio (64h build) → $1.87K/mo M6. First 1K users in 30d for $500. Kill the API, build the bot.</td>
             </tr>
         </table>
     </div>
@@ -5505,7 +5737,7 @@ THE MODEL: "MVNO for AI" — Wrap DeepSeek with better UX/workflow, charge 5-10x
 
     <!-- JOURNEY ARC -->
     <div class="card" style="margin-top:10px;">
-        <div class="card-title">Journey Arc — 32 Sprints in 6 Sessions</div>
+        <div class="card-title">Journey Arc — 33 Sprints in 6 Sessions</div>
         <div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:10px;">
             <div style="flex:1; min-width:130px; padding:10px; background:#0a0a12; border-radius:4px; text-align:center;">
                 <div style="font-size:10px; color:#4488ff; letter-spacing:1px;">SESSION 1</div>
@@ -5539,13 +5771,13 @@ THE MODEL: "MVNO for AI" — Wrap DeepSeek with better UX/workflow, charge 5-10x
             <div style="color:#333; display:flex; align-items:center;">→</div>
             <div style="flex:1; min-width:130px; padding:10px; background:#0a0a12; border-radius:4px; text-align:center; border:1px solid #9b59b6;">
                 <div style="font-size:10px; color:#9b59b6; letter-spacing:1px;">SESSION 6</div>
-                <div style="font-size:12px; color:#e0e0e0; margin:5px 0;">"Build the pipes"</div>
-                <div style="font-size:10px; color:#666;">3 sprints, 110 agents</div>
+                <div style="font-size:12px; color:#e0e0e0; margin:5px 0;">"Build the bots"</div>
+                <div style="font-size:10px; color:#666;">4 sprints, 150 agents</div>
             </div>
         </div>
         <div style="margin-top:15px; padding-top:10px; border-top:1px solid #1a1a2e;">
             <div style="font-size:11px; color:#888;">
-                <strong style="color:#9b59b6;">Conclusion after 1,200 agents:</strong> Sprint 32 crossed the research→build barrier. 40 agents generated <strong>40 production code files</strong> for Sprint-as-a-Service in 113.8s for $0.041. FastAPI + MCP server + Telegram bot + Stripe billing + Docker deployment + Python SDK + CI/CD + landing page + launch kit — all code-complete. Ship target: 48 hours from assembly to first paying customer. Combined 3-play flywheel: $41.7K/mo by M6, $129.8K/mo by M12. Cost structure: $4.61/mo hosting + $0.0017/sprint DeepSeek = infinite margin at scale.
+                <strong style="color:#9b59b6;">Conclusion after 1,240 agents:</strong> Sprint 33 killed the API-first fantasy. Product Hunt = 99.6% traffic death in 90 days. <strong>The bot IS the product. The bot IS the distribution.</strong> Telegram: 120M AI bot users, Stars payments (0 chargebacks, $0.01/Star), bots earning $18K-$2.5M/mo TODAY. 5-bot portfolio (64h build) on one $4.49/mo VPS → $1.87K/mo by M6 → scale to 10 bots at $5K/mo. First 1K users: 30 days, $500, 10h human time. Ship SprintBot as Telegram-first. Manage everything via CLI 24/7.
             </div>
         </div>
     </div>
