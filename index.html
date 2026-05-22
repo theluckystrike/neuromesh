@@ -57,10 +57,10 @@ pre { white-space: pre-wrap; word-wrap: break-word; font-size: 12px; line-height
 </div>
 
 <div class="stats-bar">
-    <div class="stat"><div class="stat-value">30</div><div class="stat-label">Sprints</div></div>
-    <div class="stat"><div class="stat-value">1130</div><div class="stat-label">Agents Run</div></div>
-    <div class="stat"><div class="stat-value">1099</div><div class="stat-label">Discoveries</div></div>
-    <div class="stat"><div class="stat-value">$0.48</div><div class="stat-label">Total Cost</div></div>
+    <div class="stat"><div class="stat-value">31</div><div class="stat-label">Sprints</div></div>
+    <div class="stat"><div class="stat-value">1160</div><div class="stat-label">Agents Run</div></div>
+    <div class="stat"><div class="stat-value">1129</div><div class="stat-label">Discoveries</div></div>
+    <div class="stat"><div class="stat-value">$0.49</div><div class="stat-label">Total Cost</div></div>
     <div class="stat"><div class="stat-value">$1M</div><div class="stat-label">ARR Target</div></div>
 </div>
 
@@ -89,6 +89,7 @@ pre { white-space: pre-wrap; word-wrap: break-word; font-size: 12px; line-height
     <button onclick="showTab('yieldmap')">YIELD MAP</button>
     <button onclick="showTab('playbook')">$1K PLAYBOOK</button>
     <button onclick="showTab('infra')">AGENT INFRA</button>
+    <button onclick="showTab('buildplan')">BUILD PLAN</button>
     <button onclick="showTab('sprints')">SPRINT LOG</button>
 </div>
 
@@ -4242,6 +4243,151 @@ THE MODEL: "MVNO for AI" — Wrap DeepSeek with better UX/workflow, charge 5-10x
     </div>
 </div>
 
+<!-- TAB: BUILD PLAN (Sprint 31) -->
+<div class="tab" id="tab-buildplan">
+    <h2>Sprint 31 — Build Plan: Deep Drill into Top 3 Plays</h2>
+    <p style="color:#888; font-size:12px; margin-bottom:20px;">30 agents drilled into Sprint-as-a-Service, Telegram Bot Empire, White-Label AI Support. Implementation-ready blueprints.</p>
+
+    <div style="display:flex; gap:15px; margin-bottom:20px; flex-wrap:wrap;">
+        <div class="card" style="flex:1; min-width:180px; text-align:center; border-left:3px solid #00ff88;">
+            <div style="font-size:11px; color:#00ff88; letter-spacing:1px;">PLAY 1: SPRINT-AS-A-SERVICE</div>
+            <div style="font-size:24px; font-weight:bold; color:#00ff88; margin:8px 0;">$0.057</div>
+            <div style="font-size:10px; color:#666;">Cost per Sprint</div>
+            <div style="font-size:16px; font-weight:bold; color:#e0e0e0; margin-top:5px;">43,800% margin</div>
+            <div style="font-size:10px; color:#666;">8 days to MVP</div>
+        </div>
+        <div class="card" style="flex:1; min-width:180px; text-align:center; border-left:3px solid #4488ff;">
+            <div style="font-size:11px; color:#4488ff; letter-spacing:1px;">PLAY 2: TELEGRAM BOT EMPIRE</div>
+            <div style="font-size:24px; font-weight:bold; color:#4488ff; margin:8px 0;">3 bots</div>
+            <div style="font-size:10px; color:#666;">Research + Crypto + Code</div>
+            <div style="font-size:16px; font-weight:bold; color:#e0e0e0; margin-top:5px;">11 days to build</div>
+            <div style="font-size:10px; color:#666;">1,900 users Month 1</div>
+        </div>
+        <div class="card" style="flex:1; min-width:180px; text-align:center; border-left:3px solid #ff6b35;">
+            <div style="font-size:11px; color:#ff6b35; letter-spacing:1px;">PLAY 3: WHITE-LABEL SUPPORT</div>
+            <div style="font-size:24px; font-weight:bold; color:#ff6b35; margin:8px 0;">$0.001</div>
+            <div style="font-size:10px; color:#666;">Per Ticket (vs $0.99 Intercom)</div>
+            <div style="font-size:16px; font-weight:bold; color:#e0e0e0; margin-top:5px;">4 weeks to MVP</div>
+            <div style="font-size:10px; color:#666;">$99K MRR target</div>
+        </div>
+        <div class="card" style="flex:1; min-width:180px; text-align:center; border-left:3px solid #ffaa00;">
+            <div style="font-size:11px; color:#ffaa00; letter-spacing:1px;">AUTOMATION SCORE</div>
+            <div style="font-size:24px; font-weight:bold; color:#ffaa00; margin:8px 0;">28%</div>
+            <div style="font-size:10px; color:#666;">Fully Automated (5/18 tasks)</div>
+            <div style="font-size:16px; font-weight:bold; color:#e0e0e0; margin-top:5px;">→80% possible</div>
+            <div style="font-size:10px; color:#666;">15 hrs/week human time</div>
+        </div>
+    </div>
+
+    <h3>First 3 Telegram Bots — Ready to Build (L14)</h3>
+    <table>
+        <tr><th>Bot</th><th>Commands</th><th>Free Tier</th><th>Paid Tier</th><th>Build Time</th><th>Month 1 Users</th></tr>
+        <tr style="background:#00ff8811;">
+            <td><strong>AI Research Bot</strong></td>
+            <td><code>/research [topic]</code></td>
+            <td>3 queries/day</td>
+            <td>$5/mo unlimited (Stars)</td>
+            <td>3 days</td>
+            <td>500</td>
+        </tr>
+        <tr>
+            <td><strong>Crypto Intel Bot</strong></td>
+            <td><code>/analyze [coin]</code></td>
+            <td>5 queries/day</td>
+            <td>$3/mo + alerts (Stars)</td>
+            <td>4 days</td>
+            <td>800</td>
+        </tr>
+        <tr>
+            <td><strong>Code Helper Bot</strong></td>
+            <td><code>/debug</code> <code>/explain</code> <code>/test</code></td>
+            <td>10 queries/day</td>
+            <td>$5/mo + GitHub (Stars)</td>
+            <td>4 days</td>
+            <td>600</td>
+        </tr>
+    </table>
+    <p style="font-size:11px; color:#888; margin-top:5px;">Cross-promotion: each bot's <code>/promo</code> command shows the other two. On free limit reached, suggest other bots.</p>
+
+    <h3>Revenue Milestone Map (L25)</h3>
+    <table>
+        <tr><th>Milestone</th><th>Timeline</th><th>Investment</th><th>Actions</th><th>Target</th></tr>
+        <tr><td><span class="score score-mid">$0→$100</span></td><td>7-14 days</td><td>$0-50</td><td>Deploy Telegram bot, post in 5 niche groups, manually onboard first 3 users</td><td>3-10 users @ $10-30/mo</td></tr>
+        <tr><td><span class="score score-mid">$100→$500</span></td><td>30-60 days</td><td>$100-300</td><td>Price to $20/mo, add Slack integration, $5/day Reddit ads, referral program</td><td>25-30 users</td></tr>
+        <tr><td><span class="score score-high">$500→$1K</span></td><td>60-90 days</td><td>$500-1K</td><td>Launch Shopify app ($29/mo), Google Ads, hire VA ($200/mo)</td><td>50 Telegram + 15 Shopify</td></tr>
+        <tr><td><span class="score score-high">$1K→$5K</span></td><td>90-180 days</td><td>$2-5K</td><td>Shopify premium tier ($79/mo), TikTok ads, hire freelance dev</td><td>50 Shopify + 100 Telegram</td></tr>
+        <tr><td><span class="score score-high">$5K→$10K</span></td><td>6-12 months</td><td>$5-10K</td><td>3 verticals, partner with Shopify agencies, full-time dev</td><td>100 Shopify + 200 Telegram</td></tr>
+    </table>
+
+    <h3>Capital Allocation — $5K Over 90 Days (L27)</h3>
+    <div class="grid">
+        <div class="card">
+            <div class="card-title">Burn Rate</div>
+            <table style="font-size:11px;">
+                <tr><th>Month</th><th>Fixed</th><th>Variable</th><th>Marketing</th><th>Total</th></tr>
+                <tr><td>Month 1</td><td>$36</td><td>$7</td><td>$0</td><td><strong>$43</strong></td></tr>
+                <tr><td>Month 2</td><td>$36</td><td>$14</td><td>$300</td><td><strong>$350</strong></td></tr>
+                <tr><td>Month 3</td><td>$36</td><td>$14</td><td>$700</td><td><strong>$750</strong></td></tr>
+            </table>
+            <p style="font-size:11px; color:#00ff88; margin-top:8px;">Runway: 13+ months at avg $381/mo burn. Self-sustaining at $381 MRR.</p>
+        </div>
+        <div class="card">
+            <div class="card-title">Allocation</div>
+            <table style="font-size:11px;">
+                <tr><td>Infrastructure (hosting, domain)</td><td><strong>$1,250</strong></td></tr>
+                <tr><td>DeepSeek API credits</td><td><strong>$1,500</strong></td></tr>
+                <tr><td>Marketing (back-loaded)</td><td><strong>$1,000</strong></td></tr>
+                <tr><td>Tools (Stripe, monitoring)</td><td><strong>$750</strong></td></tr>
+                <tr><td>Reserve (emergency)</td><td><strong>$500</strong></td></tr>
+            </table>
+            <p style="font-size:11px; color:#888; margin-top:8px;">Month 1 = organic only. Spend on marketing only after 5%+ conversion confirmed.</p>
+        </div>
+    </div>
+
+    <h3>Risk Matrix — Top Threats (L26)</h3>
+    <table>
+        <tr><th>Risk</th><th>P</th><th>Impact</th><th>Play</th><th>Mitigation</th></tr>
+        <tr class="risk-high"><td><strong>DeepSeek banned US/EU</strong></td><td>3</td><td>10</td><td>ALL</td><td>Multi-model fallback (Mistral/Llama 3). Model-agnostic architecture.</td></tr>
+        <tr><td>Solo dev burnout (3 products)</td><td>7</td><td>9</td><td>ALL</td><td>Automate everything. Prioritize 1 product after MVP validation. Hire VA.</td></tr>
+        <tr><td>@ChatGPT_bot unlimited free</td><td>8</td><td>7</td><td>Telegram</td><td>Niche down: crypto signals, code review. Custom features ChatGPT lacks.</td></tr>
+        <tr><td>Telegram adds native AI</td><td>7</td><td>9</td><td>Telegram</td><td>Focus on integrations (on-chain, GitHub) Telegram won't build.</td></tr>
+        <tr><td>AI hallucinates order info</td><td>6</td><td>10</td><td>Support</td><td>Only query real Shopify API data. Confidence threshold → escalate.</td></tr>
+        <tr><td>Perplexity launches multi-agent</td><td>6</td><td>8</td><td>Sprint</td><td>Domain-specific templates, proprietary fine-tuning, tool integrations.</td></tr>
+        <tr><td>Shopify builds native AI support</td><td>6</td><td>8</td><td>Support</td><td>Multi-platform (WooCommerce, BigCommerce). Deep e-commerce integration.</td></tr>
+    </table>
+    <p style="font-size:11px; color:#ff4444; margin-top:5px;"><strong>Kill scenario:</strong> DeepSeek regulatory ban without ready fallback. Must pre-build multi-model support.</p>
+
+    <h3>Automation Score Breakdown (L28)</h3>
+    <div class="grid">
+        <div class="card">
+            <div class="card-title">Fully Automated (5/18)</div>
+            <p style="font-size:11px;">API requests, billing/payments, bot responses, payment processing, ticket resolution</p>
+        </div>
+        <div class="card">
+            <div class="card-title">Semi-Automated (9/18)</div>
+            <p style="font-size:11px;">Quality control, customer support, content moderation, new bot creation, merchant onboarding, knowledge base, infrastructure maintenance, user support, edge cases</p>
+            <p style="font-size:11px; color:#00ff88; margin-top:5px;">All automatable with additional agents/tools → target 80%+</p>
+        </div>
+        <div class="card">
+            <div class="card-title">Manual (4/18)</div>
+            <p style="font-size:11px;">Marketing, growth hacking, app store updates, edge case handling</p>
+            <p style="font-size:11px; color:#ffaa00; margin-top:5px;">Marketing can be partially automated (Buffer API, Google Ads API)</p>
+        </div>
+    </div>
+
+    <div class="card" style="margin-top:20px; border-left:3px solid #00ff88;">
+        <div class="card-title">Sprint 31 Verdict — Build Sequence</div>
+        <p style="font-size:13px; line-height:1.8;">
+            <strong>Week 1-2:</strong> Build Sprint-as-a-Service (fastest to first dollar). FastAPI + MCP server + Telegram bot. Deploy on Hetzner ($8/mo). List on smithery.ai. Launch on HN/Reddit.<br>
+            <strong>Week 3-4:</strong> Build 3 Telegram bots (Research + Crypto + Code). Shared DeepSeek backend. Monetize via Stars. Cross-promote.<br>
+            <strong>Week 5-8:</strong> Build White-Label AI Support (highest ARPU). Shopify app. $29/mo subscription. Submit to App Store.<br>
+            <strong>Month 3:</strong> Evaluate. Double down on winner. Kill losers.<br><br>
+            <strong>P($10K MRR in 6 months):</strong> 35% (conservative). Self-sustaining at $381 MRR. 13+ months runway on $5K.<br>
+            <strong>Human time:</strong> 15 hrs/week across all 3 plays. Reducible to <5 hrs with automation agents.
+        </p>
+    </div>
+</div>
+
 <!-- TAB 8: SPRINT LOG -->
 <div class="tab" id="tab-sprints">
     <h2>Sprint Log — Full Research Timeline</h2>
@@ -4297,6 +4443,15 @@ THE MODEL: "MVNO for AI" — Wrap DeepSeek with better UX/workflow, charge 5-10x
                 <td>$0.016</td>
                 <td><span class="verdict-yes">BUILD INFRA</span></td>
                 <td>Top 5: Sprint-as-a-Service ($0.057/sprint, 43,800% margin), Telegram Bot Empire (900M users, Stars payments), White-Label AI Support ($0.001 vs $0.99/ticket), DeepSeek API Proxy (58% margin), MCP Billing Middleware (5% of all tool calls). Agent economy needs pipes not water.</td>
+            </tr>
+            <tr>
+                <td style="color:#9b59b6; font-weight:bold;">31</td>
+                <td>Deep Drill — Top 3 Build Plans</td>
+                <td>30</td>
+                <td>73.8s</td>
+                <td>$0.015</td>
+                <td><span class="verdict-yes">BUILD NOW</span></td>
+                <td>Full blueprints for 3 plays. First 3 Telegram bots specced (Research/Crypto/Code, 11 days build). $5K→13mo runway at $381/mo burn. Self-sustain at $381 MRR. P($10K MRR/6mo)=35%. 15hrs/wk human time (→5hrs with automation). Kill scenario: DeepSeek US/EU ban. Build sequence: Sprint-as-a-Service Week 1-2 → Telegram bots Week 3-4 → Shopify app Week 5-8.</td>
             </tr>
         </table>
     </div>
