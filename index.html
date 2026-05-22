@@ -57,10 +57,10 @@ pre { white-space: pre-wrap; word-wrap: break-word; font-size: 12px; line-height
 </div>
 
 <div class="stats-bar">
-    <div class="stat"><div class="stat-value">35</div><div class="stat-label">Sprints</div></div>
-    <div class="stat"><div class="stat-value">1320</div><div class="stat-label">Agents Run</div></div>
-    <div class="stat"><div class="stat-value">1289</div><div class="stat-label">Discoveries</div></div>
-    <div class="stat"><div class="stat-value">$0.59</div><div class="stat-label">Total Cost</div></div>
+    <div class="stat"><div class="stat-value">36</div><div class="stat-label">Sprints</div></div>
+    <div class="stat"><div class="stat-value">1360</div><div class="stat-label">Agents Run</div></div>
+    <div class="stat"><div class="stat-value">1329</div><div class="stat-label">Discoveries</div></div>
+    <div class="stat"><div class="stat-value">$0.61</div><div class="stat-label">Total Cost</div></div>
     <div class="stat"><div class="stat-value">$1M</div><div class="stat-label">ARR Target</div></div>
 </div>
 
@@ -95,6 +95,7 @@ pre { white-space: pre-wrap; word-wrap: break-word; font-size: 12px; line-height
     <button onclick="showTab('botempire')">BOT EMPIRE</button>
     <button onclick="showTab('cliagents')">CLI AGENTS</button>
     <button onclick="showTab('groundtruth')">GROUND TRUTH</button>
+    <button onclick="showTab('lessons')">LESSONS</button>
     <button onclick="showTab('sprints')">SPRINT LOG</button>
 </div>
 
@@ -5894,25 +5895,232 @@ THE MODEL: "MVNO for AI" — Wrap DeepSeek with better UX/workflow, charge 5-10x
     </div>
 </div>
 
+<!-- TAB: LESSONS — Sprint 36 Data & Lessons -->
+<div class="tab" id="tab-lessons">
+    <h2>Lessons Learned — Sprint 36: 40-Agent Data Harvest</h2>
+
+    <div style="display:flex; gap:15px; margin-bottom:20px; flex-wrap:wrap;">
+        <div class="card" style="flex:1; min-width:120px; text-align:center; border-left:3px solid #ff4444;">
+            <div style="font-size:24px; font-weight:bold; color:#ff4444;">0</div>
+            <div style="font-size:10px; color:#666; text-transform:uppercase;">Agent Economy</div>
+            <div style="font-size:9px; color:#ff4444;">Doesn't exist in 2026</div>
+        </div>
+        <div class="card" style="flex:1; min-width:120px; text-align:center; border-left:3px solid #00ff88;">
+            <div style="font-size:24px; font-weight:bold; color:#00ff88;">$12K</div>
+            <div style="font-size:10px; color:#666; text-transform:uppercase;">Boring SaaS Median</div>
+            <div style="font-size:9px; color:#00ff88;">PDFMonkey, 3hrs/wk</div>
+        </div>
+        <div class="card" style="flex:1; min-width:120px; text-align:center; border-left:3px solid #00ff88;">
+            <div style="font-size:24px; font-weight:bold; color:#00ff88;">$100K+</div>
+            <div style="font-size:10px; color:#666; text-transform:uppercase;">Pieter Levels MRR</div>
+            <div style="font-size:9px; color:#00ff88;">Solo dev gold standard</div>
+        </div>
+        <div class="card" style="flex:1; min-width:120px; text-align:center; border-left:3px solid #ffaa00;">
+            <div style="font-size:24px; font-weight:bold; color:#ffaa00;">6-12mo</div>
+            <div style="font-size:10px; color:#666; text-transform:uppercase;">DeepSeek Arb Window</div>
+            <div style="font-size:9px; color:#ffaa00;">Already closing ~5-10%/mo</div>
+        </div>
+        <div class="card" style="flex:1; min-width:120px; text-align:center; border-left:3px solid #4488ff;">
+            <div style="font-size:24px; font-weight:bold; color:#4488ff;">$3-5K</div>
+            <div style="font-size:10px; color:#666; text-transform:uppercase;">$100K Realistic MRR</div>
+            <div style="font-size:9px; color:#4488ff;">NOT $10K without risk</div>
+        </div>
+    </div>
+
+    <h3>M01: Meta-Analysis — The Agent Economy Doesn't Exist</h3>
+    <div class="card risk-high">
+        <div class="card-title" style="color:#ff4444;">HARD TRUTH: Stop looking for agent economy — it doesn't exist</div>
+        <p style="font-size:12px; color:#b0b0b0;">
+            After 36 sprints and 1,360 agents: there is no agent-to-agent marketplace where AI agents pay other AI agents for services. The "agent economy" is a venture capital narrative, not a market reality. What EXISTS is agents as capital allocators — deploying funds into existing financial infrastructure (DeFi, trading) where the agent replaces a human decision-maker but uses human-built rails.
+        </p>
+        <p style="font-size:11px; color:#ff4444; margin-top:8px;"><strong>Pivot:</strong> Agent as capital allocator in existing infrastructure. Not agent selling to agent.</p>
+    </div>
+
+    <h3>M40: The ONE Insight — DeFi Yield Farming</h3>
+    <div class="card" style="border-left:3px solid #00ff88;">
+        <div class="card-title">Only viable autonomous agent revenue model in 2026</div>
+        <p style="font-size:12px; color:#b0b0b0;">
+            <strong>Solana liquidity mining optimizer.</strong> CLI agent monitors and rebalances positions across DeFi protocols (Jupiter, Meteora) via public APIs. Auto-compounds every 6h based on impermanent loss and APR data. Single private key, all fees in SOL.<br><br>
+            <span class="metric"><span class="metric-val">$2-5K</span><span class="metric-lbl"> /mo revenue</span></span>
+            <span class="metric"><span class="metric-val">$50-100K</span><span class="metric-lbl"> capital req.</span></span>
+            <span class="metric"><span class="metric-val">2 weeks</span><span class="metric-lbl"> build time</span></span><br>
+            <strong style="color:#00ff88;">No external payments needed — profits accumulate in the agent's wallet.</strong> This is the ONLY model where an agent earns money without selling to humans.
+        </p>
+    </div>
+
+    <h3>M02: Top 10 Autonomous Businesses</h3>
+    <div class="card">
+        <table>
+            <tr><th>Rank</th><th>Business</th><th>MRR</th><th>Capital</th><th>Autonomy</th><th>Risk</th></tr>
+            <tr><td>1</td><td style="color:#00ff88;">DeFi Yield Farming (Solana)</td><td>$5K</td><td>$100K</td><td><span class="score score-high">95%</span></td><td><span class="score score-mid">IL + Smart Contract</span></td></tr>
+            <tr><td>2</td><td>Hyperliquid Trading Bot</td><td>$7K</td><td>$50K</td><td><span class="score score-high">90%</span></td><td><span class="score score-low">High — Market</span></td></tr>
+            <tr><td>3</td><td>PDF Invoice SaaS</td><td>$8K</td><td>$2K</td><td><span class="score score-mid">70%</span></td><td><span class="score score-high">Low</span></td></tr>
+            <tr><td>4</td><td style="color:#ffaa00;">API Reselling (DeepSeek)</td><td>$10K</td><td>$500</td><td><span class="score score-mid">80%</span></td><td><span class="score score-mid">Margin erosion</span></td></tr>
+            <tr><td>5</td><td>Domain Parking + Monetization</td><td>$5K</td><td>$1K</td><td><span class="score score-high">90%</span></td><td><span class="score score-mid">Traffic decay</span></td></tr>
+            <tr><td>6</td><td>Affiliate Content Sites</td><td>$6K</td><td>$500</td><td><span class="score score-mid">75%</span></td><td><span class="score score-mid">Google algo</span></td></tr>
+            <tr><td>7</td><td>AI Content Farms</td><td>$7K</td><td>$200</td><td><span class="score score-high">85%</span></td><td><span class="score score-low">Quality + Penalty</span></td></tr>
+            <tr><td>8</td><td>Airdrop Farming</td><td>$5K</td><td>$10K</td><td><span class="score score-mid">60%</span></td><td><span class="score score-low">Sybil detection</span></td></tr>
+            <tr><td>9</td><td>Staking as a Service</td><td>$6K</td><td>$32K</td><td><span class="score score-high">95%</span></td><td><span class="score score-mid">Slashing</span></td></tr>
+            <tr><td>10</td><td>DCA Bot SaaS</td><td>$5K</td><td>$50K</td><td><span class="score score-high">90%</span></td><td><span class="score score-mid">Market</span></td></tr>
+        </table>
+    </div>
+
+    <h3>M03: Solo Dev Success Stories — Proof It's Possible</h3>
+    <div class="card">
+        <div class="grid">
+            <div class="card" style="border-left:3px solid #00ff88;">
+                <div style="font-size:14px; font-weight:bold; color:#00ff88;">Pieter Levels — $100K+/mo</div>
+                <div style="font-size:11px; color:#888;">NomadList, RemoteOK, PhotoAI. Pure solo. No employees. Vanilla JS + PHP. SEO + Twitter distribution.</div>
+            </div>
+            <div class="card" style="border-left:3px solid #00ff88;">
+                <div style="font-size:14px; font-weight:bold; color:#00ff88;">Danny Postma — $60K+/mo</div>
+                <div style="font-size:11px; color:#888;">HeadshotPro. AI headshots. Viral product, no team. $720K+ ARR.</div>
+            </div>
+            <div class="card" style="border-left:3px solid #00ff88;">
+                <div style="font-size:14px; font-weight:bold; color:#ffaa00;">Marc Lou — $30K+/mo</div>
+                <div style="font-size:11px; color:#888;">ShipFast (Next.js boilerplate). $360K+ ARR. Template = zero marginal cost. Twitter distribution.</div>
+            </div>
+            <div class="card" style="border-left:3px solid #ffaa00;">
+                <div style="font-size:14px; font-weight:bold; color:#ffaa00;">Tony Dinh — $20K+/mo</div>
+                <div style="font-size:11px; color:#888;">TypingMind. ChatGPT wrapper that survived by owning the workflow. Multi-model support.</div>
+            </div>
+            <div class="card" style="border-left:3px solid #ffaa00;">
+                <div style="font-size:14px; font-weight:bold; color:#ffaa00;">Jon Yongfook — $12K+/mo</div>
+                <div style="font-size:11px; color:#888;">BannerBear. Automated image/video generation API. B2B. 3 hrs/wk maintenance.</div>
+            </div>
+            <div class="card" style="border-left:3px solid #ffaa00;">
+                <div style="font-size:14px; font-weight:bold; color:#ffaa00;">Michele Hansen — $12K+/mo</div>
+                <div style="font-size:11px; color:#888;">Geocodio. Geocoding API. B2B utility. 10 years running. Boring but profitable.</div>
+            </div>
+        </div>
+        <div style="font-size:11px; color:#888; margin-top:10px; padding-top:8px; border-top:1px solid #1a1a2e;">
+            <strong>Pattern:</strong> Every success has ONE thing in common — <strong style="color:#00ff88;">they own the distribution channel</strong> (SEO, Twitter audience, or existing platform ecosystem). Zero of them sell to AI agents.
+        </div>
+    </div>
+
+    <h3>M04: Boring SaaS That Actually Works</h3>
+    <div class="card">
+        <table>
+            <tr><th>SaaS</th><th>MRR</th><th>Hrs/Week</th><th>Moat</th><th>Price</th></tr>
+            <tr><td style="color:#00ff88;">TextToSpeech.io</td><td style="color:#00ff88;">$14K</td><td>5</td><td>SEO + API</td><td>$49/mo</td></tr>
+            <tr><td style="color:#00ff88;">PDFMonkey</td><td style="color:#00ff88;">$12K</td><td>3</td><td>Template engine</td><td>$29/mo</td></tr>
+            <tr><td>ScreenshotAPI</td><td>$11K</td><td>4</td><td>Browser infra</td><td>$39/mo</td></tr>
+            <tr><td>FileConverter.io</td><td>$9.5K</td><td>2</td><td>SEO moat</td><td>$19/mo</td></tr>
+            <tr><td>EmailListVerify</td><td>$8.5K</td><td>2</td><td>Data moat</td><td>Pay-per-use</td></tr>
+            <tr><td>InvoiceGenerator</td><td>$8K</td><td>3</td><td>SEO + templates</td><td>$29/mo</td></tr>
+        </table>
+        <div style="font-size:11px; color:#888; margin-top:8px;"><strong>Pattern:</strong> Single-purpose utility + SEO + $19-49/mo + API tier + 2-5 hrs/wk. None use AI. All are boring.</div>
+    </div>
+
+    <h3>M37: DeepSeek V3 Price Arbitrage Window</h3>
+    <div class="card" style="border-left:3px solid #ffaa00;">
+        <div class="card-title" style="color:#ffaa00;">6-12 Month Window — Already Closing</div>
+        <table>
+            <tr><th>Model</th><th>Input $/M tok</th><th>Output $/M tok</th><th>vs DeepSeek</th></tr>
+            <tr><td style="color:#00ff88;">DeepSeek V3</td><td style="color:#00ff88;">$0.27</td><td style="color:#00ff88;">$1.10</td><td>—</td></tr>
+            <tr><td>GPT-4o</td><td>$2.50</td><td>$10.00</td><td style="color:#ffaa00;">10x more</td></tr>
+            <tr><td>Claude Opus</td><td>$15.00</td><td>$75.00</td><td style="color:#ff4444;">50x more</td></tr>
+            <tr><td>GPT-4o mini</td><td>$0.15</td><td>$0.60</td><td style="color:#00ff88;">Cheaper!</td></tr>
+        </table>
+        <p style="font-size:11px; color:#888; margin-top:8px;">
+            <strong>Viable plays:</strong> Batch translation ($10K/mo, $500 capital), code review agent ($10K/mo, $1K capital), wholesale API reseller ($30K/mo, $5K capital). Gap narrowing ~5-10%/month. GPT-4o mini already cheaper than DeepSeek on input. <strong style="color:#ff4444;">Window closes when OpenAI matches DeepSeek pricing entirely.</strong>
+        </p>
+    </div>
+
+    <h3>M35: AI Wrapper Graveyard vs Survivors</h3>
+    <div class="card">
+        <div class="grid">
+            <div class="card risk-high">
+                <div class="card-title" style="color:#ff4444;">DEAD WRAPPERS</div>
+                <table style="font-size:11px;">
+                    <tr><th>Name</th><th>Peak</th><th>Status</th></tr>
+                    <tr><td>Jasper AI</td><td>$125M ARR</td><td style="color:#ff4444;">Near-zero</td></tr>
+                    <tr><td>Copy.ai</td><td>High MRR</td><td style="color:#ff4444;">-80% revenue</td></tr>
+                    <tr><td>Mutiny</td><td>VC-backed</td><td style="color:#ff4444;">Acquired for pennies</td></tr>
+                    <tr><td>Replika</td><td>Millions users</td><td style="color:#ff4444;">-90% users</td></tr>
+                </table>
+                <div style="font-size:10px; color:#ff4444; margin-top:5px;">Common: pure API passthrough, no data moat, no workflow lock-in</div>
+            </div>
+            <div class="card risk-low">
+                <div class="card-title" style="color:#00ff88;">SURVIVORS ($100M+ ARR)</div>
+                <table style="font-size:11px;">
+                    <tr><th>Name</th><th>Est. ARR</th><th>Why Alive</th></tr>
+                    <tr><td style="color:#00ff88;">Perplexity</td><td>$200M</td><td>Own search index</td></tr>
+                    <tr><td style="color:#00ff88;">Cursor</td><td>$100M</td><td>Own IDE + context engine</td></tr>
+                    <tr><td>v0.dev</td><td>$50M</td><td>Deployable output</td></tr>
+                    <tr><td>Bolt.new</td><td>$30M</td><td>E2E deployment</td></tr>
+                </table>
+                <div style="font-size:10px; color:#00ff88; margin-top:5px;">Common: own the workflow, multi-model, executable output, high switching cost</div>
+            </div>
+        </div>
+        <div style="font-size:11px; color:#888; margin-top:8px; padding-top:8px; border-top:1px solid #1a1a2e;">
+            <strong style="color:#00ff88;">Key insight:</strong> In 2026, a successful wrapper must <strong>own the workflow</strong>, not just the AI call. Pure API wrappers are dead. Survivors produce deployable/executable output integrated into daily tools.
+        </div>
+    </div>
+
+    <h3>M18-M19: $100K Capital Allocation</h3>
+    <div class="card">
+        <table>
+            <tr><th>Strategy</th><th>Expected Return</th><th>Monthly Income</th><th>Risk</th><th>Liquidity</th></tr>
+            <tr><td>DeFi Yield (Aave/Pendle)</td><td>6-8%</td><td>$500-700</td><td><span class="score score-mid">Medium</span></td><td>Daily</td></tr>
+            <tr><td>RE Crowdfunding (Fundrise)</td><td>7-11%</td><td>$600-900</td><td><span class="score score-mid">Medium</span></td><td>Quarterly</td></tr>
+            <tr><td style="color:#00ff88;">Buy Existing SaaS (30x MRR)</td><td style="color:#00ff88;">20-30%</td><td style="color:#00ff88;">$2K-3K</td><td><span class="score score-mid">Medium</span></td><td>Illiquid</td></tr>
+            <tr><td>Dividend ETFs (SCHD/VYM)</td><td>3-4%</td><td>$250-350</td><td><span class="score score-high">Low</span></td><td>Daily</td></tr>
+            <tr><td>Content Revenue Stream</td><td>25-40%</td><td>$2.5K-4K</td><td><span class="score score-low">High</span></td><td>Monthly</td></tr>
+        </table>
+        <div style="font-size:11px; color:#888; margin-top:8px;">
+            <strong>Buy vs Build:</strong> $5K MRR SaaS costs ~$150K (30x monthly). 60% positive ROI within 18 months. AI can reduce operating costs 40-60%. <strong style="color:#ffaa00;">Realistic combined: $3K-5K/mo — NOT $10K without significant risk.</strong>
+        </div>
+    </div>
+
+    <h3>M30: $0 to $1K MRR Playbook</h3>
+    <div class="card" style="border-left:3px solid #4488ff;">
+        <div class="card-title">CLI API Integration Generator — $29/mo</div>
+        <p style="font-size:12px; color:#b0b0b0;">
+            <strong>Product:</strong> CLI that auto-generates API integrations for B2B SaaS (Stripe, Shopify, HubSpot) using OpenAPI specs.<br>
+            <strong>Price:</strong> $29/mo single, $99/mo team. 14-day free trial.<br>
+            <strong>Stack:</strong> Node.js/TypeScript, Stripe billing, Supabase, Vercel landing page.<br>
+            <strong>Timeline:</strong> 3 months MVP, 6 months to $1K MRR (35-40 paying users).<br>
+            <strong>Distribution:</strong> Product Hunt + HN + Reddit (r/SaaS, r/webdev) + SEO long-tail.<br>
+            <strong>Capital:</strong> $0 (free tiers only).<br>
+            <strong>Killer feature:</strong> Paste OpenAPI URL → working code in 30 seconds. Zero time-to-value.
+        </p>
+    </div>
+
+    <h3>Sprint 36 Synthesis — What We Now Know</h3>
+    <div class="card" style="border-left:3px solid #9b59b6;">
+        <p style="font-size:12px; color:#b0b0b0;">
+            <strong style="color:#9b59b6; font-size:14px;">After 1,360 agents across 36 sprints:</strong><br><br>
+            <strong style="color:#ff4444;">1. The agent economy is a myth.</strong> No agents pay other agents. Zero revenue from A2A transactions in 2026. Every path leads back to selling to humans or deploying capital into human-built financial infrastructure.<br><br>
+            <strong style="color:#00ff88;">2. Boring SaaS works.</strong> PDFMonkey, ScreenshotAPI, EmailListVerify — single-purpose utilities earning $8-14K/mo on 2-5 hrs/wk. SEO-driven. No AI needed. This is the reliable path.<br><br>
+            <strong style="color:#ffaa00;">3. DeepSeek arbitrage is real but closing.</strong> 10-50x cheaper than GPT-4o for comparable quality. Window: 6-12 months. Build value-added services (fine-tuning, integrations) before the gap closes.<br><br>
+            <strong style="color:#4488ff;">4. Buy > Build at $100K capital.</strong> Acquire $5K MRR SaaS for $150K → automate with AI → 20-30% ROI. 60% success rate. Better odds than starting from zero.<br><br>
+            <strong style="color:#00ff88;">5. Solo devs who win own distribution.</strong> Pieter Levels ($100K/mo), Marc Lou ($30K/mo), Danny Postma ($60K/mo) — all have Twitter audiences or SEO moats. The product is secondary to the channel.<br><br>
+            <strong style="color:#ff4444;">6. AI wrappers die unless they own the workflow.</strong> Jasper ($125M→0), Copy.ai (-80%). Cursor ($100M+), Perplexity ($200M+) survived by embedding into daily tools with high switching costs.<br><br>
+            <strong style="color:#9b59b6;">7. The ONE autonomous play: DeFi yield farming on Solana.</strong> Agent as capital allocator. No customers, no payments, no distribution. Just deploy capital and compound. $50-100K → $2-5K/mo. This is the only model where autonomy actually matters.
+        </p>
+    </div>
+</div>
+
 <!-- TAB 8: SPRINT LOG -->
 <div class="tab" id="tab-sprints">
     <h2>Sprint Log — Full Research Timeline</h2>
 
     <div style="display:flex; gap:15px; margin-bottom:20px; flex-wrap:wrap;">
         <div class="card" style="flex:1; min-width:140px; text-align:center;">
-            <div style="font-size:28px; font-weight:bold; color:#00ff88;">35</div>
+            <div style="font-size:28px; font-weight:bold; color:#00ff88;">36</div>
             <div style="font-size:10px; color:#666; text-transform:uppercase; letter-spacing:1px;">Sprints</div>
         </div>
         <div class="card" style="flex:1; min-width:140px; text-align:center;">
-            <div style="font-size:28px; font-weight:bold; color:#00ff88;">1,320</div>
+            <div style="font-size:28px; font-weight:bold; color:#00ff88;">1,360</div>
             <div style="font-size:10px; color:#666; text-transform:uppercase; letter-spacing:1px;">Agents Run</div>
         </div>
         <div class="card" style="flex:1; min-width:140px; text-align:center;">
-            <div style="font-size:28px; font-weight:bold; color:#00ff88;">1,289</div>
+            <div style="font-size:28px; font-weight:bold; color:#00ff88;">1,329</div>
             <div style="font-size:10px; color:#666; text-transform:uppercase; letter-spacing:1px;">Discovery Files</div>
         </div>
         <div class="card" style="flex:1; min-width:140px; text-align:center;">
-            <div style="font-size:28px; font-weight:bold; color:#00ff88;">$0.59</div>
+            <div style="font-size:28px; font-weight:bold; color:#00ff88;">$0.61</div>
             <div style="font-size:10px; color:#666; text-transform:uppercase; letter-spacing:1px;">Total Cost</div>
         </div>
         <div class="card" style="flex:1; min-width:140px; text-align:center;">
@@ -5933,12 +6141,12 @@ THE MODEL: "MVNO for AI" — Wrap DeepSeek with better UX/workflow, charge 5-10x
                 <span style="color:#666; margin-left:10px;">May 22, 2026</span>
             </div>
             <div>
-                <span class="tag tag-blue">INFRA + CODE + LAUNCH + CLI + VALIDATION</span>
-                <span class="tag tag-blue">230 AGENTS</span>
-                <span class="tag tag-green">$0.131</span>
+                <span class="tag tag-blue">INFRA + CODE + LAUNCH + CLI + VALIDATION + LESSONS</span>
+                <span class="tag tag-blue">270 AGENTS</span>
+                <span class="tag tag-green">$0.149</span>
             </div>
         </div>
-        <div style="font-size:11px; color:#888; margin-bottom:10px;">Focus: Picks & shovels → production code → CLI agent distribution → ground truth validation. Sprint 35 corrected Sprint 34's optimism: GitHub/npm have NO built-in payments. Real model: free Action + external API key + Stripe SaaS. AppleScript+launchd = viable 24/7 macOS agent server.</div>
+        <div style="font-size:11px; color:#888; margin-bottom:10px;">Focus: Picks & shovels → production code → CLI agent distribution → ground truth validation → 40-agent data harvest. Sprint 36: Agent economy doesn't exist. Boring SaaS works ($8-14K/mo). DeepSeek arb closing. Buy SaaS > build. Solo dev success = own distribution. Only autonomous play: DeFi yield on Solana.</div>
         <table style="font-size:11px;">
             <tr><th style="width:55px;">Sprint</th><th>Focus</th><th style="width:50px;">Agents</th><th style="width:50px;">Time</th><th style="width:55px;">Cost</th><th style="width:80px;">Verdict</th><th>Key Finding</th></tr>
             <tr>
@@ -5986,7 +6194,7 @@ THE MODEL: "MVNO for AI" — Wrap DeepSeek with better UX/workflow, charge 5-10x
                 <td><span class="verdict-maybe">OPTIMISTIC</span></td>
                 <td>20 marketplaces mapped. Revenue projections overstated — Sprint 35 corrected. GitHub/npm have NO built-in payments.</td>
             </tr>
-            <tr style="background:#00ff8811;">
+            <tr>
                 <td style="color:#9b59b6; font-weight:bold;">35</td>
                 <td>GROUND TRUTH — Validation + AppleScript Automation</td>
                 <td>40</td>
@@ -5994,6 +6202,15 @@ THE MODEL: "MVNO for AI" — Wrap DeepSeek with better UX/workflow, charge 5-10x
                 <td>$0.017</td>
                 <td><span class="verdict-yes">VALIDATED</span></td>
                 <td>GitHub Actions = FREE only (no paid). npm = no built-in billing. Real model: free tool + external API key + Stripe SaaS backend (SonarCloud pattern). 14% of dev tools hit $1K MRR. npm automation 95/100. Stripe KYC = only manual blocker. launchd+bash+osascript = 24/7 macOS agent server. First $1: 7-21 days realistic.</td>
+            </tr>
+            <tr style="background:#00ff8811;">
+                <td style="color:#9b59b6; font-weight:bold;">36</td>
+                <td>LESSONS — 40-Agent Data Harvest</td>
+                <td>40</td>
+                <td>75.3s</td>
+                <td>$0.018</td>
+                <td><span class="verdict-yes">DATA BANKED</span></td>
+                <td>Agent economy = myth. Boring SaaS $8-14K/mo on 2-5hrs/wk. Solo dev winners own distribution. DeepSeek arb 6-12mo window, closing. Buy SaaS at 30x MRR > build. AI wrappers die unless own workflow. ONE autonomous play: DeFi yield farming on Solana ($50-100K → $2-5K/mo).</td>
             </tr>
         </table>
     </div>
@@ -6287,7 +6504,7 @@ THE MODEL: "MVNO for AI" — Wrap DeepSeek with better UX/workflow, charge 5-10x
 
     <!-- JOURNEY ARC -->
     <div class="card" style="margin-top:10px;">
-        <div class="card-title">Journey Arc — 35 Sprints in 6 Sessions</div>
+        <div class="card-title">Journey Arc — 36 Sprints in 6 Sessions</div>
         <div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:10px;">
             <div style="flex:1; min-width:130px; padding:10px; background:#0a0a12; border-radius:4px; text-align:center;">
                 <div style="font-size:10px; color:#4488ff; letter-spacing:1px;">SESSION 1</div>
@@ -6321,13 +6538,13 @@ THE MODEL: "MVNO for AI" — Wrap DeepSeek with better UX/workflow, charge 5-10x
             <div style="color:#333; display:flex; align-items:center;">→</div>
             <div style="flex:1; min-width:130px; padding:10px; background:#0a0a12; border-radius:4px; text-align:center; border:1px solid #9b59b6;">
                 <div style="font-size:10px; color:#9b59b6; letter-spacing:1px;">SESSION 6</div>
-                <div style="font-size:12px; color:#e0e0e0; margin:5px 0;">"Validate & ship"</div>
-                <div style="font-size:10px; color:#666;">6 sprints, 230 agents</div>
+                <div style="font-size:12px; color:#e0e0e0; margin:5px 0;">"Validate & learn"</div>
+                <div style="font-size:10px; color:#666;">7 sprints, 270 agents</div>
             </div>
         </div>
         <div style="margin-top:15px; padding-top:10px; border-top:1px solid #1a1a2e;">
             <div style="font-size:11px; color:#888;">
-                <strong style="color:#9b59b6;">Conclusion after 1,320 agents:</strong> Sprint 35 reality-checked Sprint 34. GitHub Marketplace = <strong>FREE Actions only</strong> (no paid tier). npm = no built-in payments. Real model (proven by SonarCloud, Snyk, Codecov): <strong>Free Action + external API key + Stripe SaaS backend</strong>. Only 14% of dev tools ever hit $1K MRR. AppleScript verdict: use <strong>launchd + bash + osascript</strong> combo — replaces PM2/systemd on macOS. One-time 5-min TCC grant, then 100% autonomous. Mac Mini in a closet = viable. First real dollar: 7-21 days. <strong>The tool is FREE distribution. The SaaS backend is the revenue.</strong>
+                <strong style="color:#9b59b6;">Conclusion after 1,360 agents:</strong> Sprint 36 harvested data across 40 agents covering meta-analysis, boring SaaS, solo dev success stories, capital allocation, DeepSeek arbitrage, and AI wrapper survival. <strong style="color:#ff4444;">The agent economy is a myth</strong> — no agents pay other agents in 2026. <strong style="color:#00ff88;">Boring SaaS works</strong> ($8-14K/mo on 2-5 hrs/wk). Solo dev winners <strong>own their distribution channel</strong>. DeepSeek arbitrage window = 6-12 months, already closing. $100K best use: <strong>buy existing SaaS at 30x MRR</strong> (20-30% ROI). The ONE autonomous play: <strong>DeFi yield farming on Solana</strong> ($50-100K capital → $2-5K/mo). Agent as capital allocator — not agent selling to agent.
             </div>
         </div>
     </div>
